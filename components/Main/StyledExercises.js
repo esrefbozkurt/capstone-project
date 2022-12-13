@@ -3,12 +3,10 @@ import styled from "styled-components";
 export const StyledExercises = styled.ul`
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
+
   li {
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
-    margin-bottom: 0;
     border-radius: 10px;
     list-style: none;
     background-color: white;
@@ -21,8 +19,7 @@ export const StyledExercises = styled.ul`
     display: flex;
     justify-content: center;
     padding: 5px;
-    margin-top: 20px;
-    margin-bottom: 0;
+    margin: 10px;
     color: #354f52;
   }
 `;
