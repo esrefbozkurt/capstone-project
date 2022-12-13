@@ -5,8 +5,8 @@ export const StyledExercises = styled.ul`
   flex-direction: column;
 
   li {
-    margin: 10px;
-    padding: 10px;
+    margin: 0.5rem;
+    padding: 0.75rem;
     border-radius: 10px;
     list-style: none;
     background-color: white;
@@ -18,8 +18,8 @@ export const StyledExercises = styled.ul`
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
-    padding: 5px;
-    margin: 10px;
+    padding: 0.75rem;
+
     color: #354f52;
   }
 `;
