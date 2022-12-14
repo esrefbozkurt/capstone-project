@@ -2,8 +2,18 @@ import styled from "styled-components";
 
 export const StyledDescription = styled.div`
   display: flex;
-  border: dotted 1px red;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #edede9;
+  border-radius: 5px;
+  padding: 0.5rem;
+  //transition: all 0.5s;
   p {
-    padding: 0.5rem;
+    padding: 0.2rem;
+  }
+  h4 {
+    padding: 0.2rem;
   }
 `;
+
+//
