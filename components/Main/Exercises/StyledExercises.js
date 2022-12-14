@@ -27,6 +27,7 @@ export const StyledExercises = styled.ul`
     background: transparent;
     height: 24px;
     width: 24px;
+    cursor: pointer;
   }
 
   span {

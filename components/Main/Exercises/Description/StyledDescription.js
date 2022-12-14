@@ -14,6 +14,11 @@ export const StyledDescription = styled.div`
   h4 {
     padding: 0.2rem;
   }
+  a {
+    padding: 0.2rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
 `;
 
 //

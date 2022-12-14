@@ -5,7 +5,6 @@ export default function Description({
   equipment,
   difficulty,
   instructions,
-
   name,
 }) {
   return (
@@ -17,12 +16,12 @@ export default function Description({
       <h4>Instructions:</h4>
       <p>{instructions}</p>
       <a
-        src={
-          "https://www.youtube.com/results?search_query=incline+hammer+curls" +
-          name
-        }
-        text="Click to see Exercise on YouTube"
-      ></a>
+        href={"https://www.youtube.com/results?search_query=" + name}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click to see Exercise on YouTube
+      </a>
     </StyledDescription>
   );
 }
