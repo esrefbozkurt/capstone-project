@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Exercises() {
   const [show, setShow] = useState(false);
-  const [toggleID, setToggleId] = useState();
+  const [toggleId, setToggleId] = useState();
 
   function handleToggle(id) {
     setShow(!show);
@@ -35,7 +35,7 @@ export default function Exercises() {
               />
             </button>
           </span>
-          {show && id === toggleID && (
+          {show && id === toggleId && (
             <Description
               key={id}
               id={id}

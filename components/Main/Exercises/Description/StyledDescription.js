@@ -7,12 +7,13 @@ export const StyledDescription = styled.div`
   background-color: #edede9;
   border-radius: 5px;
   padding: 0.5rem;
-  //transition: all 0.5s;
+
   p {
     padding: 0.2rem;
   }
   h4 {
     padding: 0.2rem;
+    font-family: Lato-bold;
   }
   a {
     padding: 0.2rem;
