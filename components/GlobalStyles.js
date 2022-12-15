@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
         src: url("/fonts/Lato/Lato-Bold.ttf") format("truetype");
 
     }
-    @media (min-width: 600px) {
+    @media (max-width: 600px) {
 }
 `;
 

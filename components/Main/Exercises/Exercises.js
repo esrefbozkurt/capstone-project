@@ -7,11 +7,15 @@ import Image from "next/image";
 
 export default function Exercises() {
   const [show, setShow] = useState(false);
-  const [toggleId, setToggleId] = useState();
+  const [toggleIds, setToggleIds] = useState([]);
 
   function handleToggle(id) {
     setShow(!show);
-    setToggleId(id);
+    if (show) {
+      setToggleIds([id, ...toggleIds]);
+    } else {
+      setToggleIds(toggleIds.filter((toggleId) => toggleId !== id));
+    }
   }
 
   return (
@@ -35,7 +39,7 @@ export default function Exercises() {
               />
             </button>
           </span>
-          {show && id === toggleId && (
+          {toggleIds.includes(id) ? (
             <Description
               key={id}
               id={id}
@@ -44,7 +48,7 @@ export default function Exercises() {
               difficulty={difficulty}
               instructions={instructions}
             />
-          )}
+          ) : null}
         </li>
       ))}
     </StyledExercises>

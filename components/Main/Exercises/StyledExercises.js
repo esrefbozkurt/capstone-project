@@ -15,7 +15,7 @@ export const StyledExercises = styled.ul`
     transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   }
   h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lato-bold;
     display: flex;
     justify-content: center;
     padding: 0.75rem;
