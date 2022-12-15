@@ -11,15 +11,17 @@ export const StyledExercises = styled.ul`
     list-style: none;
     background-color: white;
     color: #354f52;
-    box-shadow: 1px 1px 1px 1px #cad2c5;
+    box-shadow: 1px 1px 2px 2px #e9ecef;
     transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   }
   h2 {
     font-family: Lato-bold;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0.75rem;
     color: #354f52;
+    background-color: white;
+    border-top: inset #f8f9fa;
   }
 
   button {

@@ -4,6 +4,7 @@ import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
 import Image from "next/image";
+import SearchBar from "./SearchBar/SearchBar";
 
 export default function Exercises() {
   const [toggleIds, setToggleIds] = useState([]);
@@ -19,6 +20,7 @@ export default function Exercises() {
   return (
     <StyledExercises>
       <h2>Biceps Exercises</h2>
+      <SearchBar />
       {dataBiceps.map(({ name, equipment, difficulty, instructions, id }) => (
         <li key={id}>
           <span>

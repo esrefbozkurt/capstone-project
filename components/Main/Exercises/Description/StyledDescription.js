@@ -4,8 +4,8 @@ export const StyledDescription = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: #edede9;
-  border-radius: 5px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
   padding: 0.5rem;
 
   p {
