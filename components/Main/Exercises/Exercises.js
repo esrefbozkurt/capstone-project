@@ -6,15 +6,13 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Exercises() {
-  const [show, setShow] = useState(false);
   const [toggleIds, setToggleIds] = useState([]);
 
   function handleToggle(id) {
-    setShow(!show);
-    if (show) {
-      setToggleIds([id, ...toggleIds]);
-    } else {
+    if (toggleIds.includes(id)) {
       setToggleIds(toggleIds.filter((toggleId) => toggleId !== id));
+    } else {
+      setToggleIds([id, ...toggleIds]);
     }
   }
 
