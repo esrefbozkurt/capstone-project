@@ -1,21 +1,65 @@
 import styled from "styled-components";
 
 export const StyledSearchBar = styled.div`
+  display: flex;
   position: relative;
-  margin: 1rem;
+  justify-content: flex-end;
+  margin: 0 1rem 0.75rem 1rem;
 
-  /* top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */
-
-  span {
-    position: relative;
-
-    /* top: 0;
+  input {
+    opacity: 0;
+    font-family: Lato;
+    display: flex;
+    position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
-    left: 0; */
+    width: 0;
+    height: 0;
+    border: none;
+    background: #f8f9fa;
+    color: #354f52;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    transition: all 1s;
+
+    z-index: 5;
+    border: 1px solid red;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      width: 100%;
+      opacity: 1;
+      cursor: text;
+    }
+    &:focus ~ span {
+      background: white;
+      z-index: 6;
+      &::before {
+        top: 0;
+        left: 0;
+        width: 18px;
+      }
+      &::after {
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 1px;
+        border: none;
+        background: #354f52;
+        border-radius: 0%;
+        transform: rotate(-45deg);
+      }
+    }
+    &::placeholder {
+      color: #354f52;
+      opacity: 0.5;
+    }
+  }
+  span {
+    position: relative;
     width: 40px;
     height: 40px;
     background: white;
@@ -43,7 +87,7 @@ export const StyledSearchBar = styled.div`
     }
     &::after {
       content: "";
-      position: relative;
+      position: absolute;
       margin: auto;
       top: -5px;
       right: 0;
@@ -54,63 +98,6 @@ export const StyledSearchBar = styled.div`
       border-radius: 50%;
       border: 1px solid #354f52;
       transition: all 0.5s;
-    }
-  }
-  input {
-    font-family: Lato;
-    /* position: relative; */
-    /* margin: auto; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 95%;
-    height: 40px;
-    outline: black;
-    border: black;
-
-    background: #f8f9fa;
-    color: #354f52;
-
-    /* padding: 0 80px 0 20px; */
-    border-radius: 30px;
-
-    transition: all 0.8s;
-    opacity: 0;
-    z-index: 5;
-
-    /* letter-spacing: 0.1em; */
-    &:hover {
-      cursor: pointer;
-    }
-    &:focus {
-      /* width: 90%; */
-      opacity: 1;
-      cursor: text;
-      margin: 20px;
-    }
-    &:focus ~ span {
-      background: white;
-      z-index: 6;
-      &::before {
-        top: 0;
-        left: 0;
-        width: 18px;
-      }
-      &::after {
-        top: 0;
-        left: 0;
-        width: 18px;
-        height: 1px;
-        border: none;
-        background: #354f52;
-        border-radius: 0%;
-        transform: rotate(-45deg);
-      }
-    }
-    &::placeholder {
-      color: #354f52;
-      opacity: 0.5;
     }
   }
 `;

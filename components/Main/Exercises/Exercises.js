@@ -3,11 +3,12 @@ import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
-import Image from "next/image";
+
 import SearchBar from "./SearchBar/SearchBar";
 
 export default function Exercises() {
   const [toggleIds, setToggleIds] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function handleToggle(id) {
     if (toggleIds.includes(id)) {
@@ -17,40 +18,47 @@ export default function Exercises() {
     }
   }
 
+  function handleChange(event) {
+    setSearchTerm(event.target.value);
+  }
+
   return (
     <StyledExercises>
       <h2>Biceps Exercises</h2>
-      <SearchBar />
-      {dataBiceps.map(({ name, equipment, difficulty, instructions, id }) => (
-        <li key={id}>
-          <span>
-            <h3>{name.toUpperCase()}</h3>
-
+      <SearchBar onChange={handleChange} />
+      {dataBiceps
+        .filter((item) => {
+          if (searchTerm == "") {
+            return item;
+          } else if (
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return item;
+          }
+        })
+        .map(({ name, equipment, difficulty, instructions, id }) => (
+          <li key={id}>
             <button
               onClick={() => {
                 handleToggle(id);
               }}
             >
-              <Image
-                src="/info-outline-rounded.svg"
-                width={24}
-                height={24}
-                alt="info icon"
-              />
+              <span>
+                <h3>{name.toUpperCase()}</h3>
+              </span>
             </button>
-          </span>
-          {toggleIds.includes(id) ? (
-            <Description
-              key={id}
-              id={id}
-              name={name}
-              equipment={equipment}
-              difficulty={difficulty}
-              instructions={instructions}
-            />
-          ) : null}
-        </li>
-      ))}
+            {toggleIds.includes(id) ? (
+              <Description
+                key={id}
+                id={id}
+                name={name}
+                equipment={equipment}
+                difficulty={difficulty}
+                instructions={instructions}
+              />
+            ) : null}
+          </li>
+        ))}
     </StyledExercises>
   );
 }
