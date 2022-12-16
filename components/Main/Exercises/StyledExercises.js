@@ -9,9 +9,7 @@ export const StyledExercises = styled.ul`
     list-style: none;
     background-color: white;
     color: #354f52;
-    //box-shadow: 1px 1px 2px 2px #e9ecef;
-
-    border-top: solid #354f52 0.5px;
+    border-top: inset #354f52 1px;
   }
 
   h2 {
@@ -19,10 +17,8 @@ export const StyledExercises = styled.ul`
     display: flex;
     justify-content: flex-start;
     padding: 0.75rem 1rem 0.75rem 1rem;
-
     color: #354f52;
     background-color: white;
-
     overflow-y: scroll;
     font-size: 1.25rem;
   }

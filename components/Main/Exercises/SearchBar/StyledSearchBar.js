@@ -14,17 +14,17 @@ export const StyledSearchBar = styled.div`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 0;
-    height: 0;
+    width: 40px;
+    height: 40px;
     border: none;
     background: #f8f9fa;
     color: #354f52;
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    transition: all 1s;
+    transition: all 0.5s;
 
     z-index: 5;
-    border: 1px solid red;
+    border: 1px solid #354f52;
     outline: none;
     &:hover {
       cursor: pointer;
@@ -65,7 +65,7 @@ export const StyledSearchBar = styled.div`
     background: white;
     border-radius: 50%;
     border: 1px solid #354f52;
-    transition: all 0.3s;
+    transition: all 0.1s;
     z-index: 4;
 
     &:hover {
