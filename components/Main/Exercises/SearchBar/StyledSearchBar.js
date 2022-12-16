@@ -15,7 +15,7 @@ export const StyledSearchBar = styled.div`
     right: 0;
     bottom: 0;
     width: 40px;
-    height: 40px;
+    height: 30px;
     border: none;
     background: #f8f9fa;
     color: #354f52;
@@ -60,8 +60,8 @@ export const StyledSearchBar = styled.div`
   }
   span {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: white;
     border-radius: 50%;
     border: 1px solid #354f52;
