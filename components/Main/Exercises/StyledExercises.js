@@ -16,7 +16,7 @@ export const StyledExercises = styled.ul`
     font-family: Lato-bold;
     display: flex;
     justify-content: flex-start;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
     color: #354f52;
     background-color: white;
     overflow-y: scroll;
