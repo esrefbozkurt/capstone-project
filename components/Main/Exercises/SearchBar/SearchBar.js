@@ -8,8 +8,12 @@ export default function SearchBar({ onChange }) {
   }
 
   return (
+<<<<<<< HEAD
     <StyledSearchBar>
       <span onClick={handleSearchClick}></span>
+=======
+    <StyledSearchBar role="search">
+>>>>>>> origin/feature/searchBar
       <input
         type="text"
         id="search-bar"

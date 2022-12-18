@@ -5,7 +5,7 @@ export const StyledExercises = styled.ul`
   flex-direction: column;
   border-bottom: inset #354f52 1px;
   li {
-    padding: 0.4rem 1rem 0.4rem 1rem;
+    padding: 0.4rem 1rem;
     list-style: none;
     background-color: white;
     color: #354f52;
@@ -16,7 +16,7 @@ export const StyledExercises = styled.ul`
     font-family: Lato-bold;
     display: flex;
     justify-content: flex-start;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
     color: #354f52;
     background-color: white;
     overflow-y: scroll;
