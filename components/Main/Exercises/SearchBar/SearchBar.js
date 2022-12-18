@@ -8,7 +8,7 @@ export default function SearchBar({ onChange }) {
   }
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBar role="search">
       <input
         type="text"
         id="search-bar"
