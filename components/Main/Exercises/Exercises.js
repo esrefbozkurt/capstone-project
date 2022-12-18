@@ -27,13 +27,13 @@ export default function Exercises() {
       <h2>Biceps Exercises</h2>
       <SearchBar onChange={handleChange} />
       {dataBiceps
-        .filter((item) => {
+        .filter((exercise) => {
           if (searchTerm == "") {
-            return item;
+            return null;
           } else if (
             item.name.toLowerCase().includes(searchTerm.toLowerCase())
           ) {
-            return item;
+            return exercise;
           }
         })
         .map(({ name, equipment, difficulty, instructions, id }) => (
