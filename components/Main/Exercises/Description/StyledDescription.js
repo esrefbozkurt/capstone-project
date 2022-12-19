@@ -4,16 +4,18 @@ export const StyledDescription = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: #edede9;
-  border-radius: 5px;
+
+  border-radius: 10px;
   padding: 0.5rem;
 
   p {
     padding: 0.2rem;
+    font-size: 0.85rem;
   }
   h4 {
     padding: 0.2rem;
     font-family: Lato-bold;
+    font-size: 0.95rem;
   }
   a {
     padding: 0.2rem;
