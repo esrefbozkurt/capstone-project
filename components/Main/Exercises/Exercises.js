@@ -29,9 +29,9 @@ export default function Exercises() {
       {dataBiceps
         .filter((exercise) => {
           if (searchTerm == "") {
-            return null;
+            return exercise;
           } else if (
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
           ) {
             return exercise;
           }
