@@ -3,9 +3,7 @@ import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
-
 import SearchBar from "./SearchBar/SearchBar";
-import Favorite from "./Favorite/Favorite";
 import Favorite from "./Favorite/Favorite";
 
 export default function Exercises() {
