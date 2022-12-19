@@ -3,36 +3,43 @@ import styled from "styled-components";
 export const StyledExercises = styled.ul`
   display: flex;
   flex-direction: column;
-
+  border-bottom: inset #354f52 1px;
   li {
-    margin: 0.5rem;
-    padding: 0.75rem;
-    border-radius: 10px;
+    padding: 0.4rem 1rem;
     list-style: none;
     background-color: white;
     color: #354f52;
-    box-shadow: 1px 1px 1px 1px #cad2c5;
-    transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+    border-top: inset #354f52 1px;
   }
+
   h2 {
     font-family: Lato-bold;
     display: flex;
-    justify-content: center;
-    padding: 0.75rem;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
     color: #354f52;
+    background-color: white;
+    overflow-y: scroll;
+    font-size: 1.25rem;
   }
 
   button {
     border: none;
     background: transparent;
-    height: 24px;
-    width: 24px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:active {
+    box-shadow: inset 0.1px 0.1px 0.1px 0.1px #b6b8c1;
+    opacity: 0.5;
   }
 
   span {
     display: flex;
     justify-content: space-between;
-    padding: 0.4rem;
+  }
+  h3 {
+    font-size: 1rem;
+    color: #354f52;
   }
 `;

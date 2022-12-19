@@ -3,52 +3,64 @@ import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
-import Image from "next/image";
+
+import SearchBar from "./SearchBar/SearchBar";
 
 export default function Exercises() {
-  const [toggleIds, setToggleIds] = useState([]);
+  const [toggledExercises, setToggledExercises] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function handleToggle(id) {
-    if (toggleIds.includes(id)) {
-      setToggleIds(toggleIds.filter((toggleId) => toggleId !== id));
+    if (toggledExercises.includes(id)) {
+      setToggledExercises(
+        toggledExercises.filter((toggleId) => toggleId !== id)
+      );
     } else {
-      setToggleIds([id, ...toggleIds]);
+      setToggledExercises([id, ...toggledExercises]);
     }
+  }
+
+  function handleChange(event) {
+    setSearchTerm(event.target.value);
   }
 
   return (
     <StyledExercises>
       <h2>Biceps Exercises</h2>
-      {dataBiceps.map(({ name, equipment, difficulty, instructions, id }) => (
-        <li key={id}>
-          <span>
-            <h3>{name.toUpperCase()}</h3>
-
+      <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
+      {dataBiceps
+        .filter((exercise) => {
+          if (searchTerm === "") {
+            return exercise;
+          } else if (
+            exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+          ) {
+            return exercise;
+          }
+        })
+        .map(({ name, equipment, difficulty, instructions, id }) => (
+          <li key={id}>
             <button
               onClick={() => {
                 handleToggle(id);
               }}
             >
-              <Image
-                src="/info-outline-rounded.svg"
-                width={24}
-                height={24}
-                alt="info icon"
-              />
+              <span>
+                <h3>{name.toUpperCase()}</h3>
+              </span>
             </button>
-          </span>
-          {toggleIds.includes(id) ? (
-            <Description
-              key={id}
-              id={id}
-              name={name}
-              equipment={equipment}
-              difficulty={difficulty}
-              instructions={instructions}
-            />
-          ) : null}
-        </li>
-      ))}
+            {toggledExercises.includes(id) ? (
+              <Description
+                key={id}
+                id={id}
+                name={name}
+                equipment={equipment}
+                difficulty={difficulty}
+                instructions={instructions}
+              />
+            ) : null}
+          </li>
+        ))}
     </StyledExercises>
   );
 }

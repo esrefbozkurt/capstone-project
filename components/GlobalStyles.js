@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
     html,
     body {
         
-        background-color: #edede9;
+        background-color: white;
         font-family: Lato; 
           
 }
