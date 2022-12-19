@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import { useRef } from "react";
-import styled from "styled-components";
 import { StyledSearchBar } from "./StyledSearchBar";
 import { useState } from "react";
 import Image from "next/image";
 
-export default function SearchBar({ onChange }) {
+export default function SearchBar({ onChange, setSearchTerm }) {
   const [isFocused, setIsFocused] = useState(false);
 
   const inputRef = useRef(null);
@@ -13,10 +11,10 @@ export default function SearchBar({ onChange }) {
   function handleClick() {
     if (!isFocused) {
       inputRef?.current.focus();
-      console.log("focus");
     } else {
       inputRef?.current.blur();
-      console.log("blur");
+      setSearchTerm("");
+      inputRef.current.value = "";
     }
     setIsFocused(!isFocused);
   }
@@ -42,7 +40,6 @@ export default function SearchBar({ onChange }) {
           />
         )}
       </button>
-
       <input
         ref={inputRef}
         type="text"
@@ -51,11 +48,6 @@ export default function SearchBar({ onChange }) {
         onChange={onChange}
         className="input"
       />
-      {/* <button
-        type="button"
-        className="clear"
-        onClick={handleSearchClick}
-      ></button> */}
     </StyledSearchBar>
   );
 }

@@ -7,14 +7,16 @@ import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 
 export default function Exercises() {
-  const [toggleIds, setToggleIds] = useState([]);
+  const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleToggle(id) {
-    if (toggleIds.includes(id)) {
-      setToggleIds(toggleIds.filter((toggleId) => toggleId !== id));
+    if (toggledExercises.includes(id)) {
+      setToggledExercises(
+        toggledExercises.filter((toggleId) => toggleId !== id)
+      );
     } else {
-      setToggleIds([id, ...toggleIds]);
+      setToggledExercises([id, ...toggledExercises]);
     }
   }
 
@@ -25,10 +27,10 @@ export default function Exercises() {
   return (
     <StyledExercises>
       <h2>Biceps Exercises</h2>
-      <SearchBar onChange={handleChange} />
+      <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
       {dataBiceps
         .filter((exercise) => {
-          if (searchTerm == "") {
+          if (searchTerm === "") {
             return exercise;
           } else if (
             exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -47,7 +49,7 @@ export default function Exercises() {
                 <h3>{name.toUpperCase()}</h3>
               </span>
             </button>
-            {toggleIds.includes(id) ? (
+            {toggledExercises.includes(id) ? (
               <Description
                 key={id}
                 id={id}
