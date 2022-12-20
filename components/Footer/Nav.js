@@ -5,13 +5,16 @@ import { StyledNav } from "./StyledNav";
 export default function Nav() {
   return (
     <StyledNav>
-      <Image
-        className="add-fav"
-        src="/favorite-add-outline.svg"
-        width={48}
-        height={48}
-        alt="add-fav icon"
-      />
+      <a></a>
+      <a>
+        <Image
+          className="add-fav"
+          src="/favorite-add-outline.svg"
+          width={36}
+          height={36}
+          alt="add-fav icon"
+        />
+      </a>
     </StyledNav>
   );
 }
