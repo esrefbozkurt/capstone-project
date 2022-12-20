@@ -33,7 +33,7 @@ export const StyledSearchBar = styled.div`
     height: 30px;
     border-radius: 30px;
     border: 1px solid black;
-    background: #f8f9fa;
+    background: white;
     color: #354f52;
     padding-left: 20px;
     outline: none;

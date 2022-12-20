@@ -10,6 +10,12 @@ export const StyledExercises = styled.ul`
     background-color: white;
     color: #354f52;
     border-top: inset #354f52 1px;
+
+    .favContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   h2 {

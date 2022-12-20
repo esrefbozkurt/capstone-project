@@ -3,8 +3,8 @@ import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
-
 import SearchBar from "./SearchBar/SearchBar";
+import Favorite from "./Favorite/Favorite";
 
 export default function Exercises() {
   const [toggledExercises, setToggledExercises] = useState([]);
@@ -40,15 +40,18 @@ export default function Exercises() {
         })
         .map(({ name, equipment, difficulty, instructions, id }) => (
           <li key={id}>
-            <button
-              onClick={() => {
-                handleToggle(id);
-              }}
-            >
-              <span>
-                <h3>{name.toUpperCase()}</h3>
-              </span>
-            </button>
+            <div className="favContainer">
+              <button
+                onClick={() => {
+                  handleToggle(id);
+                }}
+              >
+                <span>
+                  <h3>{name.toUpperCase()}</h3>
+                </span>
+              </button>
+              <Favorite />
+            </div>
             {toggledExercises.includes(id) ? (
               <Description
                 key={id}
