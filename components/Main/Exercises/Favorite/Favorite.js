@@ -20,16 +20,16 @@ export default function Favorite() {
           <Image
             className="add-fav"
             src="/favorite-add-outline.svg"
-            width={22}
-            height={22}
+            width={28}
+            height={28}
             alt="add-fav icon"
           />
         ) : (
           <Image
             className="remove-fav"
             src="/favorite-remove.svg"
-            width={22}
-            height={22}
+            width={28}
+            height={28}
             alt="remove-fav icon"
           />
         )}

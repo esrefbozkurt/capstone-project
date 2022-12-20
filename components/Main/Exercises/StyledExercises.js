@@ -21,7 +21,7 @@ export const StyledExercises = styled.ul`
   h2 {
     font-family: Lato-bold;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flnpm ex-start;
     padding: 0.5rem 1rem;
     color: #354f52;
     background-color: white;

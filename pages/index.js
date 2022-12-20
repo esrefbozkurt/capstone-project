@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Nav from "../components/Footer/Nav";
 import Header from "../components/Header/Header";
 import Exercises from "../components/Main/Exercises/Exercises";
 
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Header />
       <Exercises />
+      <Nav />
     </>
   );
 }
