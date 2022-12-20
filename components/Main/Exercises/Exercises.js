@@ -40,12 +40,13 @@ export default function Exercises() {
         })
         .map(({ name, equipment, difficulty, instructions, id }) => (
           <li key={id}>
-            <div className="favContainer">
-              <button
-                onClick={() => {
-                  handleToggle(id);
-                }}
-              >
+            <div
+              className="favContainer"
+              onClick={() => {
+                handleToggle(id);
+              }}
+            >
+              <button>
                 <span>
                   <h3>{name.toUpperCase()}</h3>
                 </span>

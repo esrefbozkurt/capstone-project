@@ -5,7 +5,7 @@ export const StyledExercises = styled.ul`
   flex-direction: column;
   border-bottom: inset #354f52 1px;
   li {
-    padding: 0.4rem 1rem;
+    padding: 0rem 1rem;
     list-style: none;
     background-color: white;
     color: #354f52;

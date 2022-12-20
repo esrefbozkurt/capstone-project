@@ -5,7 +5,9 @@ import { StyledFav } from "./StyledFav";
 export default function Favorite() {
   const [favourite, setFavourite] = useState(false);
 
-  function toggleFav() {
+  function toggleFav(e) {
+    e.preventDefault();
+    e.stopPropagation();
     if (!favourite) {
       setFavourite(true);
     } else {
