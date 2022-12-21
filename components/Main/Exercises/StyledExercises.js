@@ -4,10 +4,13 @@ export const StyledExercises = styled.ul`
   display: flex;
   flex-direction: column;
   border-bottom: inset #354f52 1px;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 10px;
   li {
     padding: 0rem 1rem;
     list-style: none;
-    background-color: white;
+    background-color: transparent;
     color: #354f52;
     border-top: inset #354f52 1px;
 
@@ -35,10 +38,10 @@ export const StyledExercises = styled.ul`
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  button:active {
+  /* button:active {
     box-shadow: inset 0.1px 0.1px 0.1px 0.1px #b6b8c1;
     opacity: 0.5;
-  }
+  } */
 
   span {
     display: flex;
