@@ -4,7 +4,8 @@ import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import Favorite from "./Favorite/Favorite";
+import Favourite from "./Favourite/Favourite";
+import Link from "next/link";
 
 export default function Exercises() {
   const [toggledExercises, setToggledExercises] = useState([]);
@@ -38,7 +39,7 @@ export default function Exercises() {
             return exercise;
           }
         })
-        .map(({ name, equipment, difficulty, instructions, id }) => (
+        .map(({ name, equipment, difficulty, instructions, id, favourite }) => (
           <li key={id}>
             <div
               className="favContainer"
@@ -51,7 +52,7 @@ export default function Exercises() {
                   <h3>{name.toUpperCase()}</h3>
                 </span>
               </button>
-              <Favorite />
+              <Favourite favourite={favourite} />
             </div>
             {toggledExercises.includes(id) ? (
               <Description

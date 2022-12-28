@@ -2,18 +2,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { StyledFav } from "./StyledFav";
 
-export default function Favorite() {
-  const [favourite, setFavourite] = useState(false);
+export default function Favourite() {
+  // const [favourite, setFavourite] = useState(false);
 
-  function toggleFav(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!favourite) {
-      setFavourite(true);
-    } else {
-      setFavourite(false);
-    }
-  }
+  // function toggleFav(e) {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   if (!favourite) {
+  //     setFavourite(true);
+  //   } else {
+  //     setFavourite(false);
+  //   }
+  // }
 
   return (
     <StyledFav>

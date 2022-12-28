@@ -8,6 +8,6 @@ export const StyledNav = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 0.75rem;
-  background-color: white;
+  padding: 0.5rem;
+  background-color: #e9ecef;
 `;
