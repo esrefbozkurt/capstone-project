@@ -22,7 +22,7 @@ export default function Nav() {
           src="/favorite-add-outline.svg"
           width={36}
           height={36}
-          alt="add-fav icon"
+          alt="add-favourite icon"
         />
       </Link>
     </StyledNav>

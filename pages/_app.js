@@ -1,7 +1,6 @@
 import { useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
 import Layout from "../components/Layout/Layout";
-import { dataBiceps } from "../lib/data";
 
 function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);

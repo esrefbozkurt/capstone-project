@@ -38,15 +38,7 @@ export const StyledExercises = styled.ul`
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  /* button:active {
-    box-shadow: inset 0.1px 0.1px 0.1px 0.1px #b6b8c1;
-    opacity: 0.5;
-  } */
 
-  span {
-    display: flex;
-    justify-content: space-between;
-  }
   h3 {
     font-size: 1rem;
     color: #354f52;

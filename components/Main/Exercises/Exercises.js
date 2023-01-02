@@ -49,9 +49,7 @@ export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
                   }}
                 >
                   <button>
-                    <span>
-                      <h3>{exercise.name.toUpperCase()}</h3>
-                    </span>
+                    <h3>{exercise.name.toUpperCase()}</h3>
                   </button>
                   <FavouriteButton
                     onFav={onFav}
@@ -86,9 +84,7 @@ export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
                     }}
                   >
                     <button>
-                      <span>
-                        <h3>{exercise.name.toUpperCase()}</h3>
-                      </span>
+                      <h3>{exercise.name.toUpperCase()}</h3>
                     </button>
                     <FavouriteButton
                       onFav={onFav}
