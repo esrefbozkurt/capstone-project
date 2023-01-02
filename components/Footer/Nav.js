@@ -6,7 +6,7 @@ import { StyledNav } from "./StyledNav";
 export default function Nav() {
   return (
     <StyledNav>
-      <a>
+      <Link href="/">
         <Image
           className="home"
           src="/appstore-outlined.svg"
@@ -14,9 +14,9 @@ export default function Nav() {
           height={36}
           alt="home icon"
         />
-      </a>
+      </Link>
 
-      <Link href="../favourites">
+      <Link href="/favourites">
         <Image
           className="fav"
           src="/favorite-add-outline.svg"

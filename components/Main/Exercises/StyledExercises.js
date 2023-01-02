@@ -13,6 +13,7 @@ export const StyledExercises = styled.ul`
     background-color: transparent;
     color: #354f52;
     border-top: inset #354f52 1px;
+    border: solid 2px red;
 
     .favContainer {
       display: flex;
