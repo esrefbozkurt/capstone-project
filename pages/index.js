@@ -14,7 +14,11 @@ export default function Home({ onFav, isFavourite }) {
         />
       </Head>
 
-      <Exercises onFav={onFav} isFavourite={isFavourite} />
+      <Exercises
+        onFav={onFav}
+        isFavourite={isFavourite}
+        isFavouriteExercise={false}
+      />
     </>
   );
 }

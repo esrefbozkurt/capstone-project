@@ -4,9 +4,9 @@ import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import Favourite from "./Favourite/Favourite";
+import FavouriteButton from "./Favourite/FavouriteButton";
 
-export default function Exercises({ onFav, isFavourite }) {
+export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -26,45 +26,92 @@ export default function Exercises({ onFav, isFavourite }) {
 
   return (
     <StyledExercises>
-      <h2>Biceps Exercises</h2>
-      <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-      {dataBiceps
-        .filter((exercise) => {
-          if (searchTerm === "") {
-            return exercise;
-          } else if (
-            exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return exercise;
-          }
-        })
-        .map(({ name, equipment, difficulty, instructions, id }) => (
-          <li key={id}>
-            <div
-              className="favContainer"
-              onClick={() => {
-                handleToggle(id);
-              }}
-            >
-              <button>
-                <span>
-                  <h3>{name.toUpperCase()}</h3>
-                </span>
-              </button>
-              <Favourite onFav={onFav} isFavourite={isFavourite} />
-            </div>
-            {toggledExercises.includes(id) ? (
-              <Description
-                key={id}
-                id={id}
-                name={name}
-                equipment={equipment}
-                difficulty={difficulty}
-                instructions={instructions}
-              />
-            ) : null}
-          </li>
-        ))}
+      {!isFavouriteExercise ? (
+        <>
+          <h2>Biceps Exercises</h2>
+          <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
+          {dataBiceps
+            .filter((exercise) => {
+              if (searchTerm === "") {
+                return exercise;
+              } else if (
+                exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return exercise;
+              }
+            })
+            .map((exercise) => (
+              <li key={exercise.id}>
+                <div
+                  className="favContainer"
+                  onClick={() => {
+                    handleToggle(exercise.id);
+                  }}
+                >
+                  <button>
+                    <span>
+                      <h3>{exercise.name.toUpperCase()}</h3>
+                    </span>
+                  </button>
+                  <FavouriteButton
+                    onFav={onFav}
+                    isFavourite={isFavourite}
+                    id={exercise.id}
+                  />
+                </div>
+                {toggledExercises.includes(exercise.id) && (
+                  <Description
+                    key={exercise.id}
+                    id={exercise.id}
+                    name={exercise.name}
+                    equipment={exercise.equipment}
+                    difficulty={exercise.difficulty}
+                    instructions={exercise.instructions}
+                  />
+                )}
+              </li>
+            ))}
+        </>
+      ) : (
+        <>
+          <h2>Favourite Exercises</h2>
+          {dataBiceps.map((exercise) => {
+            if (isFavourite.includes(exercise.id)) {
+              return (
+                <li key={exercise.id}>
+                  <div
+                    className="favContainer"
+                    onClick={() => {
+                      handleToggle(exercise.id);
+                    }}
+                  >
+                    <button>
+                      <span>
+                        <h3>{exercise.name.toUpperCase()}</h3>
+                      </span>
+                    </button>
+                    <FavouriteButton
+                      onFav={onFav}
+                      isFavourite={isFavourite}
+                      id={exercise.id}
+                    />
+                  </div>
+                  {toggledExercises.includes(exercise.id) && (
+                    <Description
+                      key={exercise.id}
+                      id={exercise.id}
+                      name={exercise.name}
+                      equipment={exercise.equipment}
+                      difficulty={exercise.difficulty}
+                      instructions={exercise.instructions}
+                    />
+                  )}
+                </li>
+              );
+            }
+          })}
+        </>
+      )}
     </StyledExercises>
   );
 }

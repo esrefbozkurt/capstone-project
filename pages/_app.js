@@ -11,12 +11,8 @@ function MyApp({ Component, pageProps }) {
     event.stopPropagation();
 
     isFavourite.includes(id)
-      ? setIsFavourite((prev) => prev.filter((favour) => favour !== id))
-      : setIsFavourite((prev) => [...prev, id]);
-
-    console.log(id);
-    console.log(...prev);
-    console.log(favour);
+      ? setIsFavourite((exercise) => exercise.filter((favour) => favour !== id))
+      : setIsFavourite((exercise) => [...exercise, id]);
   }
 
   return (

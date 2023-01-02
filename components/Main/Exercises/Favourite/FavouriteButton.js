@@ -2,18 +2,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { StyledFav } from "./StyledFav";
 
-export default function Favourite({ onFav, isFavourite }) {
+export default function FavouriteButton({ onFav, isFavourite, id }) {
   return (
     <StyledFav>
       <button>
-        {isFavourite ? (
+        {!isFavourite.includes(id) ? (
           <Image
             className="add-fav"
             src="/favorite-add-outline.svg"
             width={28}
             height={28}
             alt="add-fav icon"
-            onFav={onFav}
+            onClick={(event) => onFav(id, event)}
           />
         ) : (
           <Image
@@ -22,7 +22,7 @@ export default function Favourite({ onFav, isFavourite }) {
             width={28}
             height={28}
             alt="remove-fav icon"
-            onFav={onFav}
+            onClick={(event) => onFav(id, event)}
           />
         )}
       </button>
