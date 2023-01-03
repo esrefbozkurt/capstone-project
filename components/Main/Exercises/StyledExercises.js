@@ -4,10 +4,13 @@ export const StyledExercises = styled.ul`
   display: flex;
   flex-direction: column;
   border-bottom: inset #354f52 1px;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 5px;
   li {
-    padding: 0.4rem 1rem;
+    padding: 0rem 1rem;
     list-style: none;
-    background-color: white;
+    background-color: transparent;
     color: #354f52;
     border-top: inset #354f52 1px;
 
@@ -21,10 +24,10 @@ export const StyledExercises = styled.ul`
   h2 {
     font-family: Lato-bold;
     display: flex;
-    justify-content: flex-start;
+
     padding: 0.5rem 1rem;
     color: #354f52;
-    background-color: white;
+    background-color: transparent;
     overflow-y: scroll;
     font-size: 1.25rem;
   }
@@ -35,15 +38,7 @@ export const StyledExercises = styled.ul`
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  button:active {
-    box-shadow: inset 0.1px 0.1px 0.1px 0.1px #b6b8c1;
-    opacity: 0.5;
-  }
 
-  span {
-    display: flex;
-    justify-content: space-between;
-  }
   h3 {
     font-size: 1rem;
     color: #354f52;

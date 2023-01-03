@@ -1,24 +1,24 @@
 import Head from "next/head";
-import Nav from "../components/Footer/Nav";
-import Header from "../components/Header/Header";
+import { Fragment } from "react";
 import Exercises from "../components/Main/Exercises/Exercises";
 
-export default function Home({ onFav, isFavourite }) {
+const Favourites = ({ onFav, isFavourite }) => {
   return (
-    <>
+    <Fragment>
       <Head>
-        <title>TrackFit | Home</title>
+        <title>TrackFit | Favourites</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
-
       <Exercises
         onFav={onFav}
         isFavourite={isFavourite}
-        isFavouriteExercise={false}
+        isFavouriteExercise={true}
       />
-    </>
+    </Fragment>
   );
-}
+};
+
+export default Favourites;

@@ -1,36 +1,27 @@
 import Image from "next/image";
-import { useState } from "react";
 import { StyledFav } from "./StyledFav";
 
-export default function Favorite() {
-  const [favourite, setFavourite] = useState(false);
-
-  function toggleFav() {
-    if (!favourite) {
-      setFavourite(true);
-    } else {
-      setFavourite(false);
-    }
-  }
-
+export default function FavouriteButton({ onFav, isFavourite, id }) {
   return (
     <StyledFav>
-      <button onClick={toggleFav}>
-        {!favourite ? (
+      <button>
+        {!isFavourite.includes(id) ? (
           <Image
             className="add-fav"
             src="/favorite-add-outline.svg"
-            width={22}
-            height={22}
+            width={28}
+            height={28}
             alt="add-fav icon"
+            onClick={(event) => onFav(id, event)}
           />
         ) : (
           <Image
             className="remove-fav"
             src="/favorite-remove.svg"
-            width={22}
-            height={22}
+            width={28}
+            height={28}
             alt="remove-fav icon"
+            onClick={(event) => onFav(id, event)}
           />
         )}
       </button>
