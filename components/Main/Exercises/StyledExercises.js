@@ -6,7 +6,7 @@ export const StyledExercises = styled.ul`
   border-bottom: inset #354f52 1px;
   margin: 10px;
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 5px;
   li {
     padding: 0rem 1rem;
     list-style: none;

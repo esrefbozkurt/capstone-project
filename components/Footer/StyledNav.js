@@ -10,4 +10,8 @@ export const StyledNav = styled.div`
   width: 100%;
   padding: 0.5rem;
   background-color: #e9ecef;
+
+  img:hover {
+    background-color: lightgray;
+  }
 `;
