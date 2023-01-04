@@ -1,4 +1,6 @@
-import MuscleGroupItem from "./MuscleGroupItem.js/MuscleGroupItem";
+import Image from "next/image";
+import MuscleGroupItem from "./MuscleGroupItem/MuscleGroupItem";
+
 import { SytledMuscleGroups } from "./StyledMuscleGroups";
 
 const MuscleGroups = () => {
@@ -6,7 +8,7 @@ const MuscleGroups = () => {
     <SytledMuscleGroups>
       <h2>Muscle Groups</h2>
       <ul>
-        <li>1</li>
+        <MuscleGroupItem muscle={abdominals} imageName={abdominals} />
         <li>2</li>
         <li>3</li>
         <li>4</li>
