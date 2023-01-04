@@ -9,7 +9,7 @@ export default function Nav() {
 
   return (
     <StyledNav>
-      <Link href="/">
+      <Link href="/overview">
         {isActive === 0 ? (
           <Image
             src="/appstore-filled.svg"
