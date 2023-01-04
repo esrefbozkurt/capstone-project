@@ -1,31 +1,32 @@
 import styled from "styled-components";
 
 export const SytledMuscleGroups = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
   h2 {
     font-family: Lato-bold;
     display: flex;
     justify-content: space-around;
     padding: 0.5rem 1rem;
     color: #354f52;
-    background-color: transparent;
-    overflow-y: scroll;
-    font-size: 1.25rem;
+    background-color: white;
+    font-size: 28px;
+    position: sticky;
+    top: 0px;
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100vh;
-    margin: 10px;
-    margin-bottom: 3.5rem;
-  }
+    margin-bottom: 7.5rem;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 30px;
 
-  li {
-    list-style: none;
-    width: 172px;
-    height: 122px;
-    background-color: red;
-    border-radius: 2px;
+    @media (max-width: 600px) {
+      justify-content: center;
+    }
   }
 `;
