@@ -11,7 +11,7 @@ const MuscleGroupItem = () => {
           height={80}
           alt="add-fav icon"
         />
-        <h2 muscle="abdominals">Abdominals</h2>
+        <h3 muscle="abdominals">Abdominals</h3>
       </li>
     </StyledMuscleGroupItem>
   );
