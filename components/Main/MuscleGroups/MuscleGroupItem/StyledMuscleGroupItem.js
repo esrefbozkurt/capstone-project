@@ -33,11 +33,11 @@ export const StyledMuscleGroupItem = styled.div`
   h2 {
     font-family: Lato-bold;
     display: flex;
-
+    padding: 0;
     /* padding: 0.5rem 1rem; */
     color: #354f52;
     background-color: transparent;
     /* border: solid 1px red; */
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 `;
