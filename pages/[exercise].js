@@ -1,5 +1,15 @@
+// const MuscleGroupExercise = () => {
+//   return (
+//     <div>
+//       <h1>Exercise page</h1>
+//     </div>
+//   );
+// };
+
+// export default MuscleGroupExercise;
+
 import Head from "next/head";
-import Exercises from "../../components/Main/Exercises/Exercises";
+import Exercises from "../components/Main/Exercises/Exercises";
 
 export default function Exercise({ onFav, isFavourite }) {
   return (

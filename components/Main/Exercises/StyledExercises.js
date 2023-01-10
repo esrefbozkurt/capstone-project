@@ -24,7 +24,7 @@ export const StyledExercises = styled.ul`
   h2 {
     font-family: Lato-bold;
     display: flex;
-    border-bottom: inset #354f52 1px;
+    /* border-bottom: inset #354f52 1px; */
     padding: 0.5rem 1rem;
     color: #354f52;
     background-color: transparent;

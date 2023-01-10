@@ -8,7 +8,7 @@ const MuscleGroups = () => {
     <SytledMuscleGroups>
       <h2>Muscle Groups</h2>
       <ul>
-        <MuscleGroupItem muscle={abdominals} imageName={abdominals} />
+        <MuscleGroupItem />
         <li>2</li>
         <li>3</li>
         <li>4</li>

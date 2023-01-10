@@ -8,9 +8,8 @@ const MuscleGroupItem = () => {
         <Image
           src="/images/abs.svg"
           width={158}
-          height={60}
+          height={80}
           alt="add-fav icon"
-          onClick={(event) => onFav(id, event)}
         />
         <h2 muscle="abdominals">Abdominals</h2>
       </li>
