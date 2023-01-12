@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Exercises from "../components/Main/Exercises/Exercises";
 
-export default function Home({ onFav, isFavourite, entries }) {
+export default function Home({ onFav, isFavourite, exercises }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Home({ onFav, isFavourite, entries }) {
       <Exercises
         onFav={onFav}
         isFavourite={isFavourite}
-        entries={entries}
+        exercises={exercises}
         isFavouriteExercise={false}
       />
     </>

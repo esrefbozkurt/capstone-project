@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout";
 
 function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
-  const [entries, setEntries] = useState([]);
+  const [exercises, setExercises] = useState([]);
 
   function handleFav(id, event) {
     event.preventDefault();
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   async function getExercises() {
     const response = await fetch("/api/exercises");
     const exercisesList = await response.json();
-    setEntries(exercisesList);
+    setExercises(exercisesList);
   }
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
           {...pageProps}
           onFav={handleFav}
           isFavourite={isFavourite}
-          entries={entries}
+          exercises={exercises}
         />
       </Layout>
     </>

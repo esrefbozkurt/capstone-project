@@ -10,7 +10,7 @@ export default function Exercises({
   onFav,
   isFavourite,
   isFavouriteExercise,
-  entries,
+  exercises,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,7 +35,7 @@ export default function Exercises({
         <>
           <h2>Biceps Exercises</h2>
           <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {entries
+          {exercises
             .filter((exercise) => {
               if (searchTerm === "") {
                 return exercise;
@@ -78,7 +78,7 @@ export default function Exercises({
       ) : (
         <>
           <h2>Favourite Exercises</h2>
-          {entries.map((exercise) => {
+          {exercises.map((exercise) => {
             if (isFavourite.includes(exercise.id)) {
               return (
                 <li key={exercise.id}>
