@@ -2,18 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Exercises from "../components/Main/Exercises/Exercises";
 
-export default function Home({ onFav, isFavourite }) {
-  const [entries, setEntries] = useState([]);
-  async function getExercises() {
-    const response = await fetch("/api/exercises");
-    const exercisesList = await response.json();
-    setEntries(exercisesList);
-  }
-
-  useEffect(() => {
-    getExercises();
-  }, []);
-
+export default function Home({ onFav, isFavourite, entries }) {
   return (
     <>
       <Head>
