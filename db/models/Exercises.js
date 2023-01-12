@@ -2,15 +2,16 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-//blaupause
-
-const questionSchema = new Schema({
-  text: { type: String, required: true },
+const exerciseSchema = new Schema({
   name: { type: String, required: true },
+  type: { type: String, required: true },
+  muscle: { type: String, required: true },
+  equipment: { type: String, required: true },
+  difficulty: { type: String, required: true },
+  instructions: { type: String, required: true },
 });
 
-//Question Model erlaubt uns die CRUD-Operationen
-const Question =
-  mongoose.models.Question || mongoose.model("Question", questionSchema);
-//Question => questions, User => users
-export default Question;
+const Exercise =
+  mongoose.models.Exercise || mongoose.model("Exercise", exerciseSchema);
+
+export default Exercise;

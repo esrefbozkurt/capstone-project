@@ -1,9 +1,19 @@
 import Head from "next/head";
-import Nav from "../components/Footer/Nav";
-import Header from "../components/Header/Header";
+import { useState, useEffect } from "react";
 import Exercises from "../components/Main/Exercises/Exercises";
 
 export default function Home({ onFav, isFavourite }) {
+  const [entries, setEntries] = useState([]);
+  async function getExercises() {
+    const response = await fetch("/api/exercises");
+    const exercisesList = await response.json();
+    setEntries(exercisesList);
+  }
+
+  useEffect(() => {
+    getExercises();
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,6 +27,7 @@ export default function Home({ onFav, isFavourite }) {
       <Exercises
         onFav={onFav}
         isFavourite={isFavourite}
+        entries={entries}
         isFavouriteExercise={false}
       />
     </>
