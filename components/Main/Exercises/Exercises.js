@@ -6,7 +6,12 @@ import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteButton from "./Favourite/FavouriteButton";
 
-export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
+export default function Exercises({
+  onFav,
+  isFavourite,
+  isFavouriteExercise,
+  exercises,
+}) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -30,7 +35,7 @@ export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
         <>
           <h2>Biceps Exercises</h2>
           <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {dataBiceps
+          {exercises
             .filter((exercise) => {
               if (searchTerm === "") {
                 return exercise;
@@ -73,7 +78,7 @@ export default function Exercises({ onFav, isFavourite, isFavouriteExercise }) {
       ) : (
         <>
           <h2>Favourite Exercises</h2>
-          {dataBiceps.map((exercise) => {
+          {exercises.map((exercise) => {
             if (isFavourite.includes(exercise.id)) {
               return (
                 <li key={exercise.id}>
