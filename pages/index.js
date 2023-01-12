@@ -14,12 +14,6 @@ export default function Home({ onFav, isFavourite, exercises }) {
       </Head>
 
       <MuscleGroups />
-      <Exercises
-        onFav={onFav}
-        isFavourite={isFavourite}
-        exercises={exercises}
-        isFavouriteExercise={false}
-      />
     </>
   );
 }

@@ -1,17 +1,7 @@
-// const MuscleGroupExercise = () => {
-//   return (
-//     <div>
-//       <h1>Exercise page</h1>
-//     </div>
-//   );
-// };
-
-// export default MuscleGroupExercise;
-
 import Head from "next/head";
 import Exercises from "../components/Main/Exercises/Exercises";
 
-export default function Exercise({ onFav, isFavourite }) {
+export default function Exercises({ onFav, isFavourite, exercises }) {
   return (
     <>
       <Head>
@@ -21,9 +11,12 @@ export default function Exercise({ onFav, isFavourite }) {
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
+
+      <MuscleGroups />
       <Exercises
         onFav={onFav}
         isFavourite={isFavourite}
+        exercises={exercises}
         isFavouriteExercise={false}
       />
     </>
