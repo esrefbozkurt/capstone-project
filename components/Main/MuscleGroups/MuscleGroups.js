@@ -16,8 +16,8 @@ const MuscleGroups = ({ exercises }) => {
     <SytledMuscleGroups>
       <h2>Muscle Groups</h2>
       <ul>
-        {muscles.map((muscle) => (
-          <MuscleGroupItem muscle={muscle} key={exercises.id} />
+        {muscles.map((muscle, index) => (
+          <MuscleGroupItem muscle={muscle} key={index} />
         ))}
       </ul>
     </SytledMuscleGroups>

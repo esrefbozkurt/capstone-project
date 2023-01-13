@@ -1,4 +1,3 @@
-import { dataBiceps } from "../../../lib/data";
 import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
@@ -12,6 +11,7 @@ export default function Exercises({
   isFavourite,
   isFavouriteExercise,
   exercises,
+  muscle,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,7 +29,9 @@ export default function Exercises({
   function handleChange(event) {
     setSearchTerm(event.target.value);
   }
-
+  const filteredExercises = exercises.filter(
+    (exercise) => exercise.muscle === muscle
+  );
   return (
     <StyledExercises>
       {!isFavouriteExercise ? (
@@ -37,9 +39,9 @@ export default function Exercises({
           <Link href="/">
             <p>Back</p>
           </Link>
-          <h2> Exercises</h2>
+          <h2>{muscle} Exercises</h2>
           <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {exercises
+          {filteredExercises
             .filter((exercise) => {
               if (searchTerm === "") {
                 return exercise;
@@ -68,7 +70,6 @@ export default function Exercises({
                 </div>
                 {toggledExercises.includes(exercise.id) && (
                   <Description
-                    key={exercise.id}
                     id={exercise.id}
                     name={exercise.name}
                     equipment={exercise.equipment}

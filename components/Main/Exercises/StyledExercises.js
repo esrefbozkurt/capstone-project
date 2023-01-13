@@ -30,6 +30,7 @@ export const StyledExercises = styled.ul`
     background-color: transparent;
     overflow-y: scroll;
     font-size: 1.25rem;
+    text-transform: capitalize;
   }
 
   button {
@@ -40,7 +41,8 @@ export const StyledExercises = styled.ul`
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #354f52;
+    text-align: left;
   }
 `;
