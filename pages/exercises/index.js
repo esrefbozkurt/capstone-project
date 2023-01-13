@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Exercises from "../components/Main/Exercises/Exercises";
+import Exercises from "../../components/Main/Exercises/Exercises";
+import MuscleGroups from "../../components/Main/MuscleGroups/MuscleGroups";
 
-export default function Exercises({ onFav, isFavourite, exercises }) {
+export default function Exercise({ onFav, isFavourite, exercises }) {
   return (
     <>
       <Head>
@@ -12,7 +13,6 @@ export default function Exercises({ onFav, isFavourite, exercises }) {
         />
       </Head>
 
-      <MuscleGroups />
       <Exercises
         onFav={onFav}
         isFavourite={isFavourite}

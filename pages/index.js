@@ -13,7 +13,7 @@ export default function Home({ onFav, isFavourite, exercises }) {
         />
       </Head>
 
-      <MuscleGroups />
+      <MuscleGroups exercises={exercises} />
     </>
   );
 }

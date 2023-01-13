@@ -24,6 +24,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     getExercises();
   }, []);
+
   return (
     <>
       <GlobalStyles />
