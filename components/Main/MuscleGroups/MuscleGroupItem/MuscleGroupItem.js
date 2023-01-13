@@ -12,6 +12,7 @@ const MuscleGroupItem = ({ muscle }) => {
             width={158}
             height={80}
             alt="muscle"
+            priority
           />
           <h3>{muscle}</h3>
         </li>
