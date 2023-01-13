@@ -5,6 +5,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteButton from "./Favourite/FavouriteButton";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Exercises({
   onFav,
@@ -36,10 +37,17 @@ export default function Exercises({
     <StyledExercises>
       {!isFavouriteExercise ? (
         <>
-          <Link href="/">
-            <p>Back</p>
-          </Link>
-          <h2>{muscle} Exercises</h2>
+          <div>
+            <Link href="/">
+              <Image
+                src="/arrow-circle-left.svg"
+                width={36}
+                height={36}
+                alt="back button"
+              />
+            </Link>
+            <h2>{muscle} Exercises</h2>
+          </div>
           <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
           {filteredExercises
             .filter((exercise) => {

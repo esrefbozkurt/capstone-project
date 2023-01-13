@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Nav from "../../components/Footer/Nav";
 import Exercises from "../../components/Main/Exercises/Exercises";
 
 export default function Exercise({ onFav, isFavourite, exercises }) {
@@ -23,6 +24,7 @@ export default function Exercise({ onFav, isFavourite, exercises }) {
         exercises={exercises}
         isFavouriteExercise={false}
       />
+      <Nav />
     </>
   );
 }

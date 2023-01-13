@@ -33,5 +33,9 @@ export const StyledMuscleGroupItem = styled.div`
     text-decoration: none;
     font-size: 1rem;
     justify-content: center;
+    padding: 4px;
+  }
+  a {
+    text-decoration: none;
   }
 `;

@@ -11,9 +11,10 @@ const MuscleGroupItem = ({ muscle }) => {
             src={`/images/${muscle}.svg`}
             width={158}
             height={80}
-            alt="muscle"
+            alt={muscle}
             priority
           />
+
           <h3>{muscle}</h3>
         </li>
       </Link>

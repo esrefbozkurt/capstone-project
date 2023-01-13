@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import Exercises from "../components/Main/Exercises/Exercises";
+import Nav from "../components/Footer/Nav";
 
 const Favourites = ({ onFav, isFavourite, exercises }) => {
   return (
@@ -18,6 +19,7 @@ const Favourites = ({ onFav, isFavourite, exercises }) => {
         isFavouriteExercise={true}
         exercises={exercises}
       />
+      <Nav />
     </Fragment>
   );
 };
