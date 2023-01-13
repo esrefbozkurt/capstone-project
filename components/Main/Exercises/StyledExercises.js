@@ -5,8 +5,8 @@ export const StyledExercises = styled.ul`
   flex-direction: column;
   border-bottom: inset #354f52 1px;
   margin: 10px;
-  border: 1px solid;
-  border-radius: 5px;
+  /* border: 1px solid; */
+  /* border-radius: 5px; */
   li {
     padding: 0rem 1rem;
     list-style: none;
@@ -24,12 +24,13 @@ export const StyledExercises = styled.ul`
   h2 {
     font-family: Lato-bold;
     display: flex;
-
+    /* border-bottom: inset #354f52 1px; */
     padding: 0.5rem 1rem;
     color: #354f52;
     background-color: transparent;
     overflow-y: scroll;
     font-size: 1.25rem;
+    text-transform: capitalize;
   }
 
   button {
@@ -40,7 +41,8 @@ export const StyledExercises = styled.ul`
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #354f52;
+    text-align: left;
   }
 `;

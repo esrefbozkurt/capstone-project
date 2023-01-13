@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import MuscleGroups from "../components/Main/MuscleGroups/MuscleGroups";
 import Exercises from "../components/Main/Exercises/Exercises";
 
 export default function Home({ onFav, isFavourite, exercises }) {
@@ -13,12 +13,7 @@ export default function Home({ onFav, isFavourite, exercises }) {
         />
       </Head>
 
-      <Exercises
-        onFav={onFav}
-        isFavourite={isFavourite}
-        exercises={exercises}
-        isFavouriteExercise={false}
-      />
+      <MuscleGroups exercises={exercises} />
     </>
   );
 }

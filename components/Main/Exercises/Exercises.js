@@ -1,16 +1,17 @@
-import { dataBiceps } from "../../../lib/data";
 import { StyledExercises } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteButton from "./Favourite/FavouriteButton";
+import Link from "next/link";
 
 export default function Exercises({
   onFav,
   isFavourite,
   isFavouriteExercise,
   exercises,
+  muscle,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,14 +29,19 @@ export default function Exercises({
   function handleChange(event) {
     setSearchTerm(event.target.value);
   }
-
+  const filteredExercises = exercises.filter(
+    (exercise) => exercise.muscle === muscle
+  );
   return (
     <StyledExercises>
       {!isFavouriteExercise ? (
         <>
-          <h2>Biceps Exercises</h2>
+          <Link href="/">
+            <p>Back</p>
+          </Link>
+          <h2>{muscle} Exercises</h2>
           <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {exercises
+          {filteredExercises
             .filter((exercise) => {
               if (searchTerm === "") {
                 return exercise;
@@ -64,7 +70,6 @@ export default function Exercises({
                 </div>
                 {toggledExercises.includes(exercise.id) && (
                   <Description
-                    key={exercise.id}
                     id={exercise.id}
                     name={exercise.name}
                     equipment={exercise.equipment}
