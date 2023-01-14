@@ -55,9 +55,27 @@ export const StyledExercisesHeader = styled.div`
     overflow-y: scroll;
     font-size: 1.25rem;
     text-transform: capitalize;
-    text-transform: capitalize;
   }
   .backbutton {
     padding-left: 10px;
+  }
+`;
+
+export const StyledFavouritesHeader = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+
+  h2 {
+    font-family: Lato-bold;
+    display: flex;
+    padding: 0.5rem 0.5rem;
+    color: #354f52;
+    background-color: transparent;
+    overflow-y: scroll;
+    font-size: 1.25rem;
+
+    margin-left: 8px;
   }
 `;

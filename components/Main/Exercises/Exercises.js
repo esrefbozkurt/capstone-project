@@ -1,4 +1,8 @@
-import { StyledExercises, StyledExercisesHeader } from "./StyledExercises";
+import {
+  StyledExercises,
+  StyledExercisesHeader,
+  StyledFavouritesHeader,
+} from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
@@ -96,40 +100,44 @@ export default function Exercises({
         </>
       ) : (
         <>
-          <h2>Favourite Exercises</h2>
-          {exercises.map((exercise) => {
-            if (isFavourite.includes(exercise.id)) {
-              return (
-                <li key={exercise.id}>
-                  <div
-                    className="favContainer"
-                    onClick={() => {
-                      handleToggle(exercise.id);
-                    }}
-                  >
-                    <button>
-                      <h3>{exercise.name.toUpperCase()}</h3>
-                    </button>
-                    <FavouriteButton
-                      onFav={onFav}
-                      isFavourite={isFavourite}
-                      id={exercise.id}
-                    />
-                  </div>
-                  {toggledExercises.includes(exercise.id) && (
-                    <Description
-                      key={exercise.id}
-                      id={exercise.id}
-                      name={exercise.name}
-                      equipment={exercise.equipment}
-                      difficulty={exercise.difficulty}
-                      instructions={exercise.instructions}
-                    />
-                  )}
-                </li>
-              );
-            }
-          })}
+          <StyledFavouritesHeader>
+            <h2>Favourite Exercises</h2>
+          </StyledFavouritesHeader>
+          <ul>
+            {exercises.map((exercise) => {
+              if (isFavourite.includes(exercise.id)) {
+                return (
+                  <li key={exercise.id}>
+                    <div
+                      className="favContainer"
+                      onClick={() => {
+                        handleToggle(exercise.id);
+                      }}
+                    >
+                      <button>
+                        <h3>{exercise.name.toUpperCase()}</h3>
+                      </button>
+                      <FavouriteButton
+                        onFav={onFav}
+                        isFavourite={isFavourite}
+                        id={exercise.id}
+                      />
+                    </div>
+                    {toggledExercises.includes(exercise.id) && (
+                      <Description
+                        key={exercise.id}
+                        id={exercise.id}
+                        name={exercise.name}
+                        equipment={exercise.equipment}
+                        difficulty={exercise.difficulty}
+                        instructions={exercise.instructions}
+                      />
+                    )}
+                  </li>
+                );
+              }
+            })}
+          </ul>
         </>
       )}
     </StyledExercises>
