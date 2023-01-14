@@ -1,4 +1,4 @@
-import { StyledExercises } from "./StyledExercises";
+import { StyledExercises, StyledExercisesHeader } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
@@ -37,56 +37,62 @@ export default function Exercises({
     <StyledExercises>
       {!isFavouriteExercise ? (
         <>
-          <div>
-            <Link href="/">
-              <Image
-                src="/arrow-circle-left.svg"
-                width={36}
-                height={36}
-                alt="back button"
-              />
-            </Link>
-            <h2>{muscle} Exercises</h2>
+          <div className="header_searchbar">
+            <StyledExercisesHeader>
+              <Link href="/">
+                <Image
+                  src="/arrow-circle-left.svg"
+                  width={42}
+                  height={42}
+                  alt="back button"
+                  className="backbutton"
+                />
+              </Link>
+              <h2>{muscle} Exercises</h2>
+            </StyledExercisesHeader>
+
+            <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
           </div>
-          <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {filteredExercises
-            .filter((exercise) => {
-              if (searchTerm === "") {
-                return exercise;
-              } else if (
-                exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return exercise;
-              }
-            })
-            .map((exercise) => (
-              <li key={exercise.id}>
-                <div
-                  className="favContainer"
-                  onClick={() => {
-                    handleToggle(exercise.id);
-                  }}
-                >
-                  <button>
-                    <h3>{exercise.name.toUpperCase()}</h3>
-                  </button>
-                  <FavouriteButton
-                    onFav={onFav}
-                    isFavourite={isFavourite}
-                    id={exercise.id}
-                  />
-                </div>
-                {toggledExercises.includes(exercise.id) && (
-                  <Description
-                    id={exercise.id}
-                    name={exercise.name}
-                    equipment={exercise.equipment}
-                    difficulty={exercise.difficulty}
-                    instructions={exercise.instructions}
-                  />
-                )}
-              </li>
-            ))}
+          <ul>
+            {filteredExercises
+              .filter((exercise) => {
+                if (searchTerm === "") {
+                  return exercise;
+                } else if (
+                  exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return exercise;
+                }
+              })
+              .map((exercise) => (
+                <li key={exercise.id}>
+                  <div
+                    className="favContainer"
+                    onClick={() => {
+                      handleToggle(exercise.id);
+                    }}
+                  >
+                    <button>
+                      <h3>{exercise.name.toUpperCase()}</h3>
+                    </button>
+                    <FavouriteButton
+                      onFav={onFav}
+                      isFavourite={isFavourite}
+                      id={exercise.id}
+                    />
+                  </div>
+                  {toggledExercises.includes(exercise.id) && (
+                    <Description
+                      id={exercise.id}
+                      name={exercise.name}
+                      equipment={exercise.equipment}
+                      difficulty={exercise.difficulty}
+                      instructions={exercise.instructions}
+                    />
+                  )}
+                </li>
+              ))}
+          </ul>
         </>
       ) : (
         <>

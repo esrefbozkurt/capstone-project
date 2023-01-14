@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SytledMuscleGroups = styled.div`
+export const StyledMuscleGroups = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ export const SytledMuscleGroups = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 7.5rem;
+    margin-bottom: 3.5rem;
     align-items: center;
     overflow: hidden;
     padding-bottom: 30px;

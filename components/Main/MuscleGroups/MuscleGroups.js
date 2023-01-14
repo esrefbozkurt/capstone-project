@@ -1,7 +1,5 @@
-import Image from "next/image";
 import MuscleGroupItem from "./MuscleGroupItem/MuscleGroupItem";
 import { useState } from "react";
-
 import { StyledMuscleGroups } from "./StyledMuscleGroups";
 
 const MuscleGroups = ({ exercises }) => {
@@ -20,7 +18,7 @@ const MuscleGroups = ({ exercises }) => {
           <MuscleGroupItem muscle={muscle} key={index} />
         ))}
       </ul>
-    </SytledMuscleGroups>
+    </StyledMuscleGroups>
   );
 };
 

@@ -1,11 +1,20 @@
 import styled from "styled-components";
 
-export const StyledExercises = styled.ul`
+export const StyledExercises = styled.div`
   display: flex;
   flex-direction: column;
-  border-bottom: inset #354f52 1px;
-  margin-bottom: 3.5rem;
 
+  .header_searchbar {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+  }
+
+  ul {
+    border-bottom: inset #354f52 1px;
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+  }
   li {
     padding: 0rem 1rem;
     list-style: none;
@@ -20,17 +29,6 @@ export const StyledExercises = styled.ul`
     }
   }
 
-  h2 {
-    font-family: Lato-bold;
-    display: flex;
-    padding: 0.5rem 1rem;
-    color: #354f52;
-    background-color: transparent;
-    overflow-y: scroll;
-    font-size: 1.25rem;
-    text-transform: capitalize;
-  }
-
   button {
     border: none;
     background: transparent;
@@ -43,7 +41,22 @@ export const StyledExercises = styled.ul`
     color: #354f52;
     text-align: left;
   }
-  div {
+`;
+
+export const StyledExercisesHeader = styled.div`
+  display: flex;
+
+  h2 {
+    font-family: Lato-bold;
     display: flex;
+    padding: 0.5rem 0.5rem;
+    color: #354f52;
+    background-color: transparent;
+    overflow-y: scroll;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+  .backbutton {
+    padding-left: 10px;
   }
 `;
