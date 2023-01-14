@@ -55,6 +55,7 @@ export const StyledExercisesHeader = styled.div`
     overflow-y: scroll;
     font-size: 1.25rem;
     text-transform: capitalize;
+    text-transform: capitalize;
   }
   .backbutton {
     padding-left: 10px;
