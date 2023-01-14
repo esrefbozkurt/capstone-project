@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
-import Layout from "../components/Layout/Layout";
 
 function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
@@ -28,14 +27,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyles />
-      <Layout>
-        <Component
-          {...pageProps}
-          onFav={handleFav}
-          isFavourite={isFavourite}
-          exercises={exercises}
-        />
-      </Layout>
+
+      <Component
+        {...pageProps}
+        onFav={handleFav}
+        isFavourite={isFavourite}
+        exercises={exercises}
+      />
     </>
   );
 }

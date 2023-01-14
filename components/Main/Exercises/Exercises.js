@@ -1,10 +1,15 @@
-import { StyledExercises } from "./StyledExercises";
+import {
+  StyledExercises,
+  StyledExercisesHeader,
+  StyledFavouritesHeader,
+} from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
 import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteButton from "./Favourite/FavouriteButton";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Exercises({
   onFav,
@@ -36,56 +41,34 @@ export default function Exercises({
     <StyledExercises>
       {!isFavouriteExercise ? (
         <>
-          <Link href="/">
-            <p>Back</p>
-          </Link>
-          <h2>{muscle} Exercises</h2>
-          <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
-          {filteredExercises
-            .filter((exercise) => {
-              if (searchTerm === "") {
-                return exercise;
-              } else if (
-                exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return exercise;
-              }
-            })
-            .map((exercise) => (
-              <li key={exercise.id}>
-                <div
-                  className="favContainer"
-                  onClick={() => {
-                    handleToggle(exercise.id);
-                  }}
-                >
-                  <button>
-                    <h3>{exercise.name.toUpperCase()}</h3>
-                  </button>
-                  <FavouriteButton
-                    onFav={onFav}
-                    isFavourite={isFavourite}
-                    id={exercise.id}
-                  />
-                </div>
-                {toggledExercises.includes(exercise.id) && (
-                  <Description
-                    id={exercise.id}
-                    name={exercise.name}
-                    equipment={exercise.equipment}
-                    difficulty={exercise.difficulty}
-                    instructions={exercise.instructions}
-                  />
-                )}
-              </li>
-            ))}
-        </>
-      ) : (
-        <>
-          <h2>Favourite Exercises</h2>
-          {exercises.map((exercise) => {
-            if (isFavourite.includes(exercise.id)) {
-              return (
+          <div className="header_searchbar">
+            <StyledExercisesHeader>
+              <Link href="/">
+                <Image
+                  src="/arrow-circle-left.svg"
+                  width={42}
+                  height={42}
+                  alt="back button"
+                  className="backbutton"
+                />
+              </Link>
+              <h2>{muscle} Exercises</h2>
+            </StyledExercisesHeader>
+
+            <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
+          </div>
+          <ul>
+            {filteredExercises
+              .filter((exercise) => {
+                if (searchTerm === "") {
+                  return exercise;
+                } else if (
+                  exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+                ) {
+                  return exercise;
+                }
+              })
+              .map((exercise) => (
                 <li key={exercise.id}>
                   <div
                     className="favContainer"
@@ -104,7 +87,6 @@ export default function Exercises({
                   </div>
                   {toggledExercises.includes(exercise.id) && (
                     <Description
-                      key={exercise.id}
                       id={exercise.id}
                       name={exercise.name}
                       equipment={exercise.equipment}
@@ -113,9 +95,49 @@ export default function Exercises({
                     />
                   )}
                 </li>
-              );
-            }
-          })}
+              ))}
+          </ul>
+        </>
+      ) : (
+        <>
+          <StyledFavouritesHeader>
+            <h2>Favourite Exercises</h2>
+          </StyledFavouritesHeader>
+          <ul>
+            {exercises.map((exercise) => {
+              if (isFavourite.includes(exercise.id)) {
+                return (
+                  <li key={exercise.id}>
+                    <div
+                      className="favContainer"
+                      onClick={() => {
+                        handleToggle(exercise.id);
+                      }}
+                    >
+                      <button>
+                        <h3>{exercise.name.toUpperCase()}</h3>
+                      </button>
+                      <FavouriteButton
+                        onFav={onFav}
+                        isFavourite={isFavourite}
+                        id={exercise.id}
+                      />
+                    </div>
+                    {toggledExercises.includes(exercise.id) && (
+                      <Description
+                        key={exercise.id}
+                        id={exercise.id}
+                        name={exercise.name}
+                        equipment={exercise.equipment}
+                        difficulty={exercise.difficulty}
+                        instructions={exercise.instructions}
+                      />
+                    )}
+                  </li>
+                );
+              }
+            })}
+          </ul>
         </>
       )}
     </StyledExercises>

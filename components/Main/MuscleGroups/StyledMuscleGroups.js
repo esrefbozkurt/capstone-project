@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SytledMuscleGroups = styled.div`
+export const StyledMuscleGroups = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -10,16 +10,12 @@ export const SytledMuscleGroups = styled.div`
     width: 162px;
     height: 112px;
     color: rgba(53, 79, 82, 0.76);
-    /* font-size: 20px; */
     border-radius: 10px;
     border: 1px solid lightgray;
     margin: 8px;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     flex-direction: column;
-    /* border: solid 1px red; */
 
     &:active {
       transform: scale(97%);
@@ -41,7 +37,7 @@ export const SytledMuscleGroups = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 7.5rem;
+    margin-bottom: 3.5rem;
     align-items: center;
     overflow: hidden;
     padding-bottom: 30px;

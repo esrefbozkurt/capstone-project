@@ -1,8 +1,6 @@
-import Image from "next/image";
 import MuscleGroupItem from "./MuscleGroupItem/MuscleGroupItem";
 import { useState } from "react";
-
-import { SytledMuscleGroups } from "./StyledMuscleGroups";
+import { StyledMuscleGroups } from "./StyledMuscleGroups";
 
 const MuscleGroups = ({ exercises }) => {
   const [muscles, setMuscles] = useState([]);
@@ -13,14 +11,14 @@ const MuscleGroups = ({ exercises }) => {
   });
 
   return (
-    <SytledMuscleGroups>
+    <StyledMuscleGroups>
       <h2>Muscle Groups</h2>
       <ul>
         {muscles.map((muscle, index) => (
           <MuscleGroupItem muscle={muscle} key={index} />
         ))}
       </ul>
-    </SytledMuscleGroups>
+    </StyledMuscleGroups>
   );
 };
 
