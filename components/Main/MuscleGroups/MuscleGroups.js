@@ -13,7 +13,7 @@ const MuscleGroups = ({ exercises }) => {
   });
 
   return (
-    <SytledMuscleGroups>
+    <StyledMuscleGroups>
       <h2>Muscle Groups</h2>
       <ul>
         {muscles.map((muscle, index) => (
