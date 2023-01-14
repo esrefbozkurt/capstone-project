@@ -15,7 +15,7 @@ export default function Nav() {
             src="/appstore-filled.svg"
             width={36}
             height={36}
-            alt="home icon"
+            alt="home icon filled "
           />
         ) : (
           <Image
@@ -43,6 +43,25 @@ export default function Nav() {
             height={36}
             alt="add-favourite icon"
             onClick={() => setIsActive(1)}
+          />
+        )}
+      </Link>
+
+      <Link href="/workouts">
+        {isActive === 2 ? (
+          <Image
+            src="/arm-filled.svg"
+            width={36}
+            height={36}
+            alt="workout icon filled"
+          />
+        ) : (
+          <Image
+            src="/arm.svg"
+            width={36}
+            height={36}
+            alt="workout icon"
+            onClick={() => setIsActive(2)}
           />
         )}
       </Link>

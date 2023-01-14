@@ -11,7 +11,7 @@ export const StyledExercises = styled.div`
   }
 
   ul {
-    border-bottom: inset #354f52 1px;
+    /* border-bottom: inset #354f52 1px; */
     margin-bottom: 3.5rem;
     overflow: hidden;
   }
@@ -55,6 +55,7 @@ export const StyledExercisesHeader = styled.div`
     overflow-y: scroll;
     font-size: 1.25rem;
     text-transform: capitalize;
+    text-decoration: underline;
   }
   .backbutton {
     padding-left: 10px;
@@ -66,6 +67,8 @@ export const StyledFavouritesHeader = styled.div`
   position: sticky;
   top: 0px;
   background-color: white;
+  margin-bottom: 1.5rem;
+  border-bottom: inset #354f52 1px;
 
   h2 {
     font-family: Lato-bold;
@@ -77,5 +80,6 @@ export const StyledFavouritesHeader = styled.div`
     font-size: 1.25rem;
 
     margin-left: 8px;
+    text-decoration: underline;
   }
 `;
