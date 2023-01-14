@@ -2,7 +2,7 @@ import Image from "next/image";
 import MuscleGroupItem from "./MuscleGroupItem/MuscleGroupItem";
 import { useState } from "react";
 
-import { SytledMuscleGroups } from "./StyledMuscleGroups";
+import { StyledMuscleGroups } from "./StyledMuscleGroups";
 
 const MuscleGroups = ({ exercises }) => {
   const [muscles, setMuscles] = useState([]);
