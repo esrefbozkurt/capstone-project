@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Nav from "../components/Footer/Nav";
-import Workouts from "../components/Main/Workouts/Workouts";
+import Nav from "../../components/Footer/Nav";
+import Workouts from "../../components/Main/Workouts/Workouts";
 
-const Favourites = ({ onFav, isFavourite, exercises }) => {
+const Workout = ({ onFav, isFavourite, exercises }) => {
   return (
     <Fragment>
       <Head>
@@ -19,4 +19,4 @@ const Favourites = ({ onFav, isFavourite, exercises }) => {
   );
 };
 
-export default Favourites;
+export default Workout;

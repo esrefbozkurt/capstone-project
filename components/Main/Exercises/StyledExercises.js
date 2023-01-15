@@ -67,7 +67,7 @@ export const StyledFavouritesHeader = styled.div`
   position: sticky;
   top: 0px;
   background-color: white;
-  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
   border-bottom: inset #354f52 1px;
 
   h2 {

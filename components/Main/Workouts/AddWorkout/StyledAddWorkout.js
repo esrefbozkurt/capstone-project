@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const StyledWorkouts = styled.div``;
+export const StyledAddWorkout = styled.div``;
 
-export const StyledWorkoutsHeader = styled.div`
+export const StyledAddWorkoutHeader = styled.div`
   display: flex;
-  background-color: white;
-  padding: 0.5rem 0;
   position: sticky;
   top: 0px;
+  background-color: white;
+  padding: 0.5rem 0;
   border-bottom: inset #354f52 1px;
   justify-content: space-between;
   align-items: center;
@@ -20,17 +20,24 @@ export const StyledWorkoutsHeader = styled.div`
     background-color: transparent;
     overflow-y: scroll;
     font-size: 1.25rem;
-
-    margin-left: 8px;
     text-decoration: underline;
   }
-  img {
-    /* height: 40px;
-    width: 30px; */
-    display: flex;
+  .backbutton {
+    margin-left: 10px;
+  }
 
-    background: transparent;
+  .checkmark {
+    margin-right: 10px;
+  }
+
+  input {
+    font-family: Lato-bold;
+    display: flex;
+    padding: 0.5rem 0.5rem;
+    color: lightgrey;
+    background-color: lightblue;
+    overflow-y: scroll;
+    font-size: 1rem;
     border: none;
-    margin-right: 15px;
   }
 `;
