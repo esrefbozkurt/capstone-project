@@ -46,8 +46,8 @@ export default function Exercises({
               <Link href="/">
                 <Image
                   src="/arrow-circle-left.svg"
-                  width={42}
-                  height={42}
+                  width={32}
+                  height={32}
                   alt="back button"
                   className="backbutton"
                 />

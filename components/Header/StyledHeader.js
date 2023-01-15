@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const StyledHeader = styled.h1`
   display: flex;
   justify-content: flex-start;
-  padding: 1rem;
-  background-color: #e9ecef;
-  color: #354f52;
+  padding: 0.53rem;
+  background: #ff5300;
   font-family: Lato-bold;
-  border-bottom: inset 1px #354f52;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  font-size: 1.8rem;
+  align-items: center;
 
   img {
     align-self: center;

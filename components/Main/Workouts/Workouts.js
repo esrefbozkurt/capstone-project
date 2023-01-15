@@ -7,12 +7,12 @@ const Workouts = () => {
     <StyledWorkouts>
       <StyledWorkoutsHeader>
         <h2>MyWorkouts</h2>
-        <Link href="/addWorkouts">
+        <Link href="/workouts/addWorkouts">
           <Image
             className="add-workout"
             src="/plus-circle.svg"
-            width={28}
-            height={28}
+            width={32}
+            height={32}
             alt="add-workout"
           />
         </Link>

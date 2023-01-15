@@ -27,9 +27,8 @@ export const StyledMuscleGroups = styled.div`
     display: flex;
     justify-content: space-around;
     padding: 0.5rem 1rem;
-    color: #354f52;
     background-color: white;
-    font-size: 28px;
+    font-size: 1.5rem;
     position: sticky;
     top: 0px;
   }
@@ -40,7 +39,7 @@ export const StyledMuscleGroups = styled.div`
     margin-bottom: 3.5rem;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 30px;
+    padding-bottom: 1rem;
 
     @media (max-width: 600px) {
       justify-content: center;

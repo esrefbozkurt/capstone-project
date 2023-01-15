@@ -4,7 +4,7 @@ export const StyledSearchBar = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
-  margin: 0 1rem 0.75rem 1rem;
+  margin: 0 1rem 0.5rem 1rem;
 
   button {
     position: absolute;
@@ -34,7 +34,7 @@ export const StyledSearchBar = styled.div`
     border-radius: 30px;
     border: 1px solid black;
     background: white;
-    color: #354f52;
+
     padding-left: 20px;
     outline: none;
     transition: width 0.4s ease-in-out;

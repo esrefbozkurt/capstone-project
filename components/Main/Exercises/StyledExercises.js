@@ -7,11 +7,12 @@ export const StyledExercises = styled.div`
   .header_searchbar {
     position: sticky;
     top: 0px;
-    background-color: white;
+    background: #ff5300;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
 
   ul {
-    /* border-bottom: inset #354f52 1px; */
     margin-bottom: 3.5rem;
     overflow: hidden;
   }
@@ -19,8 +20,8 @@ export const StyledExercises = styled.div`
     padding: 0rem 1rem;
     list-style: none;
     background-color: transparent;
-    color: #354f52;
-    border-top: inset #354f52 1px;
+    color: black;
+    border-bottom: inset #354f52 1px;
 
     .favContainer {
       display: flex;
@@ -38,27 +39,25 @@ export const StyledExercises = styled.div`
 
   h3 {
     font-size: 0.8rem;
-    color: #354f52;
+
     text-align: left;
   }
 `;
 
 export const StyledExercisesHeader = styled.div`
   display: flex;
-
+  align-items: center;
+  background: #ff5300;
+  padding-top: 0.2rem;
   h2 {
     font-family: Lato-bold;
     display: flex;
-    padding: 0.5rem 0.5rem;
-    color: #354f52;
-    background-color: transparent;
     overflow-y: scroll;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     text-transform: capitalize;
-    text-decoration: underline;
   }
   .backbutton {
-    padding-left: 10px;
+    margin: 0.2rem 0.5rem;
   }
 `;
 
@@ -66,20 +65,18 @@ export const StyledFavouritesHeader = styled.div`
   display: flex;
   position: sticky;
   top: 0px;
-  background-color: white;
+  background: #ff5300;
   padding: 0.5rem 0;
-  border-bottom: inset #354f52 1px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 
   h2 {
     font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
-    color: #354f52;
     background-color: transparent;
     overflow-y: scroll;
-    font-size: 1.25rem;
-
-    margin-left: 8px;
-    text-decoration: underline;
+    font-size: 1.3rem;
+    margin-left: 0.6rem;
   }
 `;

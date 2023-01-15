@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
-import Nav from "../../components/Footer/Nav";
-import AddWorkout from "../../components/Main/Workouts/AddWorkout/AddWorkout";
+import Nav from "../../../components/Footer/Nav";
+import AddWorkout from "../../../components/Main/Workouts/AddWorkout/AddWorkout";
 
 export default function AddWorkouts() {
   return (

@@ -9,8 +9,8 @@ const AddWorkout = () => {
         <Link href="/workouts">
           <Image
             src="/arrow-circle-left.svg"
-            width={34}
-            height={34}
+            width={32}
+            height={32}
             alt="back button"
             className="backbutton"
           />
@@ -25,15 +25,6 @@ const AddWorkout = () => {
             />
           </label>
         </form>
-        <button type="submit" value="submit">
-          <Image
-            src="/checkmark-circle.svg"
-            width={34}
-            height={34}
-            alt="checkmark button"
-            className="checkmark"
-          />
-        </button>
       </StyledAddWorkoutHeader>
     </StyledAddWorkout>
   );

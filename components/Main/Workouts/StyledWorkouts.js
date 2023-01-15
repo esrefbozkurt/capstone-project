@@ -4,33 +4,26 @@ export const StyledWorkouts = styled.div``;
 
 export const StyledWorkoutsHeader = styled.div`
   display: flex;
-  background-color: white;
+  background: #ff5300;
   padding: 0.5rem 0;
   position: sticky;
-  top: 0px;
-  border-bottom: inset #354f52 1px;
+  top: 0;
   justify-content: space-between;
   align-items: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 
   h2 {
     font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
-    color: #354f52;
-    background-color: transparent;
     overflow-y: scroll;
-    font-size: 1.25rem;
-
-    margin-left: 8px;
-    text-decoration: underline;
+    font-size: 1.3rem;
+    margin-left: 0.6rem;
   }
   img {
-    /* height: 40px;
-    width: 30px; */
     display: flex;
-
-    background: transparent;
     border: none;
-    margin-right: 15px;
+    margin-right: 0.6rem;
   }
 `;

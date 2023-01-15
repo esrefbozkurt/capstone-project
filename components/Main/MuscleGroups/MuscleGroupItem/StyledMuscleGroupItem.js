@@ -7,9 +7,9 @@ export const StyledMuscleGroupItem = styled.div`
     width: 162px;
     height: 112px;
     color: rgba(53, 79, 82, 0.76);
-    border-radius: 10px;
+    border-radius: 0.7rem;
     border: 1px solid lightgray;
-    margin: 8px;
+    margin: 0.5rem;
     display: flex;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     flex-direction: column;
@@ -28,12 +28,12 @@ export const StyledMuscleGroupItem = styled.div`
   h3 {
     font-family: Lato-bold;
     display: flex;
-    color: #354f52;
+
     background-color: transparent;
     text-decoration: none;
     font-size: 1rem;
     justify-content: center;
-    padding: 4px;
+    padding: 0.3rem;
   }
   a {
     text-decoration: none;
