@@ -4,7 +4,7 @@ export const StyledWorkouts = styled.div``;
 
 export const StyledWorkoutsHeader = styled.div`
   display: flex;
-  background: #ff5300;
+  background: black;
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
@@ -18,8 +18,10 @@ export const StyledWorkoutsHeader = styled.div`
     display: flex;
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 0.6rem;
+    text-transform: uppercase;
+    color: white;
   }
   img {
     display: flex;
