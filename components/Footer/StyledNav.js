@@ -10,12 +10,13 @@ export const StyledNav = styled.div`
   bottom: 0;
   width: 100%;
   padding: 0.5rem;
-  background: #e9ecef;
+  background: black;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  filter: invert(100%);
 
-  a:active {
-    background-color: grey;
+  .active {
+    background: grey;
+    border-radius: 0.2rem;
+    height: 36px;
   }
 `;

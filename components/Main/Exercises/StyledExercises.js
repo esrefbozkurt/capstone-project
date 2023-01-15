@@ -51,7 +51,7 @@ export const StyledExercisesHeader = styled.div`
   align-items: center;
   background: black;
   padding-top: 0.2rem;
-  justify-content: center;
+  justify-content: space-between;
   h2 {
     font-family: Lato-bold;
     display: flex;
@@ -59,6 +59,7 @@ export const StyledExercisesHeader = styled.div`
     font-size: 1.2rem;
     text-transform: uppercase;
     color: white;
+    margin-right: 6.5rem;
   }
   .backbutton {
     margin: 0.2rem 0.5rem;
