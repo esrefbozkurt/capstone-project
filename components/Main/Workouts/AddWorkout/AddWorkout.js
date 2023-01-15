@@ -19,18 +19,21 @@ const AddWorkout = () => {
           <label>
             <input
               type="text"
-              name="Workout"
+              name="text"
               placeholder="Name your Workout..."
+              required
             />
           </label>
         </form>
-        <Image
-          src="/checkmark.svg"
-          width={42}
-          height={42}
-          alt="checkmark button"
-          className="checkmark"
-        />
+        <button type="submit" value="submit">
+          <Image
+            src="/checkmark-circle.svg"
+            width={34}
+            height={34}
+            alt="checkmark button"
+            className="checkmark"
+          />
+        </button>
       </StyledAddWorkoutHeader>
     </StyledAddWorkout>
   );

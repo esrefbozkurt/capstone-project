@@ -34,10 +34,21 @@ export const StyledAddWorkoutHeader = styled.div`
     font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
-    color: lightgrey;
-    background-color: lightblue;
+    color: #354f52;
+    background-color: transparent;
     overflow-y: scroll;
+    font-size: 1.25rem;
+    border: black solid 1px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  input::placeholder {
     font-size: 1rem;
+  }
+
+  button {
+    background-color: transparent;
     border: none;
   }
 `;
