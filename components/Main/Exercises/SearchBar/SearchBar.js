@@ -26,8 +26,8 @@ export default function SearchBar({ onChange, setSearchTerm }) {
           <Image
             className="svg"
             src="/search.svg"
-            width={22}
-            height={22}
+            width={18}
+            height={18}
             alt="progress icon"
           />
         ) : (

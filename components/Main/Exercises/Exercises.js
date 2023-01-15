@@ -52,7 +52,7 @@ export default function Exercises({
                   className="backbutton"
                 />
               </Link>
-              <h2>{muscle} Exercises</h2>
+              <h2>{muscle}-Exercises</h2>
             </StyledExercisesHeader>
 
             <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
@@ -101,7 +101,7 @@ export default function Exercises({
       ) : (
         <>
           <StyledFavouritesHeader>
-            <h2>Favourite Exercises</h2>
+            <h2>Favourite-Exercises</h2>
           </StyledFavouritesHeader>
           <ul>
             {exercises.map((exercise) => {

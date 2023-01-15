@@ -6,7 +6,7 @@ const Workouts = () => {
   return (
     <StyledWorkouts>
       <StyledWorkoutsHeader>
-        <h2>MyWorkouts</h2>
+        <h2>My-Workouts</h2>
         <Link href="/workouts/addWorkouts">
           <Image
             className="add-workout"

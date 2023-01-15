@@ -7,7 +7,7 @@ export const StyledExercises = styled.div`
   .header_searchbar {
     position: sticky;
     top: 0px;
-    background: #ff5300;
+    background: black;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
   }
@@ -19,9 +19,11 @@ export const StyledExercises = styled.div`
   li {
     padding: 0rem 1rem;
     list-style: none;
-    background-color: transparent;
+    background-color: #f8f9fa;
     color: black;
-    border-bottom: inset #354f52 1px;
+    margin: 0.5rem 0.3rem;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
 
     .favContainer {
       display: flex;
@@ -47,14 +49,16 @@ export const StyledExercises = styled.div`
 export const StyledExercisesHeader = styled.div`
   display: flex;
   align-items: center;
-  background: #ff5300;
+  background: black;
   padding-top: 0.2rem;
+  justify-content: center;
   h2 {
     font-family: Lato-bold;
     display: flex;
     overflow-y: scroll;
-    font-size: 1.3rem;
-    text-transform: capitalize;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
   }
   .backbutton {
     margin: 0.2rem 0.5rem;
@@ -65,18 +69,20 @@ export const StyledFavouritesHeader = styled.div`
   display: flex;
   position: sticky;
   top: 0px;
-  background: #ff5300;
+  background: black;
   padding: 0.5rem 0;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+
+  justify-content: center;
 
   h2 {
     font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
-    background-color: transparent;
+    color: white;
     overflow-y: scroll;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 0.6rem;
   }
 `;
