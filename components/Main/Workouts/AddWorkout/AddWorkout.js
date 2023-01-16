@@ -9,8 +9,8 @@ const AddWorkout = () => {
         <Link href="/workouts">
           <Image
             src="/arrow-circle-left.svg"
-            width={32}
-            height={32}
+            width={34}
+            height={34}
             alt="back button"
             className="backbutton"
           />

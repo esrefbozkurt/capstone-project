@@ -6,7 +6,7 @@ export const StyledMuscleGroupItem = styled.div`
     list-style: none;
     width: 162px;
     height: 112px;
-    color: rgba(53, 79, 82, 0.76);
+    color: black;
     border-radius: 0.7rem;
     border: 1px solid lightgray;
     margin: 0.5rem;
@@ -23,17 +23,20 @@ export const StyledMuscleGroupItem = styled.div`
   img {
     align-self: center;
     outline: none;
+    background: transparent;
   }
 
   h3 {
     font-family: Lato-bold;
     display: flex;
-
-    background-color: transparent;
+    text-transform: capitalize;
+    background-color: #f8f9fa;
     text-decoration: none;
     font-size: 1rem;
     justify-content: center;
     padding: 0.3rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
   a {
     text-decoration: none;

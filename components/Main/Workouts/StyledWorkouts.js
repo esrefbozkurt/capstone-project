@@ -19,7 +19,7 @@ export const StyledWorkoutsHeader = styled.div`
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
     font-size: 1.1rem;
-    margin-left: 0.6rem;
+    margin-left: 6.5rem;
     text-transform: uppercase;
     color: white;
   }

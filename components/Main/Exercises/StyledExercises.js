@@ -85,5 +85,6 @@ export const StyledFavouritesHeader = styled.div`
     overflow-y: scroll;
     font-size: 1.1rem;
     margin-left: 0.6rem;
+    text-transform: uppercase;
   }
 `;
