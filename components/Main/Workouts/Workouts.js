@@ -21,7 +21,7 @@ const Workouts = ({ workouts }) => {
         <ul>
           {workouts.map((workout) => {
             return (
-              <li>
+              <li key={workout.id}>
                 <div className="workoutContainer">
                   <h3>{workout.name.toUpperCase()}</h3>
                 </div>

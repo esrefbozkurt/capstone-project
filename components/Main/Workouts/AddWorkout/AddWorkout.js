@@ -5,7 +5,7 @@ import Image from "next/image";
 const AddWorkout = ({ onAddWorkout }) => {
   async function handleSubmit(event) {
     event.preventDefault();
-
+    event.stopPropagation();
     const name = event.target.elements.name.value;
     const newWorkout = {
       name: name,
@@ -34,23 +34,24 @@ const AddWorkout = ({ onAddWorkout }) => {
             className="backbutton"
           />
         </Link>
+
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="text"
+            name="name"
             placeholder="Name your Workout..."
             required
           />
+          <button type="submit">
+            <Image
+              src="/checkmark-circle.svg"
+              width={34}
+              height={34}
+              alt="checkmark button"
+              className="checkmark"
+            />
+          </button>
         </form>
-        <button type="submit">
-          <Image
-            src="/checkmark-circle.svg"
-            width={34}
-            height={34}
-            alt="checkmark button"
-            className="checkmark"
-          />
-        </button>
       </StyledAddWorkoutHeader>
     </StyledAddWorkout>
   );

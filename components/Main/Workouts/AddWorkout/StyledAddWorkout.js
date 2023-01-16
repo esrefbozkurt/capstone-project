@@ -13,12 +13,6 @@ export const StyledAddWorkoutHeader = styled.div`
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 
-  /* h2 {
-    font-family: Lato-bold;
-    display: flex;
-    overflow-y: scroll;
-    font-size: 1.3rem;
-  } */
   .backbutton {
     margin-left: 0.6rem;
     align-self: center;
@@ -28,7 +22,6 @@ export const StyledAddWorkoutHeader = styled.div`
     font-family: Lato-bold;
     display: flex;
     padding: 0.4rem 0.4rem;
-    /* margin-right: 5rem; */
     background-color: black;
     font-size: 1.1rem;
     border: white solid 1px;
@@ -45,7 +38,7 @@ export const StyledAddWorkoutHeader = styled.div`
     margin-right: 0.6rem;
   }
   button {
-    background-color: transparent;
+    background-color: red;
     border: none;
   }
 `;
