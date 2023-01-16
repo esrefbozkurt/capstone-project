@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         
         background-color: white;
         font-family: Lato; 
+        
           
 }
 

@@ -5,7 +5,6 @@ export const StyledDescription = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  border-radius: 10px;
   padding: 0.5rem;
 
   p {

@@ -7,20 +7,23 @@ export const StyledExercises = styled.div`
   .header_searchbar {
     position: sticky;
     top: 0px;
-    background-color: white;
+    background: black;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
 
   ul {
-    border-bottom: inset #354f52 1px;
     margin-bottom: 3.5rem;
     overflow: hidden;
   }
   li {
     padding: 0rem 1rem;
     list-style: none;
-    background-color: transparent;
-    color: #354f52;
-    border-top: inset #354f52 1px;
+    background-color: #f8f9fa;
+    color: black;
+    margin: 0.5rem 0.3rem;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
 
     .favContainer {
       display: flex;
@@ -38,26 +41,28 @@ export const StyledExercises = styled.div`
 
   h3 {
     font-size: 0.8rem;
-    color: #354f52;
+
     text-align: left;
   }
 `;
 
 export const StyledExercisesHeader = styled.div`
   display: flex;
-
+  align-items: center;
+  background: black;
+  padding-top: 0.2rem;
+  justify-content: space-between;
   h2 {
     font-family: Lato-bold;
     display: flex;
-    padding: 0.5rem 0.5rem;
-    color: #354f52;
-    background-color: transparent;
     overflow-y: scroll;
-    font-size: 1.25rem;
-    text-transform: capitalize;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
+    margin-right: 6.5rem;
   }
   .backbutton {
-    padding-left: 10px;
+    margin: 0.2rem 0.5rem;
   }
 `;
 
@@ -65,17 +70,21 @@ export const StyledFavouritesHeader = styled.div`
   display: flex;
   position: sticky;
   top: 0px;
-  background-color: white;
+  background: black;
+  padding: 0.5rem 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  justify-content: center;
 
   h2 {
     font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
-    color: #354f52;
-    background-color: transparent;
+    color: white;
     overflow-y: scroll;
-    font-size: 1.25rem;
-
-    margin-left: 8px;
+    font-size: 1.1rem;
+    margin-left: 0.6rem;
+    text-transform: uppercase;
   }
 `;

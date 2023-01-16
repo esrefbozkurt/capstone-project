@@ -1,50 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
-import { useState } from "react";
 import { StyledNav } from "./StyledNav";
 
 export default function Nav() {
-  const [isActive, setIsActive] = useState(0);
+  const router = useRouter();
 
   return (
     <StyledNav>
-      <Link href="/">
-        {isActive === 0 ? (
-          <Image
-            src="/appstore-filled.svg"
-            width={36}
-            height={36}
-            alt="home icon"
-          />
-        ) : (
-          <Image
-            src="/appstore-outlined.svg"
-            width={36}
-            height={36}
-            alt="home icon"
-            onClick={() => setIsActive(0)}
-          />
-        )}
+      <Link className={router.pathname == "/" ? "active" : ""} href="/">
+        <Image
+          src="/appstore-outlined.svg"
+          width={36}
+          height={36}
+          alt="home icon"
+        />
       </Link>
 
-      <Link href="/favourites">
-        {isActive === 1 ? (
-          <Image
-            src="/favorite-remove.svg"
-            width={36}
-            height={36}
-            alt="add-favourite icon"
-          />
-        ) : (
-          <Image
-            src="/favorite-add-outline.svg"
-            width={36}
-            height={36}
-            alt="add-favourite icon"
-            onClick={() => setIsActive(1)}
-          />
-        )}
+      <Link
+        className={router.pathname == "/favourites" ? "active" : ""}
+        href="/favourites"
+      >
+        <Image
+          src="/favorite.svg"
+          width={36}
+          height={36}
+          alt="add-favourite icon"
+        />
+      </Link>
+
+      <Link
+        className={
+          router.pathname == "/workouts" && "/workouts/addWorkouts"
+            ? "active"
+            : ""
+        }
+        href="/workouts"
+      >
+        <Image
+          src="/gym.svg"
+          width={36}
+          height={36}
+          alt="workout icon filled"
+        />
       </Link>
     </StyledNav>
   );

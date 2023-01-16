@@ -46,13 +46,13 @@ export default function Exercises({
               <Link href="/">
                 <Image
                   src="/arrow-circle-left.svg"
-                  width={42}
-                  height={42}
+                  width={32}
+                  height={32}
                   alt="back button"
                   className="backbutton"
                 />
               </Link>
-              <h2>{muscle} Exercises</h2>
+              <h2>{muscle}-Exercises</h2>
             </StyledExercisesHeader>
 
             <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
@@ -101,7 +101,7 @@ export default function Exercises({
       ) : (
         <>
           <StyledFavouritesHeader>
-            <h2>Favourite Exercises</h2>
+            <h2>Favourite-Exercises</h2>
           </StyledFavouritesHeader>
           <ul>
             {exercises.map((exercise) => {
