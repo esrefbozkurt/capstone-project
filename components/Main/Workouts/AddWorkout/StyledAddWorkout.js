@@ -17,7 +17,9 @@ export const StyledAddWorkoutHeader = styled.div`
     margin-left: 0.6rem;
     align-self: center;
   }
-
+  form {
+    display: flex;
+  }
   input {
     font-family: Lato-bold;
     display: flex;
@@ -28,6 +30,7 @@ export const StyledAddWorkoutHeader = styled.div`
     text-align: center;
     border-radius: 0.5rem;
     color: white;
+    margin-right: 2.3rem;
   }
 
   input::placeholder {
@@ -38,7 +41,7 @@ export const StyledAddWorkoutHeader = styled.div`
     margin-right: 0.6rem;
   }
   button {
-    background-color: red;
+    background-color: transparent;
     border: none;
   }
 `;
