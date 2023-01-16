@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
       const workoutsArray = workouts.map((workout) => {
         return {
-          id: workout.id,
+          id: workout._id,
           name: workout.name,
         };
       });
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       res.status(200).json(workoutsArray);
     } catch (error) {
       console.log(error);
-      res.status(400).json(error);
+      res.status(400).json({ error });
     }
   }
 

@@ -26,8 +26,16 @@ function MyApp({ Component, pageProps }) {
     setWorkouts(workoutsList);
   }
 
-  function handleAddWorkout(newWorkout) {
-    setWorkouts([...workouts, newWorkout]);
+  async function handleAddWorkout(newWorkout) {
+    await fetch("/api/workouts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newWorkout),
+    });
+
+    getWorkouts();
   }
   useEffect(() => {
     getExercises();

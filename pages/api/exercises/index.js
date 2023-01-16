@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
       const exercisesArray = exercises.map((exercise) => {
         return {
-          id: exercise.id,
+          id: exercise._id,
           name: exercise.name,
           type: exercise.type,
           muscle: exercise.muscle,

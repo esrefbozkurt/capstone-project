@@ -11,13 +11,6 @@ const AddWorkout = ({ onAddWorkout }) => {
       name: name,
     };
 
-    await fetch("/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newWorkout),
-    });
     onAddWorkout(newWorkout);
     event.target.reset();
   }
