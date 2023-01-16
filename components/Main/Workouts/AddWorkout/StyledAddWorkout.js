@@ -13,12 +13,6 @@ export const StyledAddWorkoutHeader = styled.div`
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 
-  /* h2 {
-    font-family: Lato-bold;
-    display: flex;
-    overflow-y: scroll;
-    font-size: 1.3rem;
-  } */
   .backbutton {
     margin-left: 0.6rem;
     align-self: center;

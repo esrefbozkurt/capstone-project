@@ -14,17 +14,17 @@ const AddWorkout = () => {
             alt="back button"
             className="backbutton"
           />
+          <form>
+            <label>
+              <input
+                type="text"
+                name="text"
+                placeholder="Name your Workout..."
+                required
+              />
+            </label>
+          </form>
         </Link>
-        <form>
-          <label>
-            <input
-              type="text"
-              name="text"
-              placeholder="Name your Workout..."
-              required
-            />
-          </label>
-        </form>
       </StyledAddWorkoutHeader>
     </StyledAddWorkout>
   );
