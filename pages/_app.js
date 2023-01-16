@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
   function handleFav(id, event) {
     event.preventDefault();
     event.stopPropagation();
-
     isFavourite.includes(id)
       ? setIsFavourite((exercise) => exercise.filter((favour) => favour !== id))
       : setIsFavourite((exercise) => [...exercise, id]);
@@ -33,6 +32,7 @@ function MyApp({ Component, pageProps }) {
         onFav={handleFav}
         isFavourite={isFavourite}
         exercises={exercises}
+        workouts={workouts}
       />
     </>
   );
