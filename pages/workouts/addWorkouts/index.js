@@ -3,7 +3,7 @@ import Head from "next/head";
 import Nav from "../../../components/Footer/Nav";
 import AddWorkout from "../../../components/Main/Workouts/AddWorkout/AddWorkout";
 
-export default function AddWorkouts() {
+export default function AddWorkouts({ onAddWorkout }) {
   return (
     <Fragment>
       <Head>
@@ -13,7 +13,7 @@ export default function AddWorkouts() {
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
-      <AddWorkout />
+      <AddWorkout onAddWorkout={onAddWorkout} />
       <Nav />
     </Fragment>
   );

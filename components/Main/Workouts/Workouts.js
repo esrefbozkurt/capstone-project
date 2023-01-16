@@ -2,9 +2,9 @@ import { StyledWorkouts, StyledWorkoutsHeader } from "./StyledWorkouts";
 import Image from "next/image";
 import Link from "next/link";
 
-const Workouts = () => {
+const Workouts = ({ workouts }) => {
   return (
-    <StyledWorkouts>
+    <>
       <StyledWorkoutsHeader>
         <h2>My-Workouts</h2>
         <Link href="/workouts/addWorkouts">
@@ -17,8 +17,20 @@ const Workouts = () => {
           />
         </Link>
       </StyledWorkoutsHeader>
-      <ul></ul>
-    </StyledWorkouts>
+      <StyledWorkouts>
+        <ul>
+          {workouts.map((workout) => {
+            return (
+              <li key={workout.id}>
+                <div className="workoutContainer">
+                  <h3>{workout.name.toUpperCase()}</h3>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </StyledWorkouts>
+    </>
   );
 };
 

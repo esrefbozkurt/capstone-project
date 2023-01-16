@@ -3,7 +3,7 @@ import MuscleGroups from "../components/Main/MuscleGroups/MuscleGroups";
 import Header from "../components/Header/Header";
 import Nav from "../components/Footer/Nav";
 
-export default function Home({ onFav, isFavourite, exercises }) {
+export default function Home({ exercises }) {
   return (
     <>
       <Head>

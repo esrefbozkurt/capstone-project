@@ -2,8 +2,9 @@ import { Fragment } from "react";
 import Head from "next/head";
 import Nav from "../../components/Footer/Nav";
 import Workouts from "../../components/Main/Workouts/Workouts";
+import { useEffect, useState } from "react";
 
-const Workout = ({ onFav, isFavourite, exercises }) => {
+const Workout = ({ workouts }) => {
   return (
     <Fragment>
       <Head>
@@ -13,7 +14,7 @@ const Workout = ({ onFav, isFavourite, exercises }) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
-      <Workouts />
+      <Workouts workouts={workouts} />
       <Nav />
     </Fragment>
   );
