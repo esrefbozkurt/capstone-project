@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledDescription } from "./StyledDescription";
+import Image from "next/image";
 
 export default function Description({
   equipment,
@@ -20,7 +21,13 @@ export default function Description({
         target="_blank"
         rel="noopener noreferrer"
       >
-        Click to see Exercise on YouTube
+        <Image
+          src="/yt_logo_rgb_light.png"
+          width={54.8}
+          height={15}
+          alt="Youtube Link as Icon"
+          // className="checkmark"
+        />
       </a>
     </StyledDescription>
   );

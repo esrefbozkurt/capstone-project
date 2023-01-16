@@ -24,6 +24,7 @@ export const StyledExercises = styled.div`
     margin: 0.5rem 0.3rem;
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
+    text-decoration: none;
 
     .favContainer {
       display: flex;
@@ -37,6 +38,7 @@ export const StyledExercises = styled.div`
     background: transparent;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    color: black;
   }
 
   h3 {

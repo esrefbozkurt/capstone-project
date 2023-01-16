@@ -18,7 +18,7 @@ export const StyledDescription = styled.div`
     font-size: 0.95rem;
   }
   a {
-    padding: 0.2rem;
+    padding: 0.5rem 0.2rem;
     font-size: 0.75rem;
     cursor: pointer;
   }
