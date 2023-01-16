@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   const [exercises, setExercises] = useState([]);
 
   function handleFav(id, event) {
-    // event.preventDefault();
+    event.preventDefault();
     event.stopPropagation();
 
     isFavourite.includes(id)
