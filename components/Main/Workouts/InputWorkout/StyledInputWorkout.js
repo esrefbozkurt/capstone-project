@@ -9,10 +9,11 @@ export const StyledForm = styled.form`
   border-bottom-right-radius: 0.5rem;
   padding-bottom: 0.5rem;
   animation: 0.4s alternate slidein;
+
   .workout-input {
     font-family: Lato-bold;
     display: flex;
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem 0.4rem 0.4rem 0;
     background-color: black;
     font-size: 1.1rem;
     border: white solid 1px;

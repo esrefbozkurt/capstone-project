@@ -4,7 +4,7 @@ import InputWorkout from "./InputWorkout/InputWorkout";
 import { useState } from "react";
 import React from "react";
 
-const Workouts = ({ workouts, onAddWorkout }) => {
+const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
   const [showInput, setShowInput] = useState(false);
 
   function toggleShow() {
@@ -30,16 +30,12 @@ const Workouts = ({ workouts, onAddWorkout }) => {
     event.target.reset();
     setShowInput(false);
   }
+
   return (
     <>
-      <StyledWorkoutsHeader
-        className={showInput ? "radiusActive" : "radiusInactive"}
-      >
+      <StyledWorkoutsHeader>
         <h2>My-Workouts</h2>
-        <button
-          onClick={() => toggleShow()}
-          // className={
-        >
+        <button onClick={() => toggleShow()}>
           <Image
             className="add-workout"
             src="/plus-circle.svg"
@@ -49,13 +45,7 @@ const Workouts = ({ workouts, onAddWorkout }) => {
           />
         </button>
       </StyledWorkoutsHeader>
-      {showInput ? (
-        <InputWorkout
-          onSubmit={handleSubmit}
-          expanded
-          className={showInput ? "inputActive" : "inputInactive"}
-        />
-      ) : null}
+      {showInput ? <InputWorkout onSubmit={handleSubmit} /> : null}
 
       <StyledWorkouts>
         <ul>
@@ -64,6 +54,14 @@ const Workouts = ({ workouts, onAddWorkout }) => {
               <li key={workout.id}>
                 <div className="workoutContainer">
                   <h3>{workout.name.toUpperCase()}</h3>
+                  <Image
+                    onClick={(event) => onDelete(event, workout.id)}
+                    className="delete-workout"
+                    src="/close.svg"
+                    width={24}
+                    height={24}
+                    alt="delete Workout"
+                  />
                 </div>
               </li>
             );

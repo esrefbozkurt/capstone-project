@@ -29,6 +29,14 @@ function MyApp({ Component, pageProps }) {
   function handleAddWorkout(newWorkout) {
     setWorkouts([...workouts, newWorkout]);
   }
+  async function handleDeleteWorkout(event, id) {
+    event.stopPropagation();
+    await fetch("/api/workouts/" + id, {
+      method: "DELETE",
+    });
+    getWorkouts();
+  }
+
   useEffect(() => {
     getExercises();
     getWorkouts();
@@ -45,6 +53,7 @@ function MyApp({ Component, pageProps }) {
         exercises={exercises}
         onAddWorkout={handleAddWorkout}
         workouts={workouts}
+        onDelete={handleDeleteWorkout}
       />
     </>
   );

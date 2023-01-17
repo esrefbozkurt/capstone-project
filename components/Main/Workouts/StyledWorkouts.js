@@ -21,6 +21,7 @@ export const StyledWorkouts = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
 
   h3 {
@@ -38,6 +39,13 @@ export const StyledWorkoutsHeader = styled.div`
   top: 0;
   justify-content: space-between;
   z-index: 1;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  .radiusInactive {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
   h2 {
     font-family: Lato-bold;
@@ -58,5 +66,8 @@ export const StyledWorkoutsHeader = styled.div`
   button {
     background: transparent;
     border: none;
+  }
+  .delete-workout {
+    fill: black;
   }
 `;
