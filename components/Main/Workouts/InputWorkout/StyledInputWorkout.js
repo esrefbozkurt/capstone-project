@@ -17,7 +17,6 @@ export const StyledForm = styled.form`
     background-color: black;
     font-size: 1.1rem;
     border: white solid 1px;
-    /* text-align: center; */
     border-radius: 0.5rem;
     color: white;
     margin-left: 5rem;
