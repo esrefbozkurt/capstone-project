@@ -26,10 +26,19 @@ function MyApp({ Component, pageProps }) {
     setWorkouts(workoutsList);
   }
 
-  function handleAddWorkout(newWorkout) {
+  async function handleAddWorkout(newWorkout) {
+    await fetch("/api/workouts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newWorkout),
+    });
+
     setWorkouts([...workouts, newWorkout]);
   }
   async function handleDeleteWorkout(event, id) {
+    event.preventDefault();
     event.stopPropagation();
     await fetch("/api/workouts/" + id, {
       method: "DELETE",

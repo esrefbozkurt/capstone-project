@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { StyledForm } from "./StyledInputWorkout";
 
-import React from "react";
-
 const InputWorkout = ({ onSubmit }) => {
   return (
     <StyledForm onSubmit={onSubmit}>

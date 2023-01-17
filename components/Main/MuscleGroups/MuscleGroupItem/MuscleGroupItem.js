@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { StyledMuscleGroupItem } from "./StyledMuscleGroupItem";
-import React from "react";
 
 const MuscleGroupItem = ({ muscle }) => {
   return (

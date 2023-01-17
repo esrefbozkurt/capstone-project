@@ -2,13 +2,13 @@ import { StyledWorkouts, StyledWorkoutsHeader } from "./StyledWorkouts";
 import Image from "next/image";
 import InputWorkout from "./InputWorkout/InputWorkout";
 import { useState } from "react";
-import React from "react";
+import Link from "next/link";
 
 const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
   const [showInput, setShowInput] = useState(false);
 
   function toggleShow() {
-    setShowInput(true);
+    setShowInput(!showInput);
   }
 
   async function handleSubmit(event) {
@@ -19,13 +19,6 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
       name: name,
     };
 
-    await fetch("/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newWorkout),
-    });
     onAddWorkout(newWorkout);
     event.target.reset();
     setShowInput(false);
@@ -51,19 +44,21 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
         <ul>
           {workouts.map((workout) => {
             return (
-              <li key={workout.id}>
-                <div className="workoutContainer">
-                  <h3>{workout.name.toUpperCase()}</h3>
-                  <Image
-                    onClick={(event) => onDelete(event, workout.id)}
-                    className="delete-workout"
-                    src="/close.svg"
-                    width={24}
-                    height={24}
-                    alt="delete Workout"
-                  />
-                </div>
-              </li>
+              <Link href="/workout/workoutExercises">
+                <li key={workout.id}>
+                  <div className="workoutContainer">
+                    <h3>{workout.name.toUpperCase()}</h3>
+                    <Image
+                      onClick={(event) => onDelete(event, workout.id)}
+                      className="delete-workout"
+                      src="/close.svg"
+                      width={24}
+                      height={24}
+                      alt="delete Workout"
+                    />
+                  </div>
+                </li>
+              </Link>
             );
           })}
         </ul>

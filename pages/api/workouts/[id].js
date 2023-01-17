@@ -1,7 +1,6 @@
 import dbConnect from "../../../db/dbConnect";
 import Workout from "../../../db/models/Workouts";
 
-// /api/questions/id
 export default async function handler(req, res) {
   await dbConnect();
 
@@ -22,7 +21,7 @@ export default async function handler(req, res) {
   if (req.method === "DELETE") {
     const result = await Workout.findByIdAndDelete(id);
     if (result) {
-      res.status(200).json({ message: "question deleted" });
+      res.status(200).json({ message: "workout deleted" });
     } else {
       res.status(400).json({ message: "document not found" });
     }
