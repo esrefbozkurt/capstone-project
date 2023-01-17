@@ -1,27 +1,9 @@
 import { StyledAddWorkout, StyledAddWorkoutHeader } from "./StyledAddWorkout";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 
-const AddWorkout = ({ onAddWorkout }) => {
-  async function handleSubmit(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    const name = event.target.elements.name.value;
-    const newWorkout = {
-      name: name,
-    };
-
-    await fetch("/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newWorkout),
-    });
-    onAddWorkout(newWorkout);
-    event.target.reset();
-  }
-
+const AddWorkout = ({ workouts }) => {
   return (
     <StyledAddWorkout>
       <StyledAddWorkoutHeader>
@@ -34,25 +16,8 @@ const AddWorkout = ({ onAddWorkout }) => {
             className="backbutton"
           />
         </Link>
-
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name your Workout..."
-            required
-          />
-          <button type="submit">
-            <Image
-              src="/checkmark-circle.svg"
-              width={34}
-              height={34}
-              alt="checkmark button"
-              className="checkmark"
-            />
-          </button>
-        </form>
       </StyledAddWorkoutHeader>
+      <h3>{workout.name.toUpperCase()}</h3>
     </StyledAddWorkout>
   );
 };

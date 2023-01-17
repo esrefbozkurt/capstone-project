@@ -17,31 +17,4 @@ export const StyledAddWorkoutHeader = styled.div`
     margin-left: 0.6rem;
     align-self: center;
   }
-  form {
-    display: flex;
-  }
-  input {
-    font-family: Lato-bold;
-    display: flex;
-    padding: 0.4rem 0.4rem;
-    background-color: black;
-    font-size: 1.1rem;
-    border: white solid 1px;
-    text-align: center;
-    border-radius: 0.5rem;
-    color: white;
-    margin-right: 2.3rem;
-  }
-
-  input::placeholder {
-    font-size: 1rem;
-  }
-
-  .checkmark {
-    margin-right: 0.6rem;
-  }
-  button {
-    background-color: transparent;
-    border: none;
-  }
 `;

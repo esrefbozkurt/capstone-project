@@ -37,9 +37,7 @@ export const StyledWorkoutsHeader = styled.div`
   position: sticky;
   top: 0;
   justify-content: space-between;
-  align-items: center;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  z-index: 1;
 
   h2 {
     font-family: Lato-bold;
@@ -47,7 +45,7 @@ export const StyledWorkoutsHeader = styled.div`
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
     font-size: 1.1rem;
-    margin-left: 6.5rem;
+    margin-left: 6.9rem;
     text-transform: uppercase;
     color: white;
   }
@@ -55,5 +53,10 @@ export const StyledWorkoutsHeader = styled.div`
     display: flex;
     border: none;
     margin-right: 0.6rem;
+  }
+
+  button {
+    background: transparent;
+    border: none;
   }
 `;

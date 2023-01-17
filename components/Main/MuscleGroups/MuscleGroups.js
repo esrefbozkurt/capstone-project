@@ -1,6 +1,7 @@
 import MuscleGroupItem from "./MuscleGroupItem/MuscleGroupItem";
 import { useState } from "react";
 import { StyledMuscleGroups } from "./StyledMuscleGroups";
+import React from "react";
 
 const MuscleGroups = ({ exercises }) => {
   const [muscles, setMuscles] = useState([]);

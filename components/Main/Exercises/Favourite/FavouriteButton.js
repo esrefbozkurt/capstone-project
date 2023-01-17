@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { StyledFav } from "./StyledFav";
+import React from "react";
 
 export default function FavouriteButton({ onFav, isFavourite, id }) {
   return (

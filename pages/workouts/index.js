@@ -4,7 +4,10 @@ import Nav from "../../components/Footer/Nav";
 import Workouts from "../../components/Main/Workouts/Workouts";
 import { useEffect, useState } from "react";
 
-const Workout = ({ workouts }) => {
+const Workout = ({ workouts, onAddWorkout }) => {
+  function handleChange(event) {
+    setSearchTerm(event.target.value);
+  }
   return (
     <Fragment>
       <Head>
@@ -14,7 +17,7 @@ const Workout = ({ workouts }) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
-      <Workouts workouts={workouts} />
+      <Workouts workouts={workouts} onAddWorkout={onAddWorkout} />
       <Nav />
     </Fragment>
   );
