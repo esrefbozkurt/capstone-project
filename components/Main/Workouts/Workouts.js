@@ -44,7 +44,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
         <ul>
           {workouts.map((workout) => {
             return (
-              <Link href="/workout/workoutExercises">
+              <Link href={"/workouts/" + workout.id} key={workout.id}>
                 <li key={workout.id}>
                   <div className="workoutContainer">
                     <h3>{workout.name.toUpperCase()}</h3>

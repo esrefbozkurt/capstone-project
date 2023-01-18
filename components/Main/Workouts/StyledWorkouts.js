@@ -15,6 +15,11 @@ export const StyledWorkouts = styled.div`
     margin: 0.5rem 0.3rem;
     border-radius: 0.2rem;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.26);
+
+    &:active {
+      transform: scale(97%);
+      transition: all 200ms ease;
+    }
   }
 
   .workoutContainer {
