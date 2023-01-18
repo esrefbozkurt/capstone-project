@@ -17,6 +17,7 @@ export default function Exercises({
   isFavouriteExercise,
   exercises,
   muscle,
+  addExercises,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,12 +35,153 @@ export default function Exercises({
   function handleChange(event) {
     setSearchTerm(event.target.value);
   }
+
+  console.log("exercises", exercises);
   const filteredExercises = exercises.filter(
     (exercise) => exercise.muscle === muscle
   );
-  return (
-    <StyledExercises>
-      {!isFavouriteExercise ? (
+
+  if (!isFavouriteExercise && !addExercises) {
+    return (
+      <StyledExercises>
+        <div className="header_searchbar">
+          <StyledExercisesHeader>
+            <Link href="/">
+              <Image
+                src="/arrow-circle-left.svg"
+                width={32}
+                height={32}
+                alt="back button"
+                className="backbutton"
+              />
+            </Link>
+            <h2>{muscle}-Exercises</h2>
+          </StyledExercisesHeader>
+
+          <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
+        </div>
+        <ul>
+          {filteredExercises
+            .filter((exercise) => {
+              if (searchTerm === "") {
+                return exercise;
+              } else if (
+                exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return exercise;
+              }
+            })
+            .map((exercise) => (
+              <li key={exercise.id}>
+                <div
+                  className="favContainer"
+                  onClick={() => {
+                    handleToggle(exercise.id);
+                  }}
+                >
+                  <button>
+                    <h3>{exercise.name.toUpperCase()}</h3>
+                  </button>
+                  <FavouriteButton
+                    onFav={onFav}
+                    isFavourite={isFavourite}
+                    id={exercise.id}
+                  />
+                </div>
+                {toggledExercises.includes(exercise.id) && (
+                  <Description
+                    id={exercise.id}
+                    name={exercise.name}
+                    equipment={exercise.equipment}
+                    difficulty={exercise.difficulty}
+                    instructions={exercise.instructions}
+                  />
+                )}
+              </li>
+            ))}
+        </ul>
+      </StyledExercises>
+    );
+  } else if (isFavouriteExercise && !addExercises) {
+    return (
+      <StyledExercises>
+        <StyledFavouritesHeader>
+          <h2>Favourite-Exercises</h2>
+        </StyledFavouritesHeader>
+        <ul>
+          {exercises.map((exercise) => {
+            if (isFavourite.includes(exercise.id)) {
+              return (
+                <li key={exercise.id}>
+                  <div
+                    className="favContainer"
+                    onClick={() => {
+                      handleToggle(exercise.id);
+                    }}
+                  >
+                    <button>
+                      <h3>{exercise.name.toUpperCase()}</h3>
+                    </button>
+
+                    <FavouriteButton
+                      onFav={onFav}
+                      isFavourite={isFavourite}
+                      id={exercise.id}
+                    />
+                  </div>
+                  {toggledExercises.includes(exercise.id) && (
+                    <Description
+                      key={exercise.id}
+                      id={exercise.id}
+                      name={exercise.name}
+                      equipment={exercise.equipment}
+                      difficulty={exercise.difficulty}
+                      instructions={exercise.instructions}
+                    />
+                  )}
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </StyledExercises>
+    );
+  } else if (addExercises && !isFavouriteExercise) {
+    return (
+      <StyledExercises>
+        <ul>
+          {exercises.map((exercise) => (
+            <li key={exercise.id}>
+              {/* <div
+                className="favContainer"
+                onClick={() => {
+                  handleToggle(exercise.id);
+                }}
+              > */}
+              <button>
+                <h3>{exercise.name.toUpperCase()}</h3>
+              </button>
+              {/* <FavouriteButton
+                  onFav={onFav}
+                  isFavourite={isFavourite}
+                  id={exercise.id}
+                /> 
+              </div>*/}
+            </li>
+          ))}
+        </ul>
+      </StyledExercises>
+    );
+  }
+}
+
+{
+  /* // return (
+  //   <StyledExercises> */
+}
+
+{
+  /* {!isFavouriteExercise ? (
         <>
           <div className="header_searchbar">
             <StyledExercisesHeader>
@@ -117,6 +259,7 @@ export default function Exercises({
                       <button>
                         <h3>{exercise.name.toUpperCase()}</h3>
                       </button>
+
                       <FavouriteButton
                         onFav={onFav}
                         isFavourite={isFavourite}
@@ -139,7 +282,8 @@ export default function Exercises({
             })}
           </ul>
         </>
-      )}
-    </StyledExercises>
-  );
+      )} */
 }
+//   </StyledExercises>
+// );
+// }

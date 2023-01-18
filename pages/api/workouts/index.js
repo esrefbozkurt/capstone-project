@@ -3,13 +3,14 @@ import Workout from "../../../db/models/Workouts";
 
 export default async function handler(req, res) {
   await dbConnect();
+
   if (req.method === "GET") {
     try {
       const workouts = await Workout.find();
 
       const workoutsArray = workouts.map((workout) => {
         return {
-          id: workout.id,
+          id: workout._id,
           name: workout.name,
         };
       });

@@ -23,6 +23,7 @@ export default function Exercise({ onFav, isFavourite, exercises }) {
         isFavourite={isFavourite}
         exercises={exercises}
         isFavouriteExercise={false}
+        addExercises={false}
       />
       <Nav />
     </>

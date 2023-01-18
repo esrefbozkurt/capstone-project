@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledWorkoutDetails = styled.div`
   .addButton {
+    display: flex;
     height: 3.2rem;
     width: 100%;
     overflow: hidden;
@@ -13,11 +14,19 @@ export const StyledWorkoutDetails = styled.div`
     border: none;
     background: #99d98c;
     box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: Lato-bold;
 
     &:active {
       transform: scale(97%);
       transition: all 200ms ease;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 

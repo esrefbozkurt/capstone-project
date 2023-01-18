@@ -31,9 +31,9 @@ const WorkoutDetails = ({ name }) => {
           />
         </button>
       </StyledWorkoutDetailsHeader>
-      <button className="addButton">
+      <Link href="/workouts/addExercises" className="addButton">
         <h4>+ Add Exercise</h4>
-      </button>
+      </Link>
     </StyledWorkoutDetails>
   );
 };

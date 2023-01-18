@@ -18,6 +18,7 @@ const Favourites = ({ onFav, isFavourite, exercises }) => {
         isFavourite={isFavourite}
         isFavouriteExercise={true}
         exercises={exercises}
+        addExercises={false}
       />
       <Nav />
     </Fragment>
