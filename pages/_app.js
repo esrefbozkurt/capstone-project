@@ -5,6 +5,7 @@ function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
   const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
+  const [exerciseAdded, setExerciseAdded] = useState(false);
 
   function handleFav(id, event) {
     event.preventDefault();
@@ -56,6 +57,7 @@ function MyApp({ Component, pageProps }) {
       body: JSON.stringify(newWorkout),
     });
     console.log(newWorkout);
+    setExerciseAdded(true);
     getWorkouts();
   }
 
@@ -86,6 +88,7 @@ function MyApp({ Component, pageProps }) {
         workouts={workouts}
         onDelete={handleDeleteWorkout}
         onAddExercise={handleAddExerciseToWorkOut}
+        exerciseAdded={exerciseAdded}
       />
     </>
   );

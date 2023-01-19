@@ -46,8 +46,8 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
           {workouts.map((workout) => {
             return (
               <Link href={"/workouts/" + workout.id} key={workout.id}>
-                <li>
-                  <div className="workoutContainer">
+                <li key={workout.id}>
+                  <div className="workoutContainer" key={workout.id}>
                     <h3>{workout.name.toUpperCase()}</h3>
                     <Image
                       onClick={(event) => onDelete(event, workout.id)}

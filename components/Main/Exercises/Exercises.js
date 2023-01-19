@@ -20,10 +20,10 @@ export default function Exercises({
   addExercises,
   onAddExercise,
   currentWorkout,
+  exerciseAdded,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  // const [exerciseAdded, setExerciseAdded] = useState([]);
 
   function handleToggle(id) {
     if (toggledExercises.includes(id)) {
@@ -80,7 +80,14 @@ export default function Exercises({
               }
             })
             .map((exercise) => (
-              <li key={exercise.id}>
+              <li
+                key={exercise.id}
+                className={
+                  toggledExercises.includes(exercise.id)
+                    ? "expanded"
+                    : "collapsed"
+                }
+              >
                 <div
                   className="favContainer"
                   onClick={() => {
@@ -119,7 +126,14 @@ export default function Exercises({
           {exercises.map((exercise) => {
             if (isFavourite.includes(exercise.id)) {
               return (
-                <li key={exercise.id}>
+                <li
+                  key={exercise.id}
+                  className={
+                    toggledExercises.includes(exercise.id)
+                      ? "expanded"
+                      : "collapsed"
+                  }
+                >
                   <div
                     className="favContainer"
                     onClick={() => {
@@ -156,20 +170,39 @@ export default function Exercises({
       <StyledExercises>
         <ul>
           {exercises.map((exercise) => (
-            <li key={exercise.id}>
+            <li
+              key={exercise.id}
+              className={
+                toggledExercises.includes(exercise.id)
+                  ? "expanded"
+                  : "collapsed"
+              }
+            >
               <div className="addContainer">
                 <h3>{exercise.name.toUpperCase()}</h3>
-
-                <Image
-                  onClick={(event) =>
-                    onAddExercise(currentWorkout, exercise.name, event)
-                  }
-                  className="add-exercise"
-                  src="/plus.svg"
-                  width={24}
-                  height={24}
-                  alt="add Exercise"
-                />
+                {exerciseAdded ? (
+                  <Image
+                    // onClick={(event) =>
+                    //   onAddExercise(currentWorkout, exercise.name, event)
+                    // }
+                    className="add-exercise"
+                    src="/checkmark.svg"
+                    width={24}
+                    height={24}
+                    alt="checkmark exercise added"
+                  />
+                ) : (
+                  <Image
+                    onClick={(event) =>
+                      onAddExercise(currentWorkout, exercise.name, event)
+                    }
+                    className="add-exercise"
+                    src="/plus.svg"
+                    width={24}
+                    height={24}
+                    alt="add Exercise"
+                  />
+                )}
               </div>
             </li>
           ))}

@@ -25,6 +25,9 @@ export const StyledExercises = styled.div`
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     text-decoration: none;
+    transition: max-height 1s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
 
     .favContainer {
       display: flex;
@@ -40,6 +43,13 @@ export const StyledExercises = styled.div`
       height: 2.2rem;
       align-items: center;
     }
+  }
+  .expanded {
+    max-height: 100rem;
+  }
+
+  .collapsed {
+    max-height: 2.5rem;
   }
 
   button {

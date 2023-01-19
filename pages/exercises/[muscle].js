@@ -3,7 +3,12 @@ import { useRouter } from "next/router";
 import Nav from "../../components/Footer/Nav";
 import Exercises from "../../components/Main/Exercises/Exercises";
 
-export default function Exercise({ onFav, isFavourite, exercises }) {
+export default function Exercise({
+  onFav,
+  isFavourite,
+  exercises,
+  exerciseAdded,
+}) {
   const router = useRouter();
   const { muscle } = router.query;
 
@@ -24,6 +29,7 @@ export default function Exercise({ onFav, isFavourite, exercises }) {
         exercises={exercises}
         isFavouriteExercise={false}
         addExercises={false}
+        exerciseAdded={exerciseAdded}
       />
       <Nav />
     </>

@@ -36,19 +36,21 @@ const WorkoutDetails = ({ onToggle, currentWorkout }) => {
       <ul>
         {addedWorkouts.map((addedWorkout) => {
           return (
-            <li key={addedWorkout.id}>
-              <div className="addContainer">
-                <h3>{addedWorkout.name.toUpperCase()}</h3>
-                <Image
-                  onClick={(event) => onDelete(event, addedWorkout.id)}
-                  className="deleteWorkout"
-                  src="/close.svg"
-                  width={24}
-                  height={24}
-                  alt="delete Workout"
-                />
-              </div>
-            </li>
+            <div key={addedWorkout.id}>
+              <li>
+                <div className="addContainer">
+                  <h3>{addedWorkout.name.toUpperCase()}</h3>
+                  <Image
+                    onClick={(event) => onDelete(event, addedWorkout.id)}
+                    className="deleteWorkout"
+                    src="/close.svg"
+                    width={24}
+                    height={24}
+                    alt="delete Workout"
+                  />
+                </div>
+              </li>
+            </div>
           );
         })}
       </ul>
