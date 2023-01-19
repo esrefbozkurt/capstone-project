@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       res.status(200).json({
         id: workout._id,
         name: workout.name,
+        exercises: [{ exerciseName: workout.name }],
       });
     } catch (error) {
       res.status(404).json(error);

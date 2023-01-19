@@ -45,7 +45,6 @@ export default function Exercises({
     setSearchTerm(event.target.value);
   }
 
-  console.log("exercises", exercises);
   const filteredExercises = exercises.filter(
     (exercise) => exercise.muscle === muscle
   );
@@ -159,9 +158,8 @@ export default function Exercises({
           {exercises.map((exercise) => (
             <li key={exercise.id}>
               <div className="addContainer">
-                <button>
-                  <h3>{exercise.name.toUpperCase()}</h3>
-                </button>
+                <h3>{exercise.name.toUpperCase()}</h3>
+
                 {/* {exerciseAdded ? (
                   <Image
                     // onClick={(event) => onDelete(event, workout.id)}

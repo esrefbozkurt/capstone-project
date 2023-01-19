@@ -50,11 +50,12 @@ function MyApp({ Component, pageProps }) {
       exercises: [...currentWorkout.exercises, { name: exerciseName }],
     };
 
-    console.log(newWorkout);
-    await fetch("/api/workouts" + currentWorkout.id, {
+    await fetch("/api/workouts/" + currentWorkout.id, {
       method: "PUT",
-      body: newWorkout,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newWorkout),
     });
+    console.log(newWorkout);
     getWorkouts();
   }
 

@@ -15,7 +15,6 @@ const WorkoutDetail = ({ workouts, exercises, onAddExercise }) => {
     return null;
   }
 
-  console.log("current Heinz", currentWorkout);
   const name = currentWorkout?.name;
 
   function toggleShowExercisesOverview() {
@@ -41,6 +40,7 @@ const WorkoutDetail = ({ workouts, exercises, onAddExercise }) => {
         <WorkoutDetails
           currentWorkout={currentWorkout}
           onToggle={toggleShowExercisesOverview}
+          workouts={workouts}
         />
       )}
     </>

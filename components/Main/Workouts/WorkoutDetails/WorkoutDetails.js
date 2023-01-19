@@ -7,6 +7,8 @@ import Image from "next/image";
 import React from "react";
 
 const WorkoutDetails = ({ onToggle, currentWorkout }) => {
+  const addedWorkouts = currentWorkout.exercises;
+
   return (
     <StyledWorkoutDetails>
       <StyledWorkoutDetailsHeader>
@@ -31,6 +33,24 @@ const WorkoutDetails = ({ onToggle, currentWorkout }) => {
           />
         </button>
       </StyledWorkoutDetailsHeader>
+      {addedWorkouts.map((addedWorkout) => {
+        return (
+          <li key={addedWorkout.id}>
+            <div className="addContainer">
+              <h3>{addedWorkout.name.toUpperCase()}</h3>
+              <Image
+                onClick={(event) => onDelete(event, addedWorkout.id)}
+                className="deleteWorkout"
+                src="/close.svg"
+                width={24}
+                height={24}
+                alt="delete Workout"
+              />
+            </div>
+          </li>
+        );
+      })}
+
       <button onClick={onToggle} className="addButton">
         <h4>+ Add Exercise</h4>
       </button>
