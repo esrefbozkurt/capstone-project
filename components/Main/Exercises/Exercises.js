@@ -160,16 +160,6 @@ export default function Exercises({
               <div className="addContainer">
                 <h3>{exercise.name.toUpperCase()}</h3>
 
-                {/* {exerciseAdded ? (
-                  <Image
-                    // onClick={(event) => onDelete(event, workout.id)}
-                    className="add-exercise"
-                    src="/checkmark.svg"
-                    width={24}
-                    height={24}
-                    alt="exercise added"
-                  />
-                ) : ( */}
                 <Image
                   onClick={(event) =>
                     onAddExercise(currentWorkout, exercise.name, event)
@@ -180,7 +170,6 @@ export default function Exercises({
                   height={24}
                   alt="add Exercise"
                 />
-                {/* )} */}
               </div>
             </li>
           ))}

@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const StyledWorkoutDetails = styled.div`
   display: flex;
   flex-direction: column;
-
+  ul {
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+  }
   li {
     padding: 0rem 1rem;
     list-style: none;

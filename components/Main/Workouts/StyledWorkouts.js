@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const StyledWorkouts = styled.div`
   display: flex;
   flex-direction: column;
+
   ul {
     margin-bottom: 3.5rem;
     overflow: hidden;
   }
   li {
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
     list-style: none;
     background-color: #f8f9fa;
     color: black;
