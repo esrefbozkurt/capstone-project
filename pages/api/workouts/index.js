@@ -12,6 +12,7 @@ export default async function handler(req, res) {
         return {
           id: workout._id,
           name: workout.name,
+          exercises: workout.exercises,
         };
       });
 

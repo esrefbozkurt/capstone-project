@@ -17,6 +17,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
     const name = event.target.elements.name.value;
     const newWorkout = {
       name: name,
+      exercises: [],
     };
 
     onAddWorkout(newWorkout);

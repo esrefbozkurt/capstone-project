@@ -3,7 +3,12 @@ import { StyledAddExercisesHeader } from "./StyledAddExercises";
 import Link from "next/link";
 import Image from "next/image";
 
-const AddExercises = ({ exercises, currentWorkout, onToggle }) => {
+const AddExercises = ({
+  exercises,
+  currentWorkout,
+  onToggle,
+  onAddExercise,
+}) => {
   return (
     <>
       <StyledAddExercisesHeader>
@@ -15,12 +20,14 @@ const AddExercises = ({ exercises, currentWorkout, onToggle }) => {
             alt="back button"
           />
         </button>
-        <h2>Add Exercises to "{currentWorkout.name}"</h2>
+        <h2>Add Exercises </h2>
       </StyledAddExercisesHeader>
       <Exercises
         addExercises={true}
         exercises={exercises}
         isFavouriteExercise={false}
+        currentWorkout={currentWorkout}
+        onAddExercise={onAddExercise}
       />
     </>
   );

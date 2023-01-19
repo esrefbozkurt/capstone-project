@@ -6,7 +6,7 @@ export const StyledAddExercisesHeader = styled.div`
   top: 0;
   background: black;
   padding: 0.5rem 0;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;

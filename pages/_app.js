@@ -37,6 +37,27 @@ function MyApp({ Component, pageProps }) {
 
     setWorkouts([...workouts, newWorkout]);
   }
+
+  async function handleAddExerciseToWorkOut(
+    currentWorkout,
+    exerciseName,
+    event
+  ) {
+    event.preventDefault();
+    event.stopPropagation();
+    const newWorkout = {
+      ...currentWorkout,
+      exercises: [...currentWorkout.exercises, { name: exerciseName }],
+    };
+
+    console.log(newWorkout);
+    await fetch("/api/workouts" + currentWorkout.id, {
+      method: "PUT",
+      body: newWorkout,
+    });
+    getWorkouts();
+  }
+
   async function handleDeleteWorkout(event, id) {
     event.preventDefault();
     event.stopPropagation();
@@ -63,6 +84,7 @@ function MyApp({ Component, pageProps }) {
         onAddWorkout={handleAddWorkout}
         workouts={workouts}
         onDelete={handleDeleteWorkout}
+        onAddExercise={handleAddExerciseToWorkOut}
       />
     </>
   );

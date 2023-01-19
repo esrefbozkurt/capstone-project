@@ -4,7 +4,7 @@ import AddExercises from "../../components/Main/Workouts/WorkoutDetails/AddExerc
 import { useState } from "react";
 import Head from "next/head";
 
-const WorkoutDetail = ({ workouts, exercises }) => {
+const WorkoutDetail = ({ workouts, exercises, onAddExercise }) => {
   const [showExercisesOverview, setShowExercisesOverview] = useState(false);
 
   const router = useRouter();
@@ -35,6 +35,7 @@ const WorkoutDetail = ({ workouts, exercises }) => {
           exercises={exercises}
           currentWorkout={currentWorkout}
           onToggle={toggleShowExercisesOverview}
+          onAddExercise={onAddExercise}
         />
       ) : (
         <WorkoutDetails
