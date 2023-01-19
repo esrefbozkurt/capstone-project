@@ -1,18 +1,26 @@
 import { useRouter } from "next/router";
 import WorkoutDetails from "../../components/Main/Workouts/WorkoutDetails/WorkoutDetails";
+import AddExercises from "../../components/Main/Workouts/WorkoutDetails/AddExercises/AddExercises";
+import { useState } from "react";
 import Head from "next/head";
 
-const WorkoutDetail = ({ workouts }) => {
+const WorkoutDetail = ({ workouts, exercises }) => {
+  const [showExercisesOverview, setShowExercisesOverview] = useState(false);
+
   const router = useRouter();
   const { id } = router.query;
   const currentWorkout = workouts.find((workout) => workout.id === id);
-  console.log(currentWorkout);
 
   if (!currentWorkout) {
     return null;
   }
 
-  const name = currentWorkout.name;
+  console.log("current Heinz", currentWorkout);
+  const name = currentWorkout?.name;
+
+  function toggleShowExercisesOverview() {
+    setShowExercisesOverview(!showExercisesOverview);
+  }
   return (
     <>
       <Head>
@@ -22,7 +30,18 @@ const WorkoutDetail = ({ workouts }) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
       </Head>
-      <WorkoutDetails name={name} />
+      {showExercisesOverview ? (
+        <AddExercises
+          exercises={exercises}
+          currentWorkout={currentWorkout}
+          onToggle={toggleShowExercisesOverview}
+        />
+      ) : (
+        <WorkoutDetails
+          currentWorkout={currentWorkout}
+          onToggle={toggleShowExercisesOverview}
+        />
+      )}
     </>
   );
 };

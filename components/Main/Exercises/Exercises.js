@@ -152,21 +152,19 @@ export default function Exercises({
         <ul>
           {exercises.map((exercise) => (
             <li key={exercise.id}>
-              {/* <div
-                className="favContainer"
-                onClick={() => {
-                  handleToggle(exercise.id);
-                }}
-              > */}
-              <button>
-                <h3>{exercise.name.toUpperCase()}</h3>
-              </button>
-              {/* <FavouriteButton
-                  onFav={onFav}
-                  isFavourite={isFavourite}
-                  id={exercise.id}
-                /> 
-              </div>*/}
+              <div className="addContainer">
+                <button>
+                  <h3>{exercise.name.toUpperCase()}</h3>
+                </button>
+                <Image
+                  // onClick={(event) => onDelete(event, workout.id)}
+                  className="add-exercise"
+                  src="/plus.svg"
+                  width={24}
+                  height={24}
+                  alt="add Exercise"
+                />
+              </div>
             </li>
           ))}
         </ul>

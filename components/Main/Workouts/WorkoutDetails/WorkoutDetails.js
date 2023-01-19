@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-const WorkoutDetails = ({ name }) => {
+const WorkoutDetails = ({ onToggle, currentWorkout }) => {
   return (
     <StyledWorkoutDetails>
       <StyledWorkoutDetailsHeader>
@@ -19,7 +19,7 @@ const WorkoutDetails = ({ name }) => {
             className="backbutton"
           />
         </Link>
-        <h2>{name.toUpperCase()}</h2>
+        <h2>{currentWorkout.name.toUpperCase()}</h2>
         <button type="submit" className="checkmarkButton">
           <Image
             //   onClick={handleSubmit}
@@ -31,9 +31,9 @@ const WorkoutDetails = ({ name }) => {
           />
         </button>
       </StyledWorkoutDetailsHeader>
-      <Link href="/workouts/addExercises" className="addButton">
+      <button onClick={onToggle} className="addButton">
         <h4>+ Add Exercise</h4>
-      </Link>
+      </button>
     </StyledWorkoutDetails>
   );
 };

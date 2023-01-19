@@ -31,6 +31,14 @@ export const StyledExercises = styled.div`
       width: 100%;
       justify-content: space-between;
     }
+
+    .addContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      height: 2.2rem;
+      align-items: center;
+    }
   }
 
   button {
