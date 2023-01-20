@@ -27,25 +27,28 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
 
   return (
     <>
-      <StyledWorkoutsHeader>
-        <h2>My-Workouts</h2>
-        <button onClick={() => toggleShow()}>
-          <Image
-            className="add-workout"
-            src="/plus-circle.svg"
-            width={32}
-            height={32}
-            alt="show input"
-          />
-        </button>
+      <StyledWorkoutsHeader
+        style={{ maxHeight: !showInput ? "50px" : "100px" }}
+      >
+        <div className="workoutsHeaderContainer">
+          <h2>My-Workouts</h2>
+          <button className="add-workout" onClick={toggleShow}>
+            <Image
+              src="/plus-circle.svg"
+              width={32}
+              height={32}
+              alt="show input"
+            />
+          </button>
+        </div>
+        <InputWorkout onSubmit={handleSubmit} />
       </StyledWorkoutsHeader>
-      {showInput ? <InputWorkout onSubmit={handleSubmit} /> : null}
 
       <StyledWorkouts>
         <ul>
           {workouts.map((workout) => {
             return (
-              <Link href={"/workouts/" + workout.id} key={workout.id}>
+              <Link href={"/workouts/" + workout.id}>
                 <li key={workout.id}>
                   <div className="workoutContainer" key={workout.id}>
                     <h3>{workout.name.toUpperCase()}</h3>

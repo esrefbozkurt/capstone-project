@@ -42,6 +42,9 @@ export const StyledWorkouts = styled.div`
 
 export const StyledWorkoutsHeader = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   background: black;
   padding: 0.5rem 0;
   position: sticky;
@@ -50,11 +53,34 @@ export const StyledWorkoutsHeader = styled.div`
   z-index: 1;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+  overflow-y: hidden;
+  transition: max-height 800ms ease;
 
-  .radiusInactive {
+  /* .radiusInactive {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  } */
+
+  .workoutsHeaderContainer {
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: center;
   }
+
+  .add-workout {
+    position: absolute;
+    right: 8px;
+    height: 32px;
+    width: 32px;
+  }
+
+  /* .expanded {
+    max-height: 200px;
+  }
+
+  .collapsed {
+    max-height: 50px;
+  } */
 
   h2 {
     font-family: Lato-bold;
@@ -62,7 +88,6 @@ export const StyledWorkoutsHeader = styled.div`
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
     font-size: 1.1rem;
-    margin-left: 6.9rem;
     text-transform: uppercase;
     color: white;
   }

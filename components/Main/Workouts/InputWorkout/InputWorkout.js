@@ -12,13 +12,12 @@ const InputWorkout = ({ onSubmit }) => {
         className="workout-input"
         required
       />
-      <button type="submit">
+      <button className="checkmark" type="submit">
         <Image
           src="/checkmark-circle.svg"
           width={34}
           height={34}
           alt="checkmark button"
-          className="checkmark"
         />
       </button>
     </StyledForm>

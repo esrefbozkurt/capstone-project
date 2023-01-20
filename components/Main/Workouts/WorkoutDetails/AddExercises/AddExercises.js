@@ -18,6 +18,7 @@ const AddExercises = ({
             width={34}
             height={34}
             alt="back button"
+            priority
           />
         </button>
         <h2>Add Exercises </h2>

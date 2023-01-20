@@ -19,6 +19,7 @@ const WorkoutDetails = ({ onToggle, currentWorkout }) => {
             height={34}
             alt="back button"
             className="backbutton"
+            priority
           />
         </Link>
         <h2>{currentWorkout.name.toUpperCase()}</h2>

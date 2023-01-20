@@ -25,10 +25,10 @@ export const StyledExercises = styled.div`
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     text-decoration: none;
-    transition: max-height 1s ease;
+    transition: max-height 0.5s ease;
     overflow: hidden;
     cursor: pointer;
-
+    -webkit-tap-highlight-color: transparent;
     .favContainer {
       display: flex;
       width: 100%;
@@ -40,7 +40,7 @@ export const StyledExercises = styled.div`
       display: flex;
       width: 100%;
       justify-content: space-between;
-      height: 2.2rem;
+      height: 2.5rem;
       align-items: center;
     }
   }
@@ -57,7 +57,7 @@ export const StyledExercises = styled.div`
     border: none;
     background: transparent;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+
     color: black;
   }
 

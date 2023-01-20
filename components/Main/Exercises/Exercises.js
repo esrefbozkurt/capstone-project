@@ -17,13 +17,17 @@ export default function Exercises({
   isFavouriteExercise,
   exercises,
   muscle,
-  addExercises,
   onAddExercise,
   currentWorkout,
-  onToggleAddExercise,
+  addExercises,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [exerciseAdd, setExerciseAdd] = useState([]);
+
+  // function handleToggleAddExercise() {
+  //   setExerciseAdd(!exerciseAdd);
+  // }
 
   function handleToggle(id) {
     if (toggledExercises.includes(id)) {
@@ -33,6 +37,20 @@ export default function Exercises({
     } else {
       setToggledExercises([id, ...toggledExercises]);
     }
+  }
+  function handleToggleExerciseAdd(id) {
+    if (exerciseAdd.includes(id)) {
+      setExerciseAdd(exerciseAdd.filter((toggleId) => toggleId !== id));
+    } else {
+      setExerciseAdd([id, ...exerciseAdd]);
+    }
+  }
+
+  function handleAdd(event, exercise) {
+    onAddExercise(currentWorkout, exercise.name, event);
+    handleToggleExerciseAdd(exercise.id);
+
+    console.log(exercise.id);
   }
 
   function handleChange(event) {
@@ -55,6 +73,7 @@ export default function Exercises({
                 height={32}
                 alt="back button"
                 className="backbutton"
+                priority
               />
             </Link>
             <h2>{muscle}-Exercises</h2>
@@ -172,7 +191,7 @@ export default function Exercises({
             >
               <div className="addContainer">
                 <h3>{exercise.name.toUpperCase()}</h3>
-                {/* {onToggleAddExercise.includes(exercise.id) ? (
+                {!exerciseAdd ? (
                   <Image
                     className="add-exercise"
                     src="/checkmark.svg"
@@ -180,18 +199,16 @@ export default function Exercises({
                     height={24}
                     alt="checkmark exercise added"
                   />
-                ) : ( */}
-                <Image
-                  onClick={(event) =>
-                    onAddExercise(currentWorkout, exercise.name, event)
-                  }
-                  className="add-exercise"
-                  src="/plus.svg"
-                  width={24}
-                  height={24}
-                  alt="add Exercise"
-                />
-                {/* )} */}
+                ) : (
+                  <Image
+                    onClick={(event) => handleAdd(event, exercise)}
+                    className="add-exercise"
+                    src="/plus.svg"
+                    width={24}
+                    height={24}
+                    alt="add Exercise"
+                  />
+                )}
               </div>
             </li>
           ))}

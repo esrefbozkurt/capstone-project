@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const StyledForm = styled.form`
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   background-color: black;
   align-items: center;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding-bottom: 0.5rem;
   animation: 0.4s alternate slidein;
+  width: 100%;
 
   .workout-input {
     font-family: Lato-bold;
@@ -19,7 +21,7 @@ export const StyledForm = styled.form`
     border: white solid 1px;
     border-radius: 0.5rem;
     color: white;
-    margin-left: 5rem;
+    padding: 6px;
   }
 
   input::placeholder {
@@ -27,25 +29,14 @@ export const StyledForm = styled.form`
   }
 
   .checkmark {
-    margin-right: 0.5rem;
+    position: absolute;
+    right: 8px;
+    height: 32px;
+    width: 32px;
   }
   button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-  }
-
-  .inputActive {
-    transition: transform 0.35s ease-in-out;
-  }
-
-  @keyframes slidein {
-    from {
-      transform: translateY(-3rem);
-    }
-
-    to {
-      transform: translateY(0rem);
-    }
   }
 `;

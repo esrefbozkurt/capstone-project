@@ -5,7 +5,6 @@ function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
   const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
-  const [exerciseAdd, setExerciseAdd] = useState([]);
 
   function handleFav(id, event) {
     event.preventDefault();
@@ -15,13 +14,13 @@ function MyApp({ Component, pageProps }) {
       : setIsFavourite((exercise) => [...exercise, id]);
   }
 
-  function toggleAddExercise(event, id) {
-    event.preventDefault();
-    event.stopPropagation();
-    exerciseAdd.includes(id)
-      ? setExerciseAdd((exercise) => exercise.filter((added) => added !== id))
-      : setExerciseAdd((exercise) => [...exercise, id]);
-  }
+  // function toggleAddExercise(event, id) {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   exerciseAdd.includes(id)
+  //     ? setExerciseAdd((exercise) => exercise.filter((added) => added !== id))
+  //     : setExerciseAdd((exercise) => [...exercise, id]);
+  // }
   async function getExercises() {
     const response = await fetch("/api/exercises");
     const exercisesList = await response.json();
@@ -44,6 +43,7 @@ function MyApp({ Component, pageProps }) {
     });
 
     setWorkouts([...workouts, newWorkout]);
+    getWorkouts();
   }
 
   async function handleAddExerciseToWorkOut(
@@ -63,7 +63,6 @@ function MyApp({ Component, pageProps }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newWorkout),
     });
-    console.log(newWorkout);
 
     getWorkouts();
   }
@@ -95,7 +94,6 @@ function MyApp({ Component, pageProps }) {
         workouts={workouts}
         onDelete={handleDeleteWorkout}
         onAddExercise={handleAddExerciseToWorkOut}
-        onToggleAddExercise={toggleAddExercise}
       />
     </>
   );

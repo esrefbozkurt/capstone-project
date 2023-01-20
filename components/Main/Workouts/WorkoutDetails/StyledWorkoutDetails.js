@@ -20,7 +20,7 @@ export const StyledWorkoutDetails = styled.div`
       display: flex;
       width: 100%;
       justify-content: space-between;
-      height: 2.2rem;
+      height: 2.5rem;
       align-items: center;
     }
     &:active {
@@ -36,7 +36,7 @@ export const StyledWorkoutDetails = styled.div`
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    padding: 0rem 1rem;
+    padding: 0 1rem;
     border-radius: 0.5rem;
     border: none;
     background: #99d98c;
@@ -53,8 +53,8 @@ export const StyledWorkoutDetails = styled.div`
   }
 
   h3 {
-    font-size: 0.9rem;
-    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+
     text-align: left;
   }
   a {

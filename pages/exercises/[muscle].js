@@ -7,7 +7,7 @@ export default function Exercise({
   onFav,
   isFavourite,
   exercises,
-  onToggleAddExercises,
+  onAddExercise,
 }) {
   const router = useRouter();
   const { muscle } = router.query;
@@ -20,6 +20,8 @@ export default function Exercise({
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Exercises
@@ -28,7 +30,7 @@ export default function Exercise({
         isFavourite={isFavourite}
         exercises={exercises}
         isFavouriteExercise={false}
-        addExercises={false}
+        onAddExercise={onAddExercise}
       />
       <Nav />
     </>
