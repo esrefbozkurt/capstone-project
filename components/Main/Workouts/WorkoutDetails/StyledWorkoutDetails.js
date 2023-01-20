@@ -36,7 +36,7 @@ export const StyledWorkoutDetails = styled.div`
     overflow: hidden;
     position: fixed;
     bottom: 0;
-
+    padding: 0rem 1rem;
     border-radius: 0.5rem;
     border: none;
     background: #99d98c;

@@ -96,15 +96,14 @@ export default function Exercises({
                     id={exercise.id}
                   />
                 </div>
-                {toggledExercises.includes(exercise.id) && (
-                  <Description
-                    id={exercise.id}
-                    name={exercise.name}
-                    equipment={exercise.equipment}
-                    difficulty={exercise.difficulty}
-                    instructions={exercise.instructions}
-                  />
-                )}
+
+                <Description
+                  id={exercise.id}
+                  name={exercise.name}
+                  equipment={exercise.equipment}
+                  difficulty={exercise.difficulty}
+                  instructions={exercise.instructions}
+                />
               </li>
             ))}
         </ul>
@@ -142,16 +141,15 @@ export default function Exercises({
                       id={exercise.id}
                     />
                   </div>
-                  {toggledExercises.includes(exercise.id) && (
-                    <Description
-                      key={exercise.id}
-                      id={exercise.id}
-                      name={exercise.name}
-                      equipment={exercise.equipment}
-                      difficulty={exercise.difficulty}
-                      instructions={exercise.instructions}
-                    />
-                  )}
+
+                  <Description
+                    key={exercise.id}
+                    id={exercise.id}
+                    name={exercise.name}
+                    equipment={exercise.equipment}
+                    difficulty={exercise.difficulty}
+                    instructions={exercise.instructions}
+                  />
                 </li>
               );
             }
