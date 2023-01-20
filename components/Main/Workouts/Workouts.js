@@ -52,7 +52,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
                     <Image
                       onClick={(event) => onDelete(event, workout.id)}
                       className="deleteWorkout"
-                      src="/close.svg"
+                      src="/delete.svg"
                       width={24}
                       height={24}
                       alt="delete Workout"

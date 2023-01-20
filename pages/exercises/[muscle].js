@@ -7,7 +7,7 @@ export default function Exercise({
   onFav,
   isFavourite,
   exercises,
-  exerciseAdded,
+  onToggleAddExercises,
 }) {
   const router = useRouter();
   const { muscle } = router.query;
@@ -29,7 +29,6 @@ export default function Exercise({
         exercises={exercises}
         isFavouriteExercise={false}
         addExercises={false}
-        exerciseAdded={exerciseAdded}
       />
       <Nav />
     </>
