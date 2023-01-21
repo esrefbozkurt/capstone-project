@@ -1,36 +1,26 @@
 import styled from "styled-components";
 
-export const StyledAddWorkout = styled.div``;
-
-export const StyledAddWorkoutHeader = styled.div`
+export const StyledForm = styled.form`
   display: flex;
-  position: sticky;
-  top: 0;
-  background: black;
-  padding: 0.5rem 0;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
   align-items: center;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+  padding-bottom: 0.5rem;
+  animation: 0.4s alternate slidein;
+  width: 100%;
 
-  .backbutton {
-    margin-left: 0.6rem;
-    align-self: center;
-  }
-  form {
+  .workout-input {
     display: flex;
-  }
-  input {
-    font-family: Lato-bold;
-    display: flex;
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem 0.4rem 0.4rem 0;
     background-color: black;
     font-size: 1.1rem;
     border: white solid 1px;
-    text-align: center;
     border-radius: 0.5rem;
     color: white;
-    margin-right: 2.3rem;
+    padding: 0.4rem;
   }
 
   input::placeholder {
@@ -38,10 +28,14 @@ export const StyledAddWorkoutHeader = styled.div`
   }
 
   .checkmark {
-    margin-right: 0.6rem;
+    position: absolute;
+    right: 8px;
+    height: 32px;
+    width: 32px;
   }
   button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
 `;

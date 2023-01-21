@@ -5,7 +5,6 @@ export const StyledMuscleGroups = styled.div`
   flex-direction: column;
 
   h2 {
-    font-family: Lato-bold;
     display: flex;
     justify-content: space-around;
     padding: 0.5rem 1rem;

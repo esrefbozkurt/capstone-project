@@ -6,7 +6,7 @@ const MuscleGroupItem = ({ muscle }) => {
   return (
     <StyledMuscleGroupItem>
       <Link href={`/exercises/${muscle}`}>
-        <li>
+        <li key={muscle}>
           <Image
             src={`/images/${muscle}.svg`}
             width={158}

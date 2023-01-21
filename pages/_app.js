@@ -6,6 +6,11 @@ function MyApp({ Component, pageProps }) {
   const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
 
+  useEffect(() => {
+    getExercises();
+    getWorkouts();
+  }, []);
+
   function handleFav(id, event) {
     event.preventDefault();
     event.stopPropagation();
@@ -26,13 +31,69 @@ function MyApp({ Component, pageProps }) {
     setWorkouts(workoutsList);
   }
 
-  function handleAddWorkout(newWorkout) {
-    setWorkouts([...workouts, newWorkout]);
-  }
-  useEffect(() => {
-    getExercises();
+  async function handleAddWorkout(newWorkout) {
+    await fetch("/api/workouts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newWorkout),
+    });
+
     getWorkouts();
-  }, []);
+  }
+
+  async function handleDeleteWorkout(event, id) {
+    event.preventDefault();
+    event.stopPropagation();
+    await fetch("/api/workouts/" + id, {
+      method: "DELETE",
+    });
+    getWorkouts();
+  }
+
+  async function handleAddExerciseToWorkOut(
+    currentWorkout,
+    exerciseName,
+    event
+  ) {
+    event.preventDefault();
+    event.stopPropagation();
+    const newWorkout = {
+      ...currentWorkout,
+      exercises: [...currentWorkout.exercises, { name: exerciseName }],
+    };
+
+    await fetch("/api/workouts/" + currentWorkout.id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newWorkout),
+    });
+
+    getWorkouts();
+  }
+
+  async function handleDeleteExercise(currentWorkout, exerciseID, event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const exercises = currentWorkout.exercises;
+    const updatedExercises = exercises.filter(
+      (exercise) => exercise.id !== exerciseID
+    );
+    const newWorkout = {
+      ...currentWorkout,
+      exercises: updatedExercises,
+    };
+
+    await fetch("/api/workouts/" + currentWorkout.id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newWorkout),
+    });
+
+    getWorkouts();
+  }
 
   return (
     <>
@@ -45,6 +106,9 @@ function MyApp({ Component, pageProps }) {
         exercises={exercises}
         onAddWorkout={handleAddWorkout}
         workouts={workouts}
+        onDeleteWorkout={handleDeleteWorkout}
+        onAddExercise={handleAddExerciseToWorkOut}
+        onDeleteExercise={handleDeleteExercise}
       />
     </>
   );

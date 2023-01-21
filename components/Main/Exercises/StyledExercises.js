@@ -24,19 +24,41 @@ export const StyledExercises = styled.div`
     margin: 0.5rem 0.3rem;
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
-
+    text-decoration: none;
+    transition: max-height 1s ease;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     .favContainer {
       display: flex;
       width: 100%;
       justify-content: space-between;
+      align-items: center;
     }
+
+    .addContainer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      height: 2.5rem;
+      align-items: center;
+    }
+  }
+
+  .expanded {
+    max-height: 90rem;
+  }
+
+  .collapsed {
+    max-height: 2.5rem;
   }
 
   button {
     border: none;
     background: transparent;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
+
+    color: black;
   }
 
   h3 {
@@ -53,10 +75,9 @@ export const StyledExercisesHeader = styled.div`
   padding-top: 0.2rem;
   justify-content: space-between;
   h2 {
-    font-family: Lato-bold;
     display: flex;
     overflow-y: scroll;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
     margin-right: 6.5rem;
@@ -78,7 +99,6 @@ export const StyledFavouritesHeader = styled.div`
   justify-content: center;
 
   h2 {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
     color: white;
