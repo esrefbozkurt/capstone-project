@@ -25,7 +25,7 @@ export const StyledExercises = styled.div`
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     text-decoration: none;
-    transition: max-height 0.5s ease;
+    transition: max-height 1s ease;
     overflow: hidden;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -46,7 +46,7 @@ export const StyledExercises = styled.div`
   }
 
   .expanded {
-    max-height: 100rem;
+    max-height: 90rem;
   }
 
   .collapsed {

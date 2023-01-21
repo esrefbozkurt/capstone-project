@@ -15,47 +15,47 @@ export default async function handler(req, res) {
         name: workout.name,
         exercises: [
           {
-            id: workout.exercises[0]?._id,
+            id: workout.exercises[0]?.id,
             exerciseName: workout.exercises[0]?.name,
           },
           {
-            id: workout.exercises[1]?._id,
+            id: workout.exercises[1]?.id,
             exerciseName: workout.exercises[1]?.name,
           },
           {
-            id: workout.exercises[2]?._id,
+            id: workout.exercises[2]?.id,
             exerciseName: workout.exercises[2]?.name,
           },
           {
-            id: workout.exercises[3]?._id,
+            id: workout.exercises[3]?.id,
             exerciseName: workout.exercises[3]?.name,
           },
           {
-            id: workout.exercises[4]?._id,
+            id: workout.exercises[4]?.id,
             exerciseName: workout.exercises[4]?.name,
           },
           {
-            id: workout.exercises[5]?._id,
+            id: workout.exercises[5]?.id,
             exerciseName: workout.exercises[5]?.name,
           },
           {
-            id: workout.exercises[6]?._id,
+            id: workout.exercises[6]?.id,
             exerciseName: workout.exercises[6]?.name,
           },
           {
-            id: workout.exercises[7]?._id,
+            id: workout.exercises[7]?.id,
             exerciseName: workout.exercises[7]?.name,
           },
           {
-            id: workout.exercises[8]?._id,
+            id: workout.exercises[8]?.id,
             exerciseName: workout.exercises[8]?.name,
           },
           {
-            id: workout.exercises[9]?._id,
+            id: workout.exercises[9]?.id,
             exerciseName: workout.exercises[9]?.name,
           },
           {
-            id: workout.exercises[10]?._id,
+            id: workout.exercises[10]?.id,
             exerciseName: workout.exercises[10]?.name,
           },
         ],

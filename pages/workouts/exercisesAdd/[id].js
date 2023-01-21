@@ -21,9 +21,7 @@ const ExerciseAdd = ({ workouts, exercises, onAddExercise }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <AddExercises
         exercises={exercises}
         currentWorkout={currentWorkout}

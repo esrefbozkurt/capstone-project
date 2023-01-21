@@ -4,7 +4,7 @@ import InputWorkout from "./InputWorkout/InputWorkout";
 import { useState } from "react";
 import Link from "next/link";
 
-const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
+const Workouts = ({ workouts, onAddWorkout, onDeleteWorkout }) => {
   const [showInput, setShowInput] = useState(false);
 
   function toggleShow() {
@@ -52,7 +52,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
                 <li>
                   <h3>{workout.name.toUpperCase()}</h3>
                   <Image
-                    onClick={(event) => onDelete(event, workout.id)}
+                    onClick={(event) => onDeleteWorkout(event, workout.id)}
                     className="deleteWorkout"
                     src="/delete.svg"
                     width={24}

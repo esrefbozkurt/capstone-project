@@ -37,12 +37,12 @@ const WorkoutDetails = ({ onToggle, currentWorkout, onDeleteExercise, id }) => {
       <ul>
         {addedExercises.map((addedExercise) => {
           return (
-            <li key={addedExercise._id}>
+            <li key={addedExercise.id}>
               <div className="addContainer">
                 <h3>{addedExercise.name.toUpperCase()}</h3>
                 <Image
                   onClick={(event) =>
-                    onDeleteExercise(currentWorkout, addedExercise._id, event)
+                    onDeleteExercise(currentWorkout, addedExercise.id, event)
                   }
                   className="deleteWorkout"
                   src="/delete.svg"
@@ -57,9 +57,7 @@ const WorkoutDetails = ({ onToggle, currentWorkout, onDeleteExercise, id }) => {
       </ul>
 
       <Link href={`/workouts/exercisesAdd/${id}`} className="addButton">
-        {/* <button onClick={onToggle} className="addButton"> */}
         <h4>+ Add Exercise</h4>
-        {/* </button> */}
       </Link>
     </StyledWorkoutDetails>
   );

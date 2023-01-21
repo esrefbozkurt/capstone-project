@@ -3,7 +3,7 @@ import Head from "next/head";
 import Nav from "../../components/Footer/Nav";
 import Workouts from "../../components/Main/Workouts/Workouts";
 
-const Workout = ({ workouts, onAddWorkout, onDelete, exercises }) => {
+const Workout = ({ workouts, onAddWorkout, onDeleteWorkout, exercises }) => {
   return (
     <Fragment>
       <Head>
@@ -12,16 +12,13 @@ const Workout = ({ workouts, onAddWorkout, onDelete, exercises }) => {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, "
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Workouts
         exercises={exercises}
         workouts={workouts}
         onAddWorkout={onAddWorkout}
-        onDelete={onDelete}
+        onDeleteWorkout={onDeleteWorkout}
       />
-
       <Nav />
     </Fragment>
   );

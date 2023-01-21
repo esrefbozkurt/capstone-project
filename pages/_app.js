@@ -19,13 +19,6 @@ function MyApp({ Component, pageProps }) {
       : setIsFavourite((exercise) => [...exercise, id]);
   }
 
-  // function toggleAddExercise(event, id) {
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  //   exerciseAdd.includes(id)
-  //     ? setExerciseAdd((exercise) => exercise.filter((added) => added !== id))
-  //     : setExerciseAdd((exercise) => [...exercise, id]);
-  // }
   async function getExercises() {
     const response = await fetch("/api/exercises");
     const exercisesList = await response.json();
@@ -86,7 +79,7 @@ function MyApp({ Component, pageProps }) {
 
     const exercises = currentWorkout.exercises;
     const updatedExercises = exercises.filter(
-      (exercise) => exercise._id !== exerciseID
+      (exercise) => exercise.id !== exerciseID
     );
     const newWorkout = {
       ...currentWorkout,
@@ -113,7 +106,7 @@ function MyApp({ Component, pageProps }) {
         exercises={exercises}
         onAddWorkout={handleAddWorkout}
         workouts={workouts}
-        onDelete={handleDeleteWorkout}
+        onDeleteWorkout={handleDeleteWorkout}
         onAddExercise={handleAddExerciseToWorkOut}
         onDeleteExercise={handleDeleteExercise}
       />

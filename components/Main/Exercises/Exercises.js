@@ -38,8 +38,6 @@ export default function Exercises({
   function handleAdd(event, exercise, currentWorkout) {
     onAddExercise(currentWorkout, exercise.name, event);
     // handleToggleExerciseAdd(exercise.id);
-
-    console.log("Heinz", exercise);
   }
 
   function handleChange(event) {
