@@ -39,4 +39,13 @@ export default async function handler(req, res) {
       res.status(404).json({ message: "not found" });
     }
   }
+
+  if (req.method === "DELETE") {
+    const result = await Question.findByIdAndDelete(id);
+    if (result) {
+      res.status(200).json({ message: "exercise deleted" });
+    } else {
+      res.status(400).json({ message: "document not found" });
+    }
+  }
 }
