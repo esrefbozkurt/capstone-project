@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
 
     const exercises = currentWorkout.exercises;
     const updatedExercises = exercises.filter(
-      (exercise) => exercise.id !== exerciseID
+      (exercise) => exercise._id !== exerciseID
     );
     const newWorkout = {
       ...currentWorkout,

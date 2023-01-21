@@ -6,7 +6,7 @@ const ExerciseAdd = ({ workouts, exercises, onAddExercise }) => {
   const router = useRouter();
   const { id } = router.query;
   const currentWorkout = workouts.find((workout) => workout.id === id);
-  console.log(currentWorkout);
+
   if (!currentWorkout) {
     return null;
   }
