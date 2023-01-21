@@ -23,7 +23,6 @@ export default function Exercises({
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [exerciseAdd, setExerciseAdd] = useState([]);
 
   // function handleToggleAddExercise() {
   //   setExerciseAdd(!exerciseAdd);
@@ -38,20 +37,13 @@ export default function Exercises({
       setToggledExercises([id, ...toggledExercises]);
     }
   }
-  function handleToggleExerciseAdd(id) {
-    if (exerciseAdd.includes(id)) {
-      setExerciseAdd(exerciseAdd.filter((toggleId) => toggleId !== id));
-    } else {
-      setExerciseAdd([id, ...exerciseAdd]);
-    }
-  }
 
-  function handleAdd(event, exercise) {
-    onAddExercise(currentWorkout, exercise.name, event);
-    handleToggleExerciseAdd(exercise.id);
+  // function handleAdd(event, exercise) {
+  //   onAddExercise(currentWorkout, exercise.name, event);
+  //   handleToggleExerciseAdd(exercise.id);
 
-    console.log(exercise.id);
-  }
+  //   console.log(exercise.id);
+  // }
 
   function handleChange(event) {
     setSearchTerm(event.target.value);

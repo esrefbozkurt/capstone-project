@@ -26,7 +26,6 @@ export default function Description({
           width={54.8}
           height={15}
           alt="Youtube Link as Icon"
-          // className="checkmark"
         />
       </a>
     </StyledDescription>
