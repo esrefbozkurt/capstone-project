@@ -39,7 +39,7 @@ export const StyledWorkoutDetails = styled.div`
     padding: 0 1rem;
     border-radius: 0.5rem;
     border: none;
-    background: #99d98c;
+    background: lightgreen;
     box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 0.1);
     justify-content: center;
     align-items: center;

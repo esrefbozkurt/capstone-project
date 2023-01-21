@@ -20,7 +20,9 @@ export default function Exercises({
   onAddExercise,
   currentWorkout,
   addExercises,
-  onDeleteExercise,
+  exerciseAdded,
+  setExerciseAdded,
+  id,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,11 +36,13 @@ export default function Exercises({
       setToggledExercises([id, ...toggledExercises]);
     }
   }
+  // setExerciseAdded([...exerciseAdded, exerciseName]);
 
-  function handleAdd(event, exercise, currentWorkout) {
-    onAddExercise(currentWorkout, exercise.name, event);
-    // handleToggleExerciseAdd(exercise.id);
-  }
+  const handleAddExercise = (event, exerciseName) => {
+    onAddExercise(currentWorkout, exerciseName, event);
+    const nameArray = currentWorkout.exercises.map((exercise) => exercise.name);
+    setExerciseAdded([...nameArray, exerciseName]);
+  };
 
   function handleChange(event) {
     setSearchTerm(event.target.value);
@@ -166,19 +170,45 @@ export default function Exercises({
   } else if (addExercises && !isFavouriteExercise) {
     return (
       <StyledExercises>
+        <div className="header_searchbar">
+          <StyledExercisesHeader>
+            <Link href={`/workouts/${id}`}>
+              <Image
+                src="/arrow-circle-left.svg"
+                width={34}
+                height={34}
+                alt="back button"
+                priority
+              />
+            </Link>
+            <h2 className="headerAddExercise">
+              Add Exercises to {currentWorkout.name}
+            </h2>
+          </StyledExercisesHeader>
+          <SearchBar onChange={handleChange} setSearchTerm={setSearchTerm} />
+        </div>
         <ul>
-          {exercises.map((exercise) => (
-            <li
-              key={exercise.id}
-              className={
-                toggledExercises.includes(exercise.id)
-                  ? "expanded"
-                  : "collapsed"
+          {exercises
+            .filter((exercise) => {
+              if (searchTerm === "") {
+                return exercise;
+              } else if (
+                exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return exercise;
               }
-            >
-              <div className="addContainer">
+            })
+            .map((exercise) => (
+              <li
+                key={exercise.id}
+                className={
+                  exerciseAdded?.includes(exercise.name)
+                    ? "addedContainer"
+                    : "addContainer"
+                }
+              >
                 <h3>{exercise.name.toUpperCase()}</h3>
-                {/* {!exerciseAdd ? (
+                {exerciseAdded?.includes(exercise.name) ? (
                   <Image
                     className="add-exercise"
                     src="/checkmark.svg"
@@ -186,21 +216,21 @@ export default function Exercises({
                     height={24}
                     alt="checkmark exercise added"
                   />
-                ) : ( */}
-                <Image
-                  onClick={(event) =>
-                    handleAdd(event, exercise, currentWorkout)
-                  }
-                  className="add-exercise"
-                  src="/plus.svg"
-                  width={24}
-                  height={24}
-                  alt="add Exercise"
-                />
-                {/* )} */}
-              </div>
-            </li>
-          ))}
+                ) : (
+                  <Image
+                    onClick={
+                      (event) => handleAddExercise(event, exercise.name)
+                      // handleAdd(event, exercise, currentWorkout)
+                    }
+                    className="add-exercise"
+                    src="/plus.svg"
+                    width={24}
+                    height={24}
+                    alt="add Exercise"
+                  />
+                )}
+              </li>
+            ))}
         </ul>
       </StyledExercises>
     );

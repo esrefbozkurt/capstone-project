@@ -10,21 +10,11 @@ const AddExercises = ({
   onDeleteExercise,
   id,
   currentWorkout,
+  exerciseAdded,
+  setExerciseAdded,
 }) => {
   return (
     <>
-      <StyledAddExercisesHeader>
-        <Link href={`/workouts/${id}`}>
-          <Image
-            src="/arrow-circle-left.svg"
-            width={34}
-            height={34}
-            alt="back button"
-            priority
-          />
-        </Link>
-        <h2>Add Exercises </h2>
-      </StyledAddExercisesHeader>
       <Exercises
         addExercises={true}
         exercises={exercises}
@@ -33,6 +23,9 @@ const AddExercises = ({
         onAddExercise={onAddExercise}
         onDeleteExercise={onDeleteExercise}
         workouts={workouts}
+        exerciseAdded={exerciseAdded}
+        setExerciseAdded={setExerciseAdded}
+        id={id}
       />
     </>
   );

@@ -22,7 +22,7 @@ export const StyledAddExercisesHeader = styled.div`
     display: flex;
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: white;
   }

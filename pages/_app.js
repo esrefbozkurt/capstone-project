@@ -5,6 +5,7 @@ function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
   const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
+  const [exerciseAdded, setExerciseAdded] = useState([]);
 
   useEffect(() => {
     getExercises();
@@ -109,6 +110,8 @@ function MyApp({ Component, pageProps }) {
         onDeleteWorkout={handleDeleteWorkout}
         onAddExercise={handleAddExerciseToWorkOut}
         onDeleteExercise={handleDeleteExercise}
+        exerciseAdded={exerciseAdded}
+        setExerciseAdded={setExerciseAdded}
       />
     </>
   );
