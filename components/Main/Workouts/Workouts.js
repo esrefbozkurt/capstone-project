@@ -30,7 +30,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
       <StyledWorkoutsHeader
         style={{ maxHeight: !showInput ? "50px" : "100px" }}
       >
-        <div className="workoutsHeaderContainer">
+        <section className="workoutsHeaderContainer">
           <h2>My-Workouts</h2>
           <button className="add-workout" onClick={toggleShow}>
             <Image
@@ -40,7 +40,7 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
               alt="show input"
             />
           </button>
-        </div>
+        </section>
         <InputWorkout onSubmit={handleSubmit} />
       </StyledWorkoutsHeader>
 
@@ -48,19 +48,17 @@ const Workouts = ({ workouts, onAddWorkout, onDelete }) => {
         <ul>
           {workouts.map((workout) => {
             return (
-              <Link href={"/workouts/" + workout.id}>
-                <li key={workout.id}>
-                  <div className="workoutContainer" key={workout.id}>
-                    <h3>{workout.name.toUpperCase()}</h3>
-                    <Image
-                      onClick={(event) => onDelete(event, workout.id)}
-                      className="deleteWorkout"
-                      src="/delete.svg"
-                      width={24}
-                      height={24}
-                      alt="delete Workout"
-                    />
-                  </div>
+              <Link href={"/workouts/" + workout.id} key={workout.id}>
+                <li>
+                  <h3>{workout.name.toUpperCase()}</h3>
+                  <Image
+                    onClick={(event) => onDelete(event, workout.id)}
+                    className="deleteWorkout"
+                    src="/delete.svg"
+                    width={24}
+                    height={24}
+                    alt="delete Workout"
+                  />
                 </li>
               </Link>
             );

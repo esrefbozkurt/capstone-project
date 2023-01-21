@@ -75,10 +75,9 @@ export const StyledExercisesHeader = styled.div`
   padding-top: 0.2rem;
   justify-content: space-between;
   h2 {
-    font-family: Lato-bold;
     display: flex;
     overflow-y: scroll;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
     margin-right: 6.5rem;
@@ -100,7 +99,6 @@ export const StyledFavouritesHeader = styled.div`
   justify-content: center;
 
   h2 {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
     color: white;

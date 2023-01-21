@@ -44,7 +44,6 @@ export const StyledWorkoutDetails = styled.div`
     justify-content: center;
     align-items: center;
     color: black;
-    font-family: Lato-bold;
 
     &:active {
       transform: scale(97%);
@@ -79,7 +78,6 @@ export const StyledWorkoutDetailsHeader = styled.div`
   }
 
   h2 {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;

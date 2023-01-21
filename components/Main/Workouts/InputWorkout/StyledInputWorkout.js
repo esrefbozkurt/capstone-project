@@ -13,7 +13,6 @@ export const StyledForm = styled.form`
   width: 100%;
 
   .workout-input {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.4rem 0.4rem 0.4rem 0;
     background-color: black;
@@ -21,7 +20,7 @@ export const StyledForm = styled.form`
     border: white solid 1px;
     border-radius: 0.5rem;
     color: white;
-    padding: 6px;
+    padding: 0.4rem;
   }
 
   input::placeholder {

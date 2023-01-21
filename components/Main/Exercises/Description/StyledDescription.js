@@ -15,7 +15,7 @@ export const StyledDescription = styled.div`
   h4 {
     padding: 0.2rem;
     font-family: Lato-bold;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   a {
     padding: 0.5rem 0.2rem;

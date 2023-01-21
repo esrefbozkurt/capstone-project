@@ -9,6 +9,10 @@ export const StyledWorkouts = styled.div`
     overflow: hidden;
   }
   li {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem 1rem;
     list-style: none;
     background-color: #f8f9fa;
@@ -21,13 +25,6 @@ export const StyledWorkouts = styled.div`
       transform: scale(97%);
       transition: all 200ms ease;
     }
-  }
-
-  .workoutContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
   }
 
   h3 {
@@ -46,7 +43,7 @@ export const StyledWorkoutsHeader = styled.div`
   align-items: center;
   justify-content: flex-end;
   background: black;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   position: sticky;
   top: 0;
   justify-content: space-between;
@@ -56,14 +53,9 @@ export const StyledWorkoutsHeader = styled.div`
   overflow-y: hidden;
   transition: max-height 800ms ease;
 
-  /* .radiusInactive {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  } */
-
   .workoutsHeaderContainer {
     display: flex;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     justify-content: center;
   }
 
@@ -74,16 +66,7 @@ export const StyledWorkoutsHeader = styled.div`
     width: 32px;
   }
 
-  /* .expanded {
-    max-height: 200px;
-  }
-
-  .collapsed {
-    max-height: 50px;
-  } */
-
   h2 {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;

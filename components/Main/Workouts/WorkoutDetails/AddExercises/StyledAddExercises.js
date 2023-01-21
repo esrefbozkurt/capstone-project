@@ -19,7 +19,6 @@ export const StyledAddExercisesHeader = styled.div`
   }
 
   h2 {
-    font-family: Lato-bold;
     display: flex;
     padding: 0.5rem 0.5rem;
     overflow-y: scroll;
