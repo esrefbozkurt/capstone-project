@@ -47,7 +47,6 @@ function MyApp({ Component, pageProps }) {
       body: JSON.stringify(newWorkout),
     });
 
-    setWorkouts([...workouts, newWorkout]);
     getWorkouts();
   }
 
@@ -81,15 +80,25 @@ function MyApp({ Component, pageProps }) {
     getWorkouts();
   }
 
-  async function handleDeleteExercise(event, currentWorkout) {
+  async function handleDeleteExercise(currentWorkout, exerciseID, event) {
     event.preventDefault();
     event.stopPropagation();
 
-    const addedExercise = currentWorkout.exercises;
+    const exercises = currentWorkout.exercises;
+    const updatedExercises = exercises.filter(
+      (exercise) => exercise._id !== exerciseID
+    );
+    const newWorkout = {
+      ...currentWorkout,
+      exercises: updatedExercises,
+    };
 
-    await fetch("/api/workouts/" + addedExercise.id, {
-      method: "DELETE",
+    await fetch("/api/workouts/" + currentWorkout.id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newWorkout),
     });
+
     getWorkouts();
   }
 

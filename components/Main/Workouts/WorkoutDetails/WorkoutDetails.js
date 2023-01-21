@@ -42,7 +42,7 @@ const WorkoutDetails = ({ onToggle, currentWorkout, onDeleteExercise, id }) => {
                 <h3>{addedExercise.name.toUpperCase()}</h3>
                 <Image
                   onClick={(event) =>
-                    onDeleteExercise(event, addedExercise._id)
+                    onDeleteExercise(currentWorkout, addedExercise._id, event)
                   }
                   className="deleteWorkout"
                   src="/delete.svg"
