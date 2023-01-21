@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
-import WorkoutDetails from "../../components/Main/Workouts/WorkoutDetails/WorkoutDetails";
+import AddExercises from "../../../components/Main/Workouts/WorkoutDetails/AddExercises/AddExercises";
 import Head from "next/head";
 
-const WorkoutDetail = ({ workouts, onDeleteExercise }) => {
+const ExerciseAdd = ({ workouts, exercises, onAddExercise }) => {
   const router = useRouter();
   const { id } = router.query;
   const currentWorkout = workouts.find((workout) => workout.id === id);
-
+  console.log(currentWorkout);
   if (!currentWorkout) {
     return null;
   }
@@ -24,14 +24,14 @@ const WorkoutDetail = ({ workouts, onDeleteExercise }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <WorkoutDetails
+      <AddExercises
+        exercises={exercises}
         currentWorkout={currentWorkout}
-        workouts={workouts}
-        onDeleteExercise={onDeleteExercise}
+        onAddExercise={onAddExercise}
         id={id}
       />
     </>
   );
 };
 
-export default WorkoutDetail;
+export default ExerciseAdd;

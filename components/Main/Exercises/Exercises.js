@@ -20,13 +20,10 @@ export default function Exercises({
   onAddExercise,
   currentWorkout,
   addExercises,
+  onDeleteExercise,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
-  // function handleToggleAddExercise() {
-  //   setExerciseAdd(!exerciseAdd);
-  // }
 
   function handleToggle(id) {
     if (toggledExercises.includes(id)) {
@@ -38,12 +35,12 @@ export default function Exercises({
     }
   }
 
-  // function handleAdd(event, exercise) {
-  //   onAddExercise(currentWorkout, exercise.name, event);
-  //   handleToggleExerciseAdd(exercise.id);
+  function handleAdd(event, exercise, currentWorkout) {
+    onAddExercise(currentWorkout, exercise.name, event);
+    // handleToggleExerciseAdd(exercise.id);
 
-  //   console.log(exercise.id);
-  // }
+    console.log("Heinz", exercise);
+  }
 
   function handleChange(event) {
     setSearchTerm(event.target.value);
@@ -183,7 +180,7 @@ export default function Exercises({
             >
               <div className="addContainer">
                 <h3>{exercise.name.toUpperCase()}</h3>
-                {!exerciseAdd ? (
+                {/* {!exerciseAdd ? (
                   <Image
                     className="add-exercise"
                     src="/checkmark.svg"
@@ -191,16 +188,18 @@ export default function Exercises({
                     height={24}
                     alt="checkmark exercise added"
                   />
-                ) : (
-                  <Image
-                    onClick={(event) => handleAdd(event, exercise)}
-                    className="add-exercise"
-                    src="/plus.svg"
-                    width={24}
-                    height={24}
-                    alt="add Exercise"
-                  />
-                )}
+                ) : ( */}
+                <Image
+                  onClick={(event) =>
+                    handleAdd(event, exercise, currentWorkout)
+                  }
+                  className="add-exercise"
+                  src="/plus.svg"
+                  width={24}
+                  height={24}
+                  alt="add Exercise"
+                />
+                {/* )} */}
               </div>
             </li>
           ))}

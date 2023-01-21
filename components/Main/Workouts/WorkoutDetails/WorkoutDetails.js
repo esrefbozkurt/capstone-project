@@ -6,8 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-const WorkoutDetails = ({ onToggle, currentWorkout }) => {
-  const addedWorkouts = currentWorkout.exercises;
+const WorkoutDetails = ({ onToggle, currentWorkout, onDeleteExercise, id }) => {
+  const addedExercises = currentWorkout.exercises;
 
   return (
     <StyledWorkoutDetails>
@@ -35,29 +35,32 @@ const WorkoutDetails = ({ onToggle, currentWorkout }) => {
         </button>
       </StyledWorkoutDetailsHeader>
       <ul>
-        {addedWorkouts.map((addedWorkout) => {
+        {addedExercises.map((addedExercise) => {
           return (
-            <div key={addedWorkout.id}>
-              <li>
-                <div className="addContainer">
-                  <h3>{addedWorkout.name.toUpperCase()}</h3>
-                  <Image
-                    onClick={(event) => onDelete(event, addedWorkout.id)}
-                    className="deleteWorkout"
-                    src="/close.svg"
-                    width={24}
-                    height={24}
-                    alt="delete Workout"
-                  />
-                </div>
-              </li>
-            </div>
+            <li key={addedExercise._id}>
+              <div className="addContainer">
+                <h3>{addedExercise.name.toUpperCase()}</h3>
+                <Image
+                  onClick={(event) =>
+                    onDeleteExercise(event, addedExercise._id)
+                  }
+                  className="deleteWorkout"
+                  src="/delete.svg"
+                  width={24}
+                  height={24}
+                  alt="delete Workout"
+                />
+              </div>
+            </li>
           );
         })}
       </ul>
-      <button onClick={onToggle} className="addButton">
+
+      <Link href={`/workouts/exercisesAdd/${id}`} className="addButton">
+        {/* <button onClick={onToggle} className="addButton"> */}
         <h4>+ Add Exercise</h4>
-      </button>
+        {/* </button> */}
+      </Link>
     </StyledWorkoutDetails>
   );
 };

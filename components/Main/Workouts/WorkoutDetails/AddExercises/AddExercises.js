@@ -5,14 +5,16 @@ import Image from "next/image";
 
 const AddExercises = ({
   exercises,
-  currentWorkout,
-  onToggle,
+  workouts,
   onAddExercise,
+  onDeleteExercise,
+  id,
+  currentWorkout,
 }) => {
   return (
     <>
       <StyledAddExercisesHeader>
-        <button onClick={onToggle} className="backbutton">
+        <Link href={`/workouts/${id}`}>
           <Image
             src="/arrow-circle-left.svg"
             width={34}
@@ -20,7 +22,7 @@ const AddExercises = ({
             alt="back button"
             priority
           />
-        </button>
+        </Link>
         <h2>Add Exercises </h2>
       </StyledAddExercisesHeader>
       <Exercises
@@ -29,6 +31,8 @@ const AddExercises = ({
         isFavouriteExercise={false}
         currentWorkout={currentWorkout}
         onAddExercise={onAddExercise}
+        onDeleteExercise={onDeleteExercise}
+        workouts={workouts}
       />
     </>
   );

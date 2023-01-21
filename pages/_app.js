@@ -6,6 +6,11 @@ function MyApp({ Component, pageProps }) {
   const [exercises, setExercises] = useState([]);
   const [workouts, setWorkouts] = useState([]);
 
+  useEffect(() => {
+    getExercises();
+    getWorkouts();
+  }, []);
+
   function handleFav(id, event) {
     event.preventDefault();
     event.stopPropagation();
@@ -46,6 +51,15 @@ function MyApp({ Component, pageProps }) {
     getWorkouts();
   }
 
+  async function handleDeleteWorkout(event, id) {
+    event.preventDefault();
+    event.stopPropagation();
+    await fetch("/api/workouts/" + id, {
+      method: "DELETE",
+    });
+    getWorkouts();
+  }
+
   async function handleAddExerciseToWorkOut(
     currentWorkout,
     exerciseName,
@@ -67,19 +81,17 @@ function MyApp({ Component, pageProps }) {
     getWorkouts();
   }
 
-  async function handleDeleteWorkout(event, id) {
+  async function handleDeleteExercise(event, currentWorkout) {
     event.preventDefault();
     event.stopPropagation();
-    await fetch("/api/workouts/" + id, {
+
+    const addedExercise = currentWorkout.exercises;
+
+    await fetch("/api/workouts/" + addedExercise.id, {
       method: "DELETE",
     });
     getWorkouts();
   }
-
-  useEffect(() => {
-    getExercises();
-    getWorkouts();
-  }, []);
 
   return (
     <>
@@ -94,6 +106,7 @@ function MyApp({ Component, pageProps }) {
         workouts={workouts}
         onDelete={handleDeleteWorkout}
         onAddExercise={handleAddExerciseToWorkOut}
+        onDeleteExercise={handleDeleteExercise}
       />
     </>
   );

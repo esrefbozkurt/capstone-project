@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/Footer/Nav";
 import Workouts from "../../components/Main/Workouts/Workouts";
