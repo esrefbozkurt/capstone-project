@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.div`
   display: flex;
-  /* justify-content: flex-start; */
   padding: 0.5rem 0;
   background: black;
   justify-content: center;

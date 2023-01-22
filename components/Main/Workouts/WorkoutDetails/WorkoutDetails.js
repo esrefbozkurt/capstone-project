@@ -1,14 +1,15 @@
 import {
   StyledWorkoutDetails,
   StyledWorkoutDetailsHeader,
-  StyledExerciseDetailsHeader,
+  ColumnDiv,
+  RowDiv,
+  StyledDate,
 } from "./StyledWorkoutDetails";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { Fragment } from "react";
 import { useState } from "react";
 import FormAddSets from "./FormAddSets/FormAddSets";
-import styled from "styled-components";
 
 const WorkoutDetails = ({
   currentWorkout,
@@ -23,33 +24,8 @@ const WorkoutDetails = ({
   }
 
   return (
-    <StyledWorkoutDetails>
-      {/* {showInput[1] ? (
-        <> */}
-      {/* <StyledExerciseDetailsHeader>
-            <button
-              onClick={() => handleShowInput(id, false)}
-              className="backButtonExercise"
-            >
-              <Image
-                src="/arrow-circle-left.svg"
-                width={34}
-                height={34}
-                alt="back button"
-                priority
-              />
-            </button>
-            <h2>{currentWorkout.name.toUpperCase()}</h2>
-          </StyledExerciseDetailsHeader> */}
-      {/* <FormAddSets
-            currentWorkout={currentWorkout}
-            onSubmitNewSet={onSubmitNewSet}
-            exerciseId={showInput[0]}
-            onShowInput={handleShowInput}
-          />
-        </>
-      ) : ( */}
-      <>
+    <>
+      <StyledWorkoutDetails>
         <StyledWorkoutDetailsHeader>
           <Link href="/workouts">
             <Image
@@ -94,23 +70,23 @@ const WorkoutDetails = ({
                         {addedExercise.details.map(
                           (detail) =>
                             detail.date && (
-                              <>
-                                <p>{detail.date}</p>
+                              <Fragment key={detail._id}>
+                                <StyledDate>{detail.date}</StyledDate>
                                 <RowDiv>
                                   <ColumnDiv>
-                                    <p>Set #:</p>
-                                    <p>Weights:</p>
-                                    <p>Reps:</p>
+                                    <p>Set #</p>
+                                    <p>Weight</p>
+                                    <p>Reps</p>
                                   </ColumnDiv>
                                   {detail.sets.map((createdSet) => (
-                                    <ColumnDiv>
+                                    <ColumnDiv key={createdSet._id}>
                                       <p>{createdSet.name}</p>
                                       <p>{createdSet.weights}</p>
                                       <p>{createdSet.reps}</p>
                                     </ColumnDiv>
                                   ))}
                                 </RowDiv>
-                              </>
+                              </Fragment>
                             )
                         )}
                       </section>
@@ -130,21 +106,9 @@ const WorkoutDetails = ({
         <Link href={`/workouts/exercisesAdd/${id}`} className="addButton">
           <h4>+ Add Exercise</h4>
         </Link>
-      </>
-      {/* )} */}
-    </StyledWorkoutDetails>
+      </StyledWorkoutDetails>
+    </>
   );
 };
 
 export default WorkoutDetails;
-
-const ColumnDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-`;
-
-const RowDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-`;

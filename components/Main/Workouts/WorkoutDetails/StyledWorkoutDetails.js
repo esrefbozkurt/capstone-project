@@ -22,10 +22,8 @@ export const StyledWorkoutDetails = styled.div`
       justify-content: space-between;
       height: 2.5rem;
       align-items: center;
-    }
-    &:active {
-      transform: scale(97%);
-      transition: all 200ms ease;
+      background: transparent;
+      border: none;
     }
   }
 
@@ -67,14 +65,17 @@ export const StyledWorkoutDetailsHeader = styled.div`
   top: 0;
   background: black;
   padding: 0.5rem 0;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 
   .backbutton {
-    margin-left: 0.6rem;
-    align-self: center;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.6rem;
+    background: transparent;
+    border: none;
   }
 
   h2 {
@@ -96,30 +97,17 @@ export const StyledWorkoutDetailsHeader = styled.div`
   }
 `;
 
-export const StyledExerciseDetailsHeader = styled.div`
+export const ColumnDiv = styled.div`
   display: flex;
-  position: sticky;
-  top: 0;
-  background: black;
-  padding: 0.5rem 0;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: flex-end;
+`;
 
-  .backButtonExercise {
-    position: absolute;
-    left: 0.4rem;
-
-    background: transparent;
-    border: none;
-  }
-
-  h2 {
-    padding: 0.5rem 0.5rem;
-    overflow-y: scroll;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    color: white;
-  }
+export const RowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const StyledDate = styled.p`
+  font-size: 0.8rem;
 `;

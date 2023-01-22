@@ -181,6 +181,7 @@ export default function Exercises({
                 width={34}
                 height={34}
                 alt="back button"
+                className="backbutton"
                 priority
               />
             </Link>

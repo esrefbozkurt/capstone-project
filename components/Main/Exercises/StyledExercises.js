@@ -50,7 +50,6 @@ export const StyledExercises = styled.div`
 
   .headerAddExercise {
     font-size: 1rem;
-    margin-right: 3rem;
   }
 
   .addedContainer {
@@ -90,17 +89,21 @@ export const StyledExercisesHeader = styled.div`
   align-items: center;
   background: black;
   padding-top: 0.2rem;
-  justify-content: space-between;
+  justify-content: center;
   h2 {
     display: flex;
     overflow-y: scroll;
     font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
-    margin-right: 6.5rem;
+    padding: 0.8rem 0;
   }
   .backbutton {
-    margin: 0.2rem 0.5rem;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.6rem;
+    background: transparent;
+    border: none;
   }
 `;
 

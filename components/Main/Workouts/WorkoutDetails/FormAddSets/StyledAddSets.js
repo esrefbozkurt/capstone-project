@@ -16,38 +16,24 @@ export const StyledAddSets = styled.div`
     text-align: center;
     font-size: 1rem;
   }
-
-  /* align-items: center;
-  justify-content: center;
-  background-color: white;
-  align-items: center;
-  /* border-bottom-left-radius: 0.5rem;
-border-bottom-right-radius: 0.5rem;
-padding-bottom: 0.5rem; */
-
-  /* border: black;
-  border-radius: 0.3rem;
-
-  width: 100%; */
 `;
 
 export const StyledForm = styled.form`
   display: flex;
-  /* position: fixed;
-  bottom: 0; */
   width: 100%;
   justify-content: center;
   flex-direction: column;
 
-  padding: 0.5rem;
+  padding: 0.3rem 0;
   fieldset {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    border-radius: 0.7rem;
+    border-radius: 0.3rem;
     border: 1px solid lightgray;
-    padding: 0.3rem;
+    justify-content: space-between;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
+    margin-bottom: 0.5rem;
   }
   label {
     text-align: center;
@@ -55,9 +41,20 @@ export const StyledForm = styled.form`
   }
   .setInput {
     font-size: 1rem;
-    width: 2.5rem;
+    width: 2rem;
     border-radius: 0.3rem;
-
-    padding: 0.5rem;
+    margin: 0.3rem 0;
+    padding: 0.3rem;
+  }
+  .add-set {
+    background: transparent;
+    border: none;
+    margin-top: 3.5px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  img {
+    background-color: lightgreen;
+    border-radius: 0.3rem;
   }
 `;
