@@ -23,7 +23,7 @@ export default async function handler(req, res) {
                 sets: {
                   name: workout.exercises[0]?.details[0]?.sets.name,
                   weights: workout.exercises[0]?.details[0]?.sets.weights,
-                  reps: workout.exercises[0]?.details[2]?.sets.reps,
+                  reps: workout.exercises[0]?.details[0]?.sets.reps,
                 },
               },
             ],
