@@ -39,12 +39,11 @@ export default function FormAddSets({
   }
   return (
     <StyledAddSets>
-      <h3>
-        {currDate} {currentExerciseName}
-      </h3>
+      {/* <h3>{currentExerciseName}</h3>
+      <p>{currDate}</p> */}
       <StyledForm onSubmit={(event) => handleSubmitSet(event)}>
         <fieldset>
-          <label htmlFor="setNumber">set#</label>
+          <label htmlFor="setNumber">Set #</label>
           <input
             type="number"
             name="setNumber"
@@ -52,21 +51,22 @@ export default function FormAddSets({
             className="setInput"
             required
           ></input>
-          <label htmlFor="weight">weight</label>
+
+          <label htmlFor="weight">Weight</label>
           <input
             type="number"
             name="weight"
             id="weight"
-            placeholder="Name your Workout..."
-            className="workout-input"
+            className="setInput"
             required
           ></input>
-          <label htmlFor="reps">reps</label>
+
+          <label htmlFor="reps">Reps</label>
           <input
             type="number"
             name="reps"
             id="reps"
-            className="workout-input"
+            className="setInput"
             required
           ></input>
 
