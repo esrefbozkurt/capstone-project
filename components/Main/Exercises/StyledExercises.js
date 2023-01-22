@@ -29,24 +29,41 @@ export const StyledExercises = styled.div`
     overflow: hidden;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    transition: background-color 1s ease;
+    transition: height 0.3s ease;
+
     .favContainer {
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
     }
+  }
+  .addContainer {
+    display: flex;
+    flex-direction: row;
 
-    .addContainer {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      height: 2.5rem;
-      align-items: center;
-    }
+    justify-content: space-between;
+    height: 2.5rem;
+    align-items: center;
   }
 
+  .headerAddExercise {
+    font-size: 1rem;
+    margin-right: 3rem;
+  }
+
+  .addedContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    height: 2.2rem;
+    align-items: center;
+    background-color: lightgreen;
+  }
   .expanded {
-    max-height: 90rem;
+    max-height: 100rem;
   }
 
   .collapsed {

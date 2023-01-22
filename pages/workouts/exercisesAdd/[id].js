@@ -2,11 +2,17 @@ import { useRouter } from "next/router";
 import AddExercises from "../../../components/Main/Workouts/WorkoutDetails/AddExercises/AddExercises";
 import Head from "next/head";
 
-const ExerciseAdd = ({ workouts, exercises, onAddExercise }) => {
+const ExerciseAdd = ({
+  workouts,
+  exercises,
+  onAddExercise,
+  exerciseAdded,
+  updateAddedExercises,
+}) => {
   const router = useRouter();
   const { id } = router.query;
   const currentWorkout = workouts.find((workout) => workout.id === id);
-  console.log(currentWorkout);
+
   if (!currentWorkout) {
     return null;
   }
@@ -27,6 +33,8 @@ const ExerciseAdd = ({ workouts, exercises, onAddExercise }) => {
         currentWorkout={currentWorkout}
         onAddExercise={onAddExercise}
         id={id}
+        exerciseAdded={exerciseAdded}
+        updateAddedExercises={updateAddedExercises}
       />
     </>
   );
