@@ -7,7 +7,6 @@ const AddExercises = ({
   exercises,
   workouts,
   onAddExercise,
-  onDeleteExercise,
   id,
   currentWorkout,
   exerciseAdded,

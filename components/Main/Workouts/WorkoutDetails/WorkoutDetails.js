@@ -22,16 +22,6 @@ const WorkoutDetails = ({ currentWorkout, onDeleteExercise, id }) => {
           />
         </Link>
         <h2>{currentWorkout.name.toUpperCase()}</h2>
-        <button type="submit" className="checkmarkButton">
-          <Image
-            //   onClick={handleSubmit}
-            src="/checkmark-circle.svg"
-            width={34}
-            height={34}
-            alt="checkmark button"
-            className="checkmark"
-          />
-        </button>
       </StyledWorkoutDetailsHeader>
       <ul>
         {addedExercises.map((addedExercise) => {
