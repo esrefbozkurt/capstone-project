@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledForm } from "./StyledForm";
+import { StyledForm, StyledFormSets } from "./StyledForm";
 
 const FormSets = () => {
   // const [entrySet, setEntrySet] = useState([]);
@@ -14,42 +14,44 @@ const FormSets = () => {
   // }
   const currDate = new Date().toLocaleDateString();
   return (
-    <StyledForm>
+    <StyledFormSets>
       <h3>{currDate}</h3>
-      <section className="setContainer">
+      <StyledForm>
         <form>
           <fieldset>
-            <label for="setNumber">set#</label>
+            <label htmlFor="setNumber">set#</label>
             <input
               type="number"
               name="setNumber"
               id="setNumber"
-              className="setInput"
+              className="set-input"
               required
             ></input>
-            <label for="weight">weight</label>
+            <label htmlFor="weight">weight</label>
             <input
               type="number"
               name="weight"
               id="weight"
               placeholder="Name your Workout..."
-              className="workout-input"
+              className="set-input"
               required
             ></input>
-            <label for="reps">reps</label>
+            <label htmlFor="reps">reps</label>
             <input
               type="number"
               name="reps"
               id="reps"
-              className="workout-input"
+              className="set-input"
               required
             ></input>
 
-            <button type="submit">Send</button>
+            <button className="addButton" type="submit">
+              Send
+            </button>
           </fieldset>
         </form>
-      </section>
-    </StyledForm>
+      </StyledForm>
+    </StyledFormSets>
   );
 };
 

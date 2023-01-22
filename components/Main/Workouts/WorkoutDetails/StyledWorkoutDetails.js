@@ -95,3 +95,31 @@ export const StyledWorkoutDetailsHeader = styled.div`
     border: none;
   }
 `;
+
+export const StyledExerciseDetailsHeader = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
+  background: black;
+  padding: 0.5rem 0;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  .backButtonExercise {
+    position: absolute;
+    left: 0.4rem;
+
+    background: transparent;
+    border: none;
+  }
+
+  h2 {
+    padding: 0.5rem 0.5rem;
+    overflow-y: scroll;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: white;
+  }
+`;
