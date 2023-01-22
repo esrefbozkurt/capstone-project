@@ -30,7 +30,6 @@ export const StyledExercises = styled.div`
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 1s ease;
-    /* /* transition: height 0.3s ease; */
     transition: max-height 1s ease;
 
     .favContainer {
@@ -59,7 +58,7 @@ export const StyledExercises = styled.div`
     justify-content: space-between;
     flex-direction: row;
 
-    height: 2.2rem;
+    height: 2.5rem;
     align-items: center;
     background-color: lightgreen;
   }

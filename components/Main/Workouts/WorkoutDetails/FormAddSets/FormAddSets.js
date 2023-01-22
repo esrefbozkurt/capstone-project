@@ -62,6 +62,7 @@ export default function FormAddSets({
     event.target.reset();
     event.target.elements.setNumber.focus();
   }
+
   return (
     <StyledAddSets>
       <StyledForm onSubmit={(event) => handleSubmitSet(event)}>
