@@ -71,7 +71,10 @@ function MyApp({ Component, pageProps }) {
     event.stopPropagation();
     const newWorkout = {
       ...currentWorkout,
-      exercises: [...currentWorkout.exercises, { name: exerciseName }],
+      exercises: [
+        ...currentWorkout.exercises,
+        { name: exerciseName, details: [{}] },
+      ],
     };
 
     await fetch("/api/workouts/" + currentWorkout.id, {
@@ -106,6 +109,18 @@ function MyApp({ Component, pageProps }) {
     getWorkouts();
   }
 
+  async function handleSubmitNewSet(updatedWorkout, id, event) {
+    event.preventDefault();
+    event.stopPropagation();
+    await fetch("/api/workouts/" + id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedWorkout),
+    });
+
+    getWorkouts();
+  }
+
   return (
     <>
       <GlobalStyles />
@@ -122,6 +137,7 @@ function MyApp({ Component, pageProps }) {
         onDeleteExercise={handleDeleteExercise}
         exerciseAdded={exerciseAdded}
         updateAddedExercises={updateAddedExercises}
+        onSubmitNewSet={handleSubmitNewSet}
       />
     </>
   );

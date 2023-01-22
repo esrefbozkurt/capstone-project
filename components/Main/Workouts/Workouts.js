@@ -28,7 +28,7 @@ const Workouts = ({ workouts, onAddWorkout, onDeleteWorkout }) => {
   return (
     <>
       <StyledWorkoutsHeader
-        style={{ maxHeight: !showInput ? "50px" : "100px" }}
+        style={{ maxHeight: !showInput ? "53px" : "100px" }}
       >
         <section className="workoutsHeaderContainer">
           <h2>My-Workouts</h2>

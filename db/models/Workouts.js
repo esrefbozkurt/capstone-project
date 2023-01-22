@@ -7,6 +7,18 @@ const workoutSchema = new Schema({
   exercises: [
     {
       name: { type: String, required: true },
+      details: [
+        {
+          date: { type: String, required: true },
+          sets: [
+            {
+              name: { type: String, required: true },
+              weights: { type: String, required: true },
+              reps: { type: String, required: true },
+            },
+          ],
+        },
+      ],
     },
   ],
 });

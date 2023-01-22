@@ -25,12 +25,12 @@ export const StyledExercises = styled.div`
     border-radius: 0.2rem;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
     text-decoration: none;
-    transition: max-height 1s ease;
+
     overflow: hidden;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 1s ease;
-    transition: height 0.3s ease;
+    transition: max-height 1s ease;
 
     .favContainer {
       display: flex;
@@ -50,7 +50,6 @@ export const StyledExercises = styled.div`
 
   .headerAddExercise {
     font-size: 1rem;
-    margin-right: 3rem;
   }
 
   .addedContainer {
@@ -58,7 +57,7 @@ export const StyledExercises = styled.div`
     justify-content: space-between;
     flex-direction: row;
 
-    height: 2.2rem;
+    height: 2.5rem;
     align-items: center;
     background-color: lightgreen;
   }
@@ -90,17 +89,21 @@ export const StyledExercisesHeader = styled.div`
   align-items: center;
   background: black;
   padding-top: 0.2rem;
-  justify-content: space-between;
+  justify-content: center;
   h2 {
     display: flex;
     overflow-y: scroll;
     font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
-    margin-right: 6.5rem;
+    padding: 0.8rem 0;
   }
   .backbutton {
-    margin: 0.2rem 0.5rem;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.6rem;
+    background: transparent;
+    border: none;
   }
 `;
 
