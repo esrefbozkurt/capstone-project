@@ -221,10 +221,7 @@ export default function Exercises({
                   />
                 ) : (
                   <Image
-                    onClick={
-                      (event) => handleAddExercise(event, exercise.name)
-                      // handleAdd(event, exercise, currentWorkout)
-                    }
+                    onClick={(event) => handleAddExercise(event, exercise.name)}
                     className="add-exercise"
                     src="/plus.svg"
                     width={24}
