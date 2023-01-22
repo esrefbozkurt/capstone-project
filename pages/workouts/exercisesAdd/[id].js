@@ -7,7 +7,7 @@ const ExerciseAdd = ({
   exercises,
   onAddExercise,
   exerciseAdded,
-  setExerciseAdded,
+  updateAddedExercises,
 }) => {
   const router = useRouter();
   const { id } = router.query;
@@ -34,7 +34,7 @@ const ExerciseAdd = ({
         onAddExercise={onAddExercise}
         id={id}
         exerciseAdded={exerciseAdded}
-        setExerciseAdded={setExerciseAdded}
+        updateAddedExercises={updateAddedExercises}
       />
     </>
   );

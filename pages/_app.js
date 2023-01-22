@@ -44,6 +44,15 @@ function MyApp({ Component, pageProps }) {
     getWorkouts();
   }
 
+  async function updateAddedExercises(currentWorkout, exerciseName) {
+    const nameArray = currentWorkout.exercises.map((exercise) => exercise.name);
+    if (exerciseName) {
+      setExerciseAdded([...nameArray, exerciseName]);
+    } else {
+      setExerciseAdded(nameArray);
+    }
+  }
+
   async function handleDeleteWorkout(event, id) {
     event.preventDefault();
     event.stopPropagation();
@@ -72,6 +81,7 @@ function MyApp({ Component, pageProps }) {
     });
 
     getWorkouts();
+    updateAddedExercises(currentWorkout, exerciseName);
   }
 
   async function handleDeleteExercise(currentWorkout, exerciseID, event) {
@@ -111,7 +121,7 @@ function MyApp({ Component, pageProps }) {
         onAddExercise={handleAddExerciseToWorkOut}
         onDeleteExercise={handleDeleteExercise}
         exerciseAdded={exerciseAdded}
-        setExerciseAdded={setExerciseAdded}
+        updateAddedExercises={updateAddedExercises}
       />
     </>
   );

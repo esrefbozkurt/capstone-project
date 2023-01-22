@@ -5,7 +5,7 @@ import {
 } from "./StyledExercises";
 import React from "react";
 import Description from "./Description/Description";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteButton from "./Favourite/FavouriteButton";
 import Link from "next/link";
@@ -21,11 +21,17 @@ export default function Exercises({
   currentWorkout,
   addExercises,
   exerciseAdded,
-  setExerciseAdded,
+  updateAddedExercises,
   id,
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    if (currentWorkout) {
+      updateAddedExercises(currentWorkout);
+    }
+  }, []);
 
   function handleToggle(id) {
     if (toggledExercises.includes(id)) {
@@ -36,12 +42,9 @@ export default function Exercises({
       setToggledExercises([id, ...toggledExercises]);
     }
   }
-  // setExerciseAdded([...exerciseAdded, exerciseName]);
 
   const handleAddExercise = (event, exerciseName) => {
     onAddExercise(currentWorkout, exerciseName, event);
-    const nameArray = currentWorkout.exercises.map((exercise) => exercise.name);
-    setExerciseAdded([...nameArray, exerciseName]);
   };
 
   function handleChange(event) {

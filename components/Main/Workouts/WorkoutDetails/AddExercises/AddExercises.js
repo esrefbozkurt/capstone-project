@@ -11,7 +11,7 @@ const AddExercises = ({
   id,
   currentWorkout,
   exerciseAdded,
-  setExerciseAdded,
+  updateAddedExercises,
 }) => {
   return (
     <>
@@ -21,10 +21,9 @@ const AddExercises = ({
         isFavouriteExercise={false}
         currentWorkout={currentWorkout}
         onAddExercise={onAddExercise}
-        onDeleteExercise={onDeleteExercise}
         workouts={workouts}
         exerciseAdded={exerciseAdded}
-        setExerciseAdded={setExerciseAdded}
+        updateAddedExercises={updateAddedExercises}
         id={id}
       />
     </>
