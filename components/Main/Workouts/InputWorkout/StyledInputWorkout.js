@@ -9,7 +9,7 @@ export const StyledForm = styled.form`
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding-bottom: 0.5rem;
-  animation: 0.4s alternate slidein;
+
   width: 100%;
 
   .workout-input {

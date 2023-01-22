@@ -1,7 +1,4 @@
 import Exercises from "../../../Exercises/Exercises";
-import { StyledAddExercisesHeader } from "./StyledAddExercises";
-import Link from "next/link";
-import Image from "next/image";
 
 const AddExercises = ({
   exercises,

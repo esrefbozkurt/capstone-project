@@ -27,7 +27,6 @@ export const StyledMuscleGroupItem = styled.div`
   }
 
   h3 {
-    font-family: Lato-bold;
     display: flex;
     text-transform: capitalize;
     background-color: #f8f9fa;

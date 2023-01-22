@@ -6,7 +6,12 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-const WorkoutDetails = ({ currentWorkout, onDeleteExercise, id }) => {
+const WorkoutDetails = ({
+  currentWorkout,
+  onDeleteExercise,
+  id,
+  exercisesAdded,
+}) => {
   const addedExercises = currentWorkout.exercises;
   return (
     <StyledWorkoutDetails>
@@ -27,7 +32,10 @@ const WorkoutDetails = ({ currentWorkout, onDeleteExercise, id }) => {
         {addedExercises.map((addedExercise) => {
           return (
             <li key={addedExercise._id}>
-              <div className="addContainer">
+              <Link
+                href={`/workouts/addSet/${addedExercise._id}`}
+                className="addContainer"
+              >
                 <h3>{addedExercise.name.toUpperCase()}</h3>
                 <Image
                   onClick={(event) =>
@@ -39,7 +47,7 @@ const WorkoutDetails = ({ currentWorkout, onDeleteExercise, id }) => {
                   height={24}
                   alt="delete Workout"
                 />
-              </div>
+              </Link>
             </li>
           );
         })}

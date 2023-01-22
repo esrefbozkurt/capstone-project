@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import WorkoutDetails from "../../components/Main/Workouts/WorkoutDetails/WorkoutDetails";
 import Head from "next/head";
 
-const WorkoutDetail = ({ workouts, onDeleteExercise }) => {
+const WorkoutDetail = ({ workouts, onDeleteExercise, exercisesAdded }) => {
   const router = useRouter();
   const { id } = router.query;
   const currentWorkout = workouts.find((workout) => workout.id === id);
@@ -24,6 +24,7 @@ const WorkoutDetail = ({ workouts, onDeleteExercise }) => {
       </Head>
 
       <WorkoutDetails
+        exercisesAdded={exercisesAdded}
         currentWorkout={currentWorkout}
         workouts={workouts}
         onDeleteExercise={onDeleteExercise}

@@ -19,18 +19,6 @@ export default function Nav() {
       </Link>
 
       <Link
-        className={router.pathname == "/favourites" ? "active" : ""}
-        href="/favourites"
-      >
-        <Image
-          src="/favorite.svg"
-          width={36}
-          height={36}
-          alt="add-favourite icon"
-        />
-      </Link>
-
-      <Link
         className={
           router.pathname == "/workouts" && "/workouts/addWorkouts"
             ? "active"
@@ -43,6 +31,18 @@ export default function Nav() {
           width={36}
           height={36}
           alt="workout icon filled"
+        />
+      </Link>
+
+      <Link
+        className={router.pathname == "/favourites" ? "active" : ""}
+        href="/favourites"
+      >
+        <Image
+          src="/favorite.svg"
+          width={36}
+          height={36}
+          alt="add-favourite icon"
         />
       </Link>
     </StyledNav>
