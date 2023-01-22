@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { StyledAddSets, StyledAddSetsHeader } from "./StyledAddSets";
 
 export default function AddSets({ exerciseAdded, id }) {
@@ -15,7 +17,7 @@ export default function AddSets({ exerciseAdded, id }) {
           />
         </Link>
         <h2 className="headerAddExercise">
-          Add Exercises to {exerciseAdded.name}
+          {/* Add Exercises to {exerciseAdded.name} */}
         </h2>
       </StyledAddSetsHeader>
       <StyledAddSets></StyledAddSets>
