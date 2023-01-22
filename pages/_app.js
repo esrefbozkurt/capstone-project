@@ -71,7 +71,10 @@ function MyApp({ Component, pageProps }) {
     event.stopPropagation();
     const newWorkout = {
       ...currentWorkout,
-      exercises: [...currentWorkout.exercises, { name: exerciseName }],
+      exercises: [
+        ...currentWorkout.exercises,
+        { name: exerciseName, details: [{}] },
+      ],
     };
 
     await fetch("/api/workouts/" + currentWorkout.id, {

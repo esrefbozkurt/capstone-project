@@ -88,7 +88,7 @@ const WorkoutDetails = ({
                       alt="delete Workout"
                     />
                   </button>
-                  {showInput[1] && (
+                  {showInput[0] === addedExercise._id && showInput[1] && (
                     <>
                       <section>
                         {addedExercise.details.map(
