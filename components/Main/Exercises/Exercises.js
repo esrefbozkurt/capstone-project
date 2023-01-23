@@ -26,6 +26,7 @@ export default function Exercises({
 }) {
   const [toggledExercises, setToggledExercises] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [addExercise, setAddExercise] = useState(exerciseAdded);
 
   useEffect(() => {
     if (currentWorkout) {
@@ -45,6 +46,7 @@ export default function Exercises({
 
   const handleAddExercise = (event, exerciseName) => {
     onAddExercise(currentWorkout, exerciseName, event);
+    setAddExercise([...addExercise, exerciseName]);
   };
 
   function handleChange(event) {
@@ -206,13 +208,13 @@ export default function Exercises({
               <li
                 key={exercise.id}
                 className={
-                  exerciseAdded?.includes(exercise.name)
+                  addExercise?.includes(exercise.name)
                     ? "addedContainer"
                     : "addContainer"
                 }
               >
                 <h3>{exercise.name.toUpperCase()}</h3>
-                {exerciseAdded?.includes(exercise.name) ? (
+                {addExercise?.includes(exercise.name) ? (
                   <Image
                     className="add-exercise"
                     src="/checkmark.svg"

@@ -6,8 +6,8 @@ export default function FormAddSets({
   currentWorkout,
   exerciseId,
 }) {
-  // const currDate = new Date().toLocaleDateString();
-  const currDate = "22/01/2023";
+  const currDate = new Date().toLocaleDateString();
+  // const currDate = "19/01/2023";
 
   const currentExerciseDetails = currentWorkout.exercises.find(
     (exercise) => exercise._id === exerciseId
