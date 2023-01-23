@@ -29,8 +29,7 @@ export const StyledExercises = styled.div`
     overflow: hidden;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    transition: background-color 1s ease;
-    transition: max-height 1s ease;
+    transition: all 1s ease;
 
     .favContainer {
       display: flex;
