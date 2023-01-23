@@ -65,6 +65,7 @@ export const StyledWorkoutsHeader = styled.div`
     right: 8px;
     height: 32px;
     width: 32px;
+    cursor: pointer;
   }
 
   h2 {
