@@ -24,6 +24,7 @@ export const StyledWorkoutDetails = styled.div`
       align-items: center;
       background: transparent;
       border: none;
+      cursor: pointer;
     }
   }
 
@@ -47,10 +48,6 @@ export const StyledWorkoutDetails = styled.div`
       transform: scale(97%);
       transition: all 200ms ease;
     }
-  }
-
-  .addedExercise {
-    cursor: pointer;
   }
 
   h3 {
@@ -89,15 +86,6 @@ export const StyledWorkoutDetailsHeader = styled.div`
     font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
-  }
-
-  .checkmark {
-    margin-right: 0.6rem;
-  }
-
-  .checkmarkButton {
-    background: transparent;
-    border: none;
   }
 `;
 
