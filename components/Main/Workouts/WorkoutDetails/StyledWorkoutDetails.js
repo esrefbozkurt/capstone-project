@@ -49,6 +49,10 @@ export const StyledWorkoutDetails = styled.div`
     }
   }
 
+  .addedExercise {
+    cursor: pointer;
+  }
+
   h3 {
     font-size: 0.8rem;
 

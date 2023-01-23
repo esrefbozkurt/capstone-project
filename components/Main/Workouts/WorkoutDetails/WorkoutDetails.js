@@ -46,7 +46,7 @@ const WorkoutDetails = ({
                 <li key={addedExercise._id}>
                   <button
                     onClick={() => handleShowInput(addedExercise._id)}
-                    className="addContainer"
+                    className="addedExercise"
                   >
                     <h3>{addedExercise.name.toUpperCase()}</h3>
                     <Image
