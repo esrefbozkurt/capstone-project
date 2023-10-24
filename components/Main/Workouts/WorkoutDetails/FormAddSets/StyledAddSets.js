@@ -20,38 +20,38 @@ export const StyledAddSets = styled.div`
 
 export const StyledForm = styled.form`
   display: flex;
-  width: 100%;
-  justify-content: center;
   flex-direction: column;
-
+  justify-content: center;
   padding: 0.3rem 0;
+  width: 100%;
+
   fieldset {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5rem;
     border-radius: 0.3rem;
     border: 1px solid lightgray;
-    justify-content: space-between;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.26);
-    margin-bottom: 0.5rem;
   }
   label {
-    text-align: center;
     margin: 0.3rem;
+    text-align: center;
   }
   .setInput {
-    font-size: 1rem;
-    width: 2rem;
-    border-radius: 0.3rem;
     margin: 0.3rem 0;
+    width: 2rem;
     padding: 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
   }
   .add-set {
-    background: transparent;
-    border: none;
     margin-top: 3.5px;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+    background: transparent;
+    border: none;
   }
   img {
     background-color: lightgreen;
