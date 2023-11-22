@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { StyledMuscleGroupItem } from "./StyledMuscleGroupItem";
 
-const MuscleGroupItem = ({ muscle }) => {
+interface IMuscleGroupItem {
+  muscle: string;
+}
+
+const MuscleGroupItem = ({ muscle }: IMuscleGroupItem) => {
   return (
     <StyledMuscleGroupItem>
       <Link href={`/exercises/${muscle}`}>

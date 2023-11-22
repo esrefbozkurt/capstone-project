@@ -3,8 +3,20 @@ import Image from "next/image";
 import InputWorkout from "./InputWorkout/InputWorkout";
 import { useState } from "react";
 import Link from "next/link";
+import { WorkoutType } from "../../../types";
 
-const Workouts = ({ workouts, onAddWorkout, onDeleteWorkout }) => {
+interface NewWorkoutType {
+  name: string;
+  exercises: any[];
+}
+
+interface IWorkouts {
+  workouts: WorkoutType[];
+  onAddWorkout: (newWorkout: NewWorkoutType) => void;
+  onDeleteWorkout: (event: any, id: string) => void;
+}
+
+const Workouts = ({ workouts, onAddWorkout, onDeleteWorkout }: IWorkouts) => {
   const [showInput, setShowInput] = useState(false);
 
   function toggleShow() {
@@ -14,8 +26,8 @@ const Workouts = ({ workouts, onAddWorkout, onDeleteWorkout }) => {
   async function handleSubmit(event) {
     event.preventDefault();
     event.stopPropagation();
-    const name = event.target.elements.name.value;
-    const newWorkout = {
+    const name: string = event.target.elements.name.value;
+    const newWorkout: NewWorkoutType = {
       name: name,
       exercises: [],
     };

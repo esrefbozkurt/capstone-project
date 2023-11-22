@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
+import { ExerciseType, WorkoutType } from "../types";
 
 function MyApp({ Component, pageProps }) {
   const [isFavourite, setIsFavourite] = useState([]);
-  const [exercises, setExercises] = useState([]);
-  const [workouts, setWorkouts] = useState([]);
+  const [exercises, setExercises] = useState<ExerciseType[]>([]);
+  const [workouts, setWorkouts] = useState<WorkoutType[]>([]);
   const [exerciseAdded, setExerciseAdded] = useState([]);
 
   useEffect(() => {
@@ -22,13 +23,13 @@ function MyApp({ Component, pageProps }) {
 
   async function getExercises() {
     const response = await fetch("/api/exercises");
-    const exercisesList = await response.json();
+    const exercisesList: ExerciseType[] = await response.json();
     setExercises(exercisesList);
   }
 
   async function getWorkouts() {
     const response = await fetch("/api/workouts");
-    const workoutsList = await response.json();
+    const workoutsList: WorkoutType[] = await response.json();
     setWorkouts(workoutsList);
   }
 

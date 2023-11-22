@@ -1,5 +1,6 @@
 import dbConnect from "../../../db/dbConnect";
 import Exercise from "../../../db/models/Exercises";
+import { ExerciseType } from "../../../types";
 
 export default async function handler(req, res) {
   await dbConnect();
@@ -7,7 +8,7 @@ export default async function handler(req, res) {
     try {
       const exercises = await Exercise.find();
 
-      const exercisesArray = exercises.map((exercise) => {
+      const exercisesArray: ExerciseType[] = exercises.map((exercise) => {
         return {
           id: exercise._id,
           name: exercise.name,
